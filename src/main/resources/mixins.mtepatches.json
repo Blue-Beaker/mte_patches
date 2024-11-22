@@ -1,9 +1,9 @@
 {
-    "required": false,
+    "required": true,
     "compatibilityLevel": "JAVA_8",
     "package": "io.bluebeaker.mtepatches.mixin",
     "mixins": [
-
+      "MixinRotorRepairRecipe"
     ],
     "client": [
     ],
