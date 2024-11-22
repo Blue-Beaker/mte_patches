@@ -1,4 +1,4 @@
-package io.bluebeaker.examplemod;
+package io.bluebeaker.mtepatches;
 
 import org.apache.logging.log4j.Logger;
 
@@ -13,18 +13,18 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(modid = ExampleMod.MODID, name = ExampleMod.NAME, version = ExampleMod.VERSION)
-public class ExampleMod
+@Mod(modid = MTEPatchesMod.MODID, name = MTEPatchesMod.NAME, version = MTEPatchesMod.VERSION)
+public class MTEPatchesMod
 {
-    public static final String MODID = "examplemod";
-    public static final String NAME = "ExampleMod";
+    public static final String MODID = "mtepatches";
+    public static final String NAME = "MTEPatches";
     public static final String VERSION = "1.0";
     
     public MinecraftServer server;
 
     private static Logger logger;
     
-    public ExampleMod() {
+    public MTEPatchesMod() {
         MinecraftForge.EVENT_BUS.register(this);
     }
     

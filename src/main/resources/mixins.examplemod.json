@@ -1,7 +1,7 @@
 {
     "required": false,
     "compatibilityLevel": "JAVA_8",
-    "package": "io.bluebeaker.examplemod.mixin",
+    "package": "io.bluebeaker.mtepatches.mixin",
     "mixins": [
 
     ],
@@ -12,5 +12,5 @@
     "injectors": {
       "defaultRequire": 1
     },
-    "refmap": "mixins.examplemod.refmap.json"
+    "refmap": "mixins.mtepatches.refmap.json"
   }
