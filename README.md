@@ -1,5 +1,5 @@
 # MTE Patches
-Fixes bugs in mods for the modpack Minetech:Evolution.  
+Fixes bugs in mods for the modpack Minetech Evolution.  
 
 ## Current fixes:  
 ### Railcraft

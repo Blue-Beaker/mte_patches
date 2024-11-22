@@ -2,7 +2,7 @@
 {
   "modid": "mtepatches",
   "name": "MTE Patches",
-  "description": "Fixes bugs in mods for the modpack Minetech:Evolution.",
+  "description": "Fixes bugs in mods for the modpack Minetech Evolution.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
