@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 public class MixinRotorRepairRecipe {
     @ModifyVariable(remap = true, at = @At(value = "STORE"), ordinal = 0, method = "getCraftingResult")
     public ItemStack copyItemStack(ItemStack stack) {
-        if (MTEPatchesConfig.railcraft.turbineCraftingFix)
+        if (MTEPatchesConfig.railcraft.turbineRepairingFix)
             return stack.copy();
         else
             return stack;

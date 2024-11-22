@@ -1,1 +1,3 @@
-config.mtepatches.example.name=Example
+config.mtepatches.railcraft.name=RailCraft
+config.mtepatches.railcraft.multiblockfix.name=Multiblock Sync Fix
+config.mtepatches.railcraft.turbineCraftingFix.name=Turbine Repairing Fix

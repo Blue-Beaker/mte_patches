@@ -1,14 +1,14 @@
 [
 {
   "modid": "mtepatches",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "name": "MTE Patches",
+  "description": "Fixes bugs in mods for the modpack Minetech:Evolution.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["CleanroomMC"],
-  "credits": "Authors of this project",
+  "authorList": ["Blue_Beaker"],
+  "credits": "Authors of all the mods patched by this mod",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

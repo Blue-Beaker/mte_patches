@@ -26,6 +26,7 @@ public class MTEPatchesMod
     
     public MTEPatchesMod() {
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(RCMultiblockPatch.class);
     }
     
     @EventHandler
@@ -44,7 +45,7 @@ public class MTEPatchesMod
         }
     }
 
-    public void logInfo(String log){
+    public static void logInfo(String log){
         logger.info(log);
     }
 }
