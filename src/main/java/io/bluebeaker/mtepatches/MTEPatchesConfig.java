@@ -13,13 +13,12 @@ public class MTEPatchesConfig {
 
     public static class CategoryRailcraft{
 
-        @Comment({"Fixes a desync bug of multiblock that client doesn't load them properly when the multiblock is across chunks, ",
-        " and the chunks are not loaded by the client at the same time.",
-        "When desync, client can get its inventory scrambled when right-clicked at the bugged multiblock. "})
+        @Comment({"Fix a desync bug of multiblock that when the multiblock is across chunks. ",
+        "When desync, client can get its inventory scrambled when right-clicking at the bugged multiblock. "})
         @LangKey("config.mtepatches.railcraft.multiblockfix.name")
         public boolean multiblockSyncFix = true; 
 
-        @Comment("Fixes turbine being fixed for free when putting in crafting slot with a blade and take it out.")
+        @Comment("Fix turbine being fixed for free when putting in crafting slot with a blade and take it out.")
         @LangKey("config.mtepatches.railcraft.turbineCraftingFix.name")
         public boolean turbineRepairingFix = true; 
     }
