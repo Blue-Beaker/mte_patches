@@ -22,4 +22,17 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.railcraft.turbineCraftingFix.name")
         public boolean turbineRepairingFix = true; 
     }
+
+    @LangKey("config.mtepatches.ic2.name")
+    public static CategoryIC2 ic2 = new CategoryIC2();
+    public static class CategoryIC2{
+
+        @Comment("Make IC2 crop stick able to put on any BlockFarmland, including the ones added by mods.")
+        @LangKey("config.mtepatches.ic2.cropOnAllFarmlands.name")
+        public boolean cropOnAllFarmlands = true;
+
+        @Comment("Fix mass fabricator stuck permanently after it's output is blocked.")
+        @LangKey("config.mtepatches.ic2.massFabStuckFix.name")
+        public boolean massFabStuckFix = true;
+    }
 }

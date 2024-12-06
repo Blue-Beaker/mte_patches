@@ -1,3 +1,7 @@
 config.mtepatches.railcraft.name=RailCraft
 config.mtepatches.railcraft.multiblockfix.name=Multiblock Sync Fix
 config.mtepatches.railcraft.turbineCraftingFix.name=Turbine Repairing Fix
+
+config.mtepatches.ic2.name=IC2
+config.mtepatches.ic2.cropOnAllFarmlands.name=Crop on all farmlands
+config.mtepatches.ic2.massFabStuckFix.name=MassFab stuck fix
