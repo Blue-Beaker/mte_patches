@@ -15,7 +15,7 @@ import ic2.core.item.type.MiscResourceType;
 import ic2.core.ref.ItemName;
 
 @Mixin(value = TileEntityMassFabricator.class,remap = false)
-public class MixinMassFabricator {
+public abstract class MixinMassFabricator {
     @ModifyVariable(remap = false, method = "updateEntityServer()V", at = @At(value = "LOAD"),ordinal = 0)
     private double ifScrapFull(double scrapConversion) {
         if (MTEPatchesConfig.ic2.massFabStuckFix) {
