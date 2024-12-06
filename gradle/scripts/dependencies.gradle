@@ -1,0 +1,86 @@
+apply from: 'gradle/scripts/helpers.gradle'
+
+repositories {
+    // Other repositories described by default:
+    // CleanroomMC: https://maven.cleanroommc.com
+    exclusiveContent {
+        forRepository {
+            maven {
+                name 'CurseMaven'
+                url 'https://cursemaven.com'
+            }
+        }
+        filter {
+            includeGroup 'curse.maven'
+        }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name 'Modrinth'
+                url 'https://api.modrinth.com/maven'
+            }
+        }
+        filter {
+            includeGroup 'maven.modrinth'
+        }
+    }
+    flatDir {
+        dirs 'libs'
+    }
+    maven {
+        // Crafttweaker and gamestages
+        name = "BlameJared Maven"
+        url = "https://maven.blamejared.com"
+    }
+    mavenLocal() // Must be last for caching to work
+}
+
+dependencies {
+    // Include StripLatestForgeRequirements by default for the dev env, saves everyone a hassle
+    runtimeOnly 'com.cleanroommc:strip-latest-forge-requirements:1.0'
+
+    // For easier testing
+    runtimeOnly rfg.deobf('curse.maven:had-enough-items-557549:4543375')
+    runtimeOnly rfg.deobf('curse.maven:ftb-library-legacy-forge-237167:2985811')
+    runtimeOnly rfg.deobf('curse.maven:ftb-utilities-forge-237102:3157548')
+    
+    implementation rfg.deobf('industrialcraft-2:industrialcraft-2-2.8.222-ex112')
+    implementation rfg.deobf('libs:railcraft-12.0.0')
+
+    runtimeOnly rfg.deobf('libs:BiomesOPlenty-1.12.2-7.0.1.2445-universal')
+    // Crafttweaker
+    //implementation rfg.deobf("curse.maven:mtlib-253211:3308160")
+    //implementation rfg.deobf("CraftTweaker2:CraftTweaker2-MC1120-Main:${project.version_crafttweaker}")
+    
+    // Example - Dependency descriptor:
+    // 'com.google.code.gson:gson:2.8.6' << group: com.google.code.gson, name:gson, version:2.8.6
+    // 'group:name:version:classifier' where classifier is optional
+
+    // Example - Deobfuscating dependencies:
+    // rfg.deobf('curse.maven:had-enough-items-557549:4543375')
+    // By wrapping a dependency descriptor in rfg.deobf() method call, the dependency is queued for deobfuscation
+    // When deobfuscating, RFG respects the mapping_channel + mapping_version stated in gradle.properties
+
+    // Example - CurseMaven dependencies:
+    // 'curse.maven:had-enough-items-557549:4543375' << had-enough-items = project slug, 557549 = project id, 4543375 = file id
+    // Full documentation: https://cursemaven.com/
+
+    // Example - Modrinth dependencies:
+    // 'maven.modrinth:jei:4.16.1.1000' << jei = project name, 4.16.1.1000 = file version
+    // Full documentation: https://docs.modrinth.com/docs/tutorials/maven/
+
+    // Common dependency types (configuration):
+    // implementation = dependency available at both compile time and runtime
+    // runtimeOnly = runtime dependency
+    // compileOnly = compile time dependency
+    // annotationProcessor = annotation processing dependencies
+
+    // Transitive dependencies:
+    // (Dependencies that your dependency depends on)
+    // If you wish to exclude transitive dependencies in the described dependencies
+    // Use a closure as such:
+    // implementation ('com.google.code.gson:gson:2.8.6') {
+    //     transitive = false
+    // }
+}
