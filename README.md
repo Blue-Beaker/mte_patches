@@ -10,3 +10,9 @@ __Multiblock Desync__
   
 __Free Turbine Repair__  
   Fix turbine being fixed for free when putting in crafting slot with a blade and take it out.
+
+### IndustrialCraft 2
+__Mass Fabricator Stuck__  
+Mass fabricator stuck forever when its output is blocked once. This mod can fix this.  
+__Crops and Farmlands__  
+This is a enhancement for IC2, allowing crop sticks to be put on other mod's farmlands, as long as it extends from BlockFarmland.  
