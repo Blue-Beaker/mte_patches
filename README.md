@@ -16,3 +16,7 @@ __Mass Fabricator Stuck__
 Mass fabricator stuck forever when its output is blocked once. This mod can fix this.  
 __Crops and Farmlands__  
 This is a enhancement for IC2, allowing crop sticks to be put on other mod's farmlands, as long as it extends from BlockFarmland.  
+
+### Thermal Series
+__Fuzzy NBT Recycling__  
+Enhancement for Thermal Expansion, allows recycling enchanted items with induction smelter and sawmill.  
