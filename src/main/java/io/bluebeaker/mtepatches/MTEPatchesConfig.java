@@ -35,4 +35,16 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.ic2.massFabStuckFix.name")
         public boolean massFabStuckFix = true;
     }
+
+    @LangKey("config.mtepatches.thermal.name")
+    public static CategoryThermal thermal = new CategoryThermal();
+    public static class CategoryThermal{
+
+        @Config.RequiresMcRestart
+        @Comment({"Don't match input NBT for recycling recipes of smelter and sawmill.",
+                "Allows recycling enchanted items with them."})
+        @LangKey("config.mtepatches.thermal.recycleRecipesFuzzyNBT.name")
+        public boolean recycleRecipesFuzzyNBT = true;
+
+    }
 }

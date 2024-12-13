@@ -9,6 +9,8 @@
     "MixinItemCrop",
     "MixinMassFabricator",
     "MixinRotorRepairRecipe",
+    "MixinSawmillManager",
+    "MixinSmelterManager",
     "MixinTileEntityCrop",
     "MixinTileEntityCropmatron"
   ],
