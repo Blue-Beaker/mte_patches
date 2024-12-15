@@ -5,6 +5,7 @@ import forestry.api.apiculture.IBeeHousing;
 import forestry.apiculture.BeekeepingLogic;
 import forestry.apiculture.ModuleApiculture;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
+import io.bluebeaker.mtepatches.MTEPatchesMod;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import org.spongepowered.asm.mixin.Final;
@@ -29,6 +30,7 @@ public abstract class MixinBeeKeepingLogic {
             this.queenStack=new ItemStack(ModuleApiculture.getItems().beePrincessGE);
             this.queenStack.setTagCompound(tagCompound);
             this.housing.getBeeInventory().setQueen(this.queenStack);
+            MTEPatchesMod.getLogger().warn("Replaced a faulty Bee Queen at {}. This would cause a crash normally. {} {}", this.housing.getCoordinates(),queenStack,tagCompound);
             ci.cancel();
         }
     }

@@ -44,7 +44,7 @@ public class MTEPatchesMod
             ConfigManager.sync(MODID, Type.INSTANCE);
         }
     }
-
+    public static Logger getLogger(){return logger;}
     public static void logInfo(String log){
         logger.info(log);
     }
