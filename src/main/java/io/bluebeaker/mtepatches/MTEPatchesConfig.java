@@ -47,4 +47,12 @@ public class MTEPatchesConfig {
         public boolean recycleRecipesFuzzyNBT = true;
 
     }
+    @LangKey("config.mtepatches.forestry.name")
+    public static CategoryForestry forestry = new CategoryForestry();
+    public static class CategoryForestry{
+        @Comment({"Prevent faulty bee queen without mated tag from crashing the server when put into beekeeping.",
+                "They will be replaced with a princess with the same NBT."})
+        @LangKey("config.mtepatches.forestry.faultyQueenFix.name")
+        public boolean faultyQueenFix = true;
+    }
 }
