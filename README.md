@@ -1,6 +1,7 @@
 # MTE Patches
 Fixes bugs in mods for the modpack Minetech Evolution.  
-
+Use freely if you want any fixes in the mod. All fixes are togglable via config. 
+This mod works outside of the modpack as well.  
 ## Current fixes:  
 ### Railcraft
 __Multiblock Desync__  
