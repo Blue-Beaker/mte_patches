@@ -20,3 +20,7 @@ This is a enhancement for IC2, allowing crop sticks to be put on other mod's far
 ### Thermal Series
 __Fuzzy NBT Recycling__  
 Enhancement for Thermal Expansion, allows recycling enchanted items with induction smelter and sawmill.  
+
+### Forestry  
+__Faulty Queen Bee Fix__  
+Prevent crashing when placing a faulty queen bee into apiary  
