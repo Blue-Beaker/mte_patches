@@ -17,6 +17,8 @@ __Mass Fabricator Stuck__
 Mass fabricator stuck forever when its output is blocked once. This mod can fix this.  
 __Crops and Farmlands__  
 This is a enhancement for IC2, allowing crop sticks to be put on other mod's farmlands, as long as it extends from BlockFarmland.  
+__Block Keybinds in GUI__  
+Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump with the inventory open.  
 
 ### Thermal Series
 __Fuzzy NBT Recycling__  
