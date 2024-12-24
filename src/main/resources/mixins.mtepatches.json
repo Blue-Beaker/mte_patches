@@ -16,5 +16,7 @@
     "MixinTileEntityCropmatron"
   ],
   "server": [],
-  "client": []
+  "client": [
+    "MixinIC2KeyboardClient"
+  ]
 }

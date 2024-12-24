@@ -34,6 +34,11 @@ public class MTEPatchesConfig {
         @Comment("Fix mass fabricator stuck permanently after it's output is blocked.")
         @LangKey("config.mtepatches.ic2.massFabStuckFix.name")
         public boolean massFabStuckFix = true;
+
+        @Comment({"Prevent IC2 keybinds in inventory GUIs.",
+                "Fixes jetpack being activated when pressing jump with the inventory open."})
+        @LangKey("config.mtepatches.ic2.blockKeybindInGUI.name")
+        public boolean blockKeybindInGUI = true;
     }
 
     @LangKey("config.mtepatches.thermal.name")

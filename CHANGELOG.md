@@ -8,3 +8,6 @@ Added tweaks for Thermal Expansion:
 ## 1.3.0
 Added patch for Forestry:  
 - Prevent crashing when placing a faulty queen bee into apiary  
+## 1.3.1
+Added tweak for IC2:
+- Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump with the inventory open.  
