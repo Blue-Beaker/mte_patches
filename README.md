@@ -27,3 +27,13 @@ Enhancement for Thermal Expansion, allows recycling enchanted items with inducti
 ### Forestry  
 __Faulty Queen Bee Fix__  
 Prevent crashing when placing a faulty queen bee into apiary  
+
+### RFTools
+#### Modular Storage GUI Tweaks  
+- Shift Tweak  
+
+  When pulling out items with shift, don't refresh the list until the mouse is released.  Improves compatibility with MouseTweaks.  
+
+- Insertion Tweak  
+
+  When putting your held item into the storage, prevent swapping the hovered item out from the storage.  

@@ -26,7 +26,7 @@ public abstract class MixinGuiModularStorage {
     public void onMouseDown(int x, int y, int button, CallbackInfo ci){
         GuiModularStorage guiModularStorage = (GuiModularStorage) (Object)this;
         if(!MTEPatchesConfig.rftools.storageGuiShiftTweak) return;
-        
+
         if(!guiModularStorage.shiftClickedSlot.isEmpty()){
             if (guiModularStorage.lastClickSlot != null && guiModularStorage.lastClickSlot.inventory instanceof ModularStorageTileEntity)
                 mte_patches$isShiftClickedItem = true;

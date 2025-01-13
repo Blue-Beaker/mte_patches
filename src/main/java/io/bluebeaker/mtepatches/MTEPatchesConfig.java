@@ -65,12 +65,12 @@ public class MTEPatchesConfig {
     public static CategoryRFTools rftools = new CategoryRFTools();
     public static class CategoryRFTools{
         @Comment({"In modular storage GUI, when pulling items with shift,",
-                "don't update the list until mouse is released.",
+                "don't refresh the list until mouse is released.",
                 "Improves compatibility with MouseTweaks."})
         @LangKey("config.mtepatches.rftools.storageGuiShiftTweak.name")
         public boolean storageGuiShiftTweak = true;
 
-        @Comment({"In modular storage GUI, prevent swapping the existing item out with an item held."})
+        @Comment({"In modular storage GUI, when putting your held item into the storage, prevent swapping the hovered item out from the storage."})
         @LangKey("config.mtepatches.rftools.storageGuiInsertTweak.name")
         public boolean storageGuiInsertTweak = true;
     }
