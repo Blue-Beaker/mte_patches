@@ -13,3 +13,6 @@ config.mtepatches.thermal.recycleRecipesFuzzyNBT.name=Recycling with Fuzzy NBT
 config.mtepatches.rftools.name=RFTools
 config.mtepatches.rftools.storageGuiShiftTweak.name=Modular Storage Shift Tweak
 config.mtepatches.rftools.storageGuiInsertTweak.name=Modular Storage Insertion Tweak
+
+config.mtepatches.bop.name=Biomes O Plenty
+config.mtepatches.bop.connectionTimeout.name=Connection Timeout (ms)

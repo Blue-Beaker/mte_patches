@@ -4,28 +4,28 @@ Use freely if you want any fixes in the mod. All fixes are togglable via config.
 This mod works outside of the modpack as well.  
 ## Current fixes:  
 ### Railcraft
-__Multiblock Desync__  
+#### Multiblock Desync  
   Fix a desync bug of multiblock that when the multiblock is across chunks.
   This can be easily reproduced by building a multiblock tank across 4 chunks, forceload one chunk of them, walk away from the tank, quit and rejoin world, then walk back slowly. 
   When desync, client can get its inventory scrambled when right-clicking at the bugged multiblock.  
   
-__Free Turbine Repair__  
+#### Free Turbine Repair  
   Fix turbine being fixed for free when putting in crafting slot with a blade and take it out.
 
 ### IndustrialCraft 2
-__Mass Fabricator Stuck__  
+#### Mass Fabricator Stuck  
 Mass fabricator stuck forever when its output is blocked once. This mod can fix this.  
-__Crops and Farmlands__  
+#### Crops and Farmlands  
 This is a enhancement for IC2, allowing crop sticks to be put on other mod's farmlands, as long as it extends from BlockFarmland.  
-__Block Keybinds in GUI__  
+#### Block Keybinds in GUI  
 Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump with the inventory open.  
 
 ### Thermal Series
-__Fuzzy NBT Recycling__  
+#### Fuzzy NBT Recycling  
 Enhancement for Thermal Expansion, allows recycling enchanted items with induction smelter and sawmill.  
 
 ### Forestry  
-__Faulty Queen Bee Fix__  
+#### Faulty Queen Bee Fix  
 Prevent crashing when placing a faulty queen bee into apiary  
 
 ### RFTools
@@ -37,3 +37,7 @@ Prevent crashing when placing a faulty queen bee into apiary
 - Insertion Tweak  
 
   When putting your held item into the storage, prevent swapping the hovered item out from the storage.  
+
+### Biomes O Plenty
+#### Connection Timeout
+Add a timeout when it's retrieving trail info, prevent it from freezing the loading progress forever on a lossy internet connection.  

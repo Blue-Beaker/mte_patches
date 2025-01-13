@@ -74,4 +74,15 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.rftools.storageGuiInsertTweak.name")
         public boolean storageGuiInsertTweak = true;
     }
+
+    @LangKey("config.mtepatches.bop.name")
+    public static CategoryBOP bop = new CategoryBOP();
+    public static class CategoryBOP{
+
+        @Comment({"Add a timeout when it's retrieving trail info, prevent it from sticking the loading progress forever on a lossy internet connection.",
+                "Set to 0 for infinite timeout (original behaviour)."})
+        @LangKey("config.mtepatches.bop.connectionTimeout.name")
+        @Config.RangeInt(min = 0)
+        public int connectionTimeout = 5000;
+    }
 }

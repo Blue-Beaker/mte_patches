@@ -62,7 +62,7 @@ dependencies {
     implementation rfg.deobf('libs:mcjtylib-1.12-3.5.4')
     implementation rfg.deobf('libs:rftools-1.12-7.73')
     
-    runtimeOnly rfg.deobf('libs:BiomesOPlenty-1.12.2-7.0.1.2445-universal')
+    implementation rfg.deobf('libs:BiomesOPlenty-1.12.2-7.0.1.2445-universal')
     // Crafttweaker
     //implementation rfg.deobf("curse.maven:mtlib-253211:3308160")
     //implementation rfg.deobf("CraftTweaker2:CraftTweaker2-MC1120-Main:${project.version_crafttweaker}")

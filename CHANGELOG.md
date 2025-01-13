@@ -11,3 +11,10 @@ Added patch for Forestry:
 ## 1.3.1
 Added tweak for IC2:
 - Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump with the inventory open.  
+## 1.3.2
+Added tweaks for the RFTools Modular Storage GUI:  
+- Shift Tweak  
+- Insertion Tweak  
+
+Added tweaks for Biomes O Plenty:  
+- Connection Timeout: Add a timeout when it's retrieving trail info, prevent it from sticking the loading progress forever on a lossy internet connection.  
