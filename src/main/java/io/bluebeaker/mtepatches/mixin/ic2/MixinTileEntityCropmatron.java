@@ -1,4 +1,4 @@
-package io.bluebeaker.mtepatches.mixin;
+package io.bluebeaker.mtepatches.mixin.ic2;
 
 import ic2.core.block.machine.tileentity.TileEntityCropmatron;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;

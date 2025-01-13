@@ -1,4 +1,4 @@
-package io.bluebeaker.mtepatches.mixin;
+package io.bluebeaker.mtepatches.mixin.thermal;
 
 import cofh.thermalexpansion.util.managers.machine.SmelterManager;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;

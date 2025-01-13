@@ -1,14 +1,11 @@
-package io.bluebeaker.mtepatches.mixin;
+package io.bluebeaker.mtepatches.mixin.ic2;
 
 import ic2.core.crop.TileEntityCrop;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFarmland;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;

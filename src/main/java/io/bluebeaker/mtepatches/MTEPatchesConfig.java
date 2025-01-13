@@ -60,4 +60,12 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.forestry.faultyQueenFix.name")
         public boolean faultyQueenFix = true;
     }
+
+    @LangKey("config.mtepatches.rftools.name")
+    public static CategoryRFTools rftools = new CategoryRFTools();
+    public static class CategoryRFTools{
+        @Comment({"Tweak modular storage GUI, make it work well when shift-clicking out items with MouseTweaks."})
+        @LangKey("config.mtepatches.rftools.storageGuiFix.name")
+        public boolean storageGuiFix = true;
+    }
 }

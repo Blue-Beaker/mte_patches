@@ -1,4 +1,4 @@
-package io.bluebeaker.mtepatches.mixin;
+package io.bluebeaker.mtepatches.mixin.ic2;
 
 import ic2.core.util.KeyboardClient;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;

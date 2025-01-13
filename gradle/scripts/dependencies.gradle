@@ -57,6 +57,10 @@ dependencies {
 
 
     implementation rfg.deobf("curse.maven:forestry-59751:2918418")
+
+
+    implementation rfg.deobf('libs:mcjtylib-1.12-3.5.4')
+    implementation rfg.deobf('libs:rftools-1.12-7.73')
     
     runtimeOnly rfg.deobf('libs:BiomesOPlenty-1.12.2-7.0.1.2445-universal')
     // Crafttweaker

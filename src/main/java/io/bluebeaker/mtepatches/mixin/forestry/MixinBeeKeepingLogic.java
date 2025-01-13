@@ -1,4 +1,4 @@
-package io.bluebeaker.mtepatches.mixin;
+package io.bluebeaker.mtepatches.mixin.forestry;
 
 import forestry.api.apiculture.IBee;
 import forestry.api.apiculture.IBeeHousing;

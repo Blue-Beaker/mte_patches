@@ -6,17 +6,18 @@
   "minVersion": "0.8.5",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinBeeKeepingLogic",
-    "MixinItemCrop",
-    "MixinMassFabricator",
-    "MixinRotorRepairRecipe",
-    "MixinSawmillManager",
-    "MixinSmelterManager",
-    "MixinTileEntityCrop",
-    "MixinTileEntityCropmatron"
+    "forestry.MixinBeeKeepingLogic",
+    "ic2.MixinItemCrop",
+    "ic2.MixinMassFabricator",
+    "ic2.MixinTileEntityCrop",
+    "ic2.MixinTileEntityCropmatron",
+    "railcraft.MixinRotorRepairRecipe",
+    "thermal.MixinSawmillManager",
+    "thermal.MixinSmelterManager"
   ],
   "server": [],
   "client": [
-    "MixinIC2KeyboardClient"
+    "ic2.MixinIC2KeyboardClient",
+    "rftools.MixinGuiModularStorage"
   ]
 }
