@@ -1,8 +1,11 @@
 package io.bluebeaker.mtepatches.mixin.rftools;
 
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
+import io.bluebeaker.mtepatches.MTEPatchesMod;
 import mcjty.rftools.blocks.storage.GuiModularStorage;
+import mcjty.rftools.blocks.storage.ModularStorageItemInventory;
 import mcjty.rftools.blocks.storage.ModularStorageTileEntity;
+import mcjty.rftools.blocks.storage.RemoteStorageItemInventory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.inventory.Container;
@@ -28,8 +31,14 @@ public abstract class MixinGuiModularStorage {
         if(!MTEPatchesConfig.rftools.storageGuiShiftTweak) return;
 
         if(!guiModularStorage.shiftClickedSlot.isEmpty()){
-            if (guiModularStorage.lastClickSlot != null && guiModularStorage.lastClickSlot.inventory instanceof ModularStorageTileEntity)
+            if (guiModularStorage.lastClickSlot != null
+            && (guiModularStorage.lastClickSlot.inventory instanceof ModularStorageTileEntity
+            || guiModularStorage.lastClickSlot.inventory instanceof ModularStorageItemInventory
+            || guiModularStorage.lastClickSlot.inventory instanceof RemoteStorageItemInventory)
+                ){
+                MTEPatchesMod.logInfo(guiModularStorage.lastClickSlot.inventory.getClass().getName());
                 mte_patches$isShiftClickedItem = true;
+            }
         }
     }
 
