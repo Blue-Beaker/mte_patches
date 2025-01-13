@@ -64,8 +64,14 @@ public class MTEPatchesConfig {
     @LangKey("config.mtepatches.rftools.name")
     public static CategoryRFTools rftools = new CategoryRFTools();
     public static class CategoryRFTools{
-        @Comment({"Tweak modular storage GUI, make it work well when shift-clicking out items with MouseTweaks."})
-        @LangKey("config.mtepatches.rftools.storageGuiFix.name")
-        public boolean storageGuiFix = true;
+        @Comment({"In modular storage GUI, when pulling items with shift,",
+                "don't update the list until mouse is released.",
+                "Improves compatibility with MouseTweaks."})
+        @LangKey("config.mtepatches.rftools.storageGuiShiftTweak.name")
+        public boolean storageGuiShiftTweak = true;
+
+        @Comment({"In modular storage GUI, prevent swapping the existing item out with an item held."})
+        @LangKey("config.mtepatches.rftools.storageGuiInsertTweak.name")
+        public boolean storageGuiInsertTweak = true;
     }
 }
