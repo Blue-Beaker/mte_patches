@@ -93,6 +93,6 @@ public class MTEPatchesConfig {
 
         @Comment({"Allows BuildCraft item pipes to accept items ejected from hoppers and machines from other mods"})
         @LangKey("config.mtepatches.buildcraft.itemPipeAcceptEjection.name")
-        public boolean itemPipeAcceptEjection = false;
+        public boolean itemPipeAcceptEjection = true;
     }
 }
