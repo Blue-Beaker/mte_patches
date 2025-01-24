@@ -1,5 +1,6 @@
 package io.bluebeaker.mtepatches;
 
+import io.bluebeaker.mtepatches.buildcraft.BCCapabilityAdapter;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Config.Type;
@@ -27,6 +28,10 @@ public class MTEPatchesMod
         MinecraftForge.EVENT_BUS.register(this);
         if(LoadedModChecker.railcraft.isLoaded()){
             MinecraftForge.EVENT_BUS.register(RCMultiblockPatch.class);
+        }
+        if(LoadedModChecker.buildcrafttransport.isLoaded()){
+            BCCapabilityAdapter.INSTANCE.init();
+            MinecraftForge.EVENT_BUS.register(BCCapabilityAdapter.INSTANCE);
         }
     }
     

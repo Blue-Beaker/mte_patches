@@ -7,6 +7,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "biomesoplenty.MixinTrailManager",
+    "buildcraft.MixinPipeFlowItems",
     "forestry.MixinBeeKeepingLogic",
     "ic2.MixinItemCrop",
     "ic2.MixinMassFabricator",

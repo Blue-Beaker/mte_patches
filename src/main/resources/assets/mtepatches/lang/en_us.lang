@@ -16,3 +16,6 @@ config.mtepatches.rftools.storageGuiInsertTweak.name=Modular Storage Insertion T
 
 config.mtepatches.bop.name=Biomes O Plenty
 config.mtepatches.bop.connectionTimeout.name=Connection Timeout (ms)
+
+config.mtepatches.buildcraft.name=BuildCraft
+config.mtepatches.buildcraft.itemPipeAcceptEjection.name=Item Pipe Accepts Ejection

@@ -79,10 +79,20 @@ public class MTEPatchesConfig {
     public static CategoryBOP bop = new CategoryBOP();
     public static class CategoryBOP{
 
+        @Config.RequiresMcRestart
         @Comment({"Add a timeout when it's retrieving trail info, prevent it from sticking the loading progress forever on a lossy internet connection.",
                 "Set to 0 for infinite timeout (original behaviour)."})
         @LangKey("config.mtepatches.bop.connectionTimeout.name")
         @Config.RangeInt(min = 0)
         public int connectionTimeout = 5000;
+    }
+
+    @LangKey("config.mtepatches.buildcraft.name")
+    public static CategoryBC buildcraft = new CategoryBC();
+    public static class CategoryBC{
+
+        @Comment({"Allows BuildCraft item pipes to accept items ejected from hoppers and machines from other mods"})
+        @LangKey("config.mtepatches.buildcraft.itemPipeAcceptEjection.name")
+        public boolean itemPipeAcceptEjection = false;
     }
 }

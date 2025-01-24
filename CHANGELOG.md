@@ -18,3 +18,6 @@ Added tweaks for the RFTools Modular Storage GUI:
 
 Added tweaks for Biomes O Plenty:  
 - Connection Timeout: Add a timeout when it's retrieving trail info, prevent it from sticking the loading progress forever on a lossy internet connection.  
+## 1.3.3
+Added tweaks for BuildCraft:  
+- Item Pipe Accepts Ejection

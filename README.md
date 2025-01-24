@@ -41,3 +41,7 @@ Prevent crashing when placing a faulty queen bee into apiary
 ### Biomes O Plenty
 #### Connection Timeout
 Add a timeout when it's retrieving trail info, prevent it from freezing the loading progress forever on a lossy internet connection.  
+
+### BuildCraft
+#### Item Pipe Accepts Ejection
+Allows BuildCraft item pipes to accept items ejected from vanilla hoppers and machines from other mods.  
