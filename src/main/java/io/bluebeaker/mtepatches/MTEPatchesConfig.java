@@ -95,4 +95,12 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.buildcraft.itemPipeAcceptEjection.name")
         public boolean itemPipeAcceptEjection = true;
     }
+
+    @LangKey("config.mtepatches.moarTinkers.name")
+    public static CategoryMoarTinkers moarTinkers = new CategoryMoarTinkers();
+    public static class CategoryMoarTinkers{
+        @Comment({"Disables server-side mining speed boost of traits when sneaking"})
+        @LangKey("config.mtepatches.moarTinkers.sneakDisablesMiningBoost.name")
+        public boolean sneakDisablesMiningBoost = true;
+    }
 }

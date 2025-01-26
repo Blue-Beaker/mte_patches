@@ -13,6 +13,10 @@
     "ic2.MixinMassFabricator",
     "ic2.MixinTileEntityCrop",
     "ic2.MixinTileEntityCropmatron",
+    "moartinkers.MixinTraitEnergyEater",
+    "moartinkers.MixinTraitLightboost",
+    "moartinkers.MixinTraitManaEater",
+    "moartinkers.MixinTraitPsiEater",
     "railcraft.MixinRotorRepairRecipe",
     "thermal.MixinSawmillManager",
     "thermal.MixinSmelterManager"

@@ -21,3 +21,6 @@ Added tweaks for Biomes O Plenty:
 ## 1.3.3
 Added tweaks for BuildCraft:  
 - Item Pipe Accepts Ejection
+## 1.3.3
+Added tweaks for Moar Tinkers:
+- Item Pipe Accepts Ejection

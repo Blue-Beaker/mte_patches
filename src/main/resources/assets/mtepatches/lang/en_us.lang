@@ -19,3 +19,7 @@ config.mtepatches.bop.connectionTimeout.name=Connection Timeout (ms)
 
 config.mtepatches.buildcraft.name=BuildCraft
 config.mtepatches.buildcraft.itemPipeAcceptEjection.name=Item Pipe Accepts Ejection
+
+
+config.mtepatches.moarTinkers.name=Moar Tinkers
+config.mtepatches.moarTinkers.sneakDisablesMiningBoost.name=Disable Mining Boost when Sneaking
