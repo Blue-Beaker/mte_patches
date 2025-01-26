@@ -48,6 +48,7 @@ dependencies {
     implementation rfg.deobf('industrialcraft-2:industrialcraft-2-2.8.222-ex112')
     implementation rfg.deobf('libs:railcraft-12.0.0')
 
+    //Thermal
     implementation rfg.deobf('libs:CodeChickenLib-1.12.2-3.2.3.358-universal')
     implementation rfg.deobf('libs:CoFHCore-1.12.2-4.6.6.1-universal')
     implementation rfg.deobf('libs:CoFHWorld-1.12.2-1.4.0.1-universal')
@@ -58,7 +59,7 @@ dependencies {
 
     implementation rfg.deobf("curse.maven:forestry-59751:2918418")
 
-
+    //Rftools
     implementation rfg.deobf('libs:mcjtylib-1.12-3.5.4')
     implementation rfg.deobf('libs:rftools-1.12-7.73')
     
