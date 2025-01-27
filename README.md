@@ -45,3 +45,7 @@ Add a timeout when it's retrieving trail info, prevent it from freezing the load
 ### BuildCraft
 #### Item Pipe Accepts Ejection
 Allows BuildCraft item pipes to accept items ejected from vanilla hoppers and machines from other mods.  
+
+### Moar Tinkers
+#### Disable Mining Boost when Sneaking
+A QoL Feature, disables server-side mining speed boost of traits when sneaking, to prevent over-mining with it
