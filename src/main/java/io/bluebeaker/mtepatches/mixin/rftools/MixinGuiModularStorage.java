@@ -1,11 +1,8 @@
 package io.bluebeaker.mtepatches.mixin.rftools;
 
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
-import io.bluebeaker.mtepatches.MTEPatchesMod;
+import io.bluebeaker.mtepatches.rftools.RFTUtils;
 import mcjty.rftools.blocks.storage.GuiModularStorage;
-import mcjty.rftools.blocks.storage.ModularStorageItemInventory;
-import mcjty.rftools.blocks.storage.ModularStorageTileEntity;
-import mcjty.rftools.blocks.storage.RemoteStorageItemInventory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.inventory.Container;
@@ -19,6 +16,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import static io.bluebeaker.mtepatches.rftools.RFTUtils.isSlotInStorageGUI;
+
 @Mixin(value = GuiModularStorage.class,remap = false)
 public abstract class MixinGuiModularStorage {
 
@@ -31,12 +30,8 @@ public abstract class MixinGuiModularStorage {
         if(!MTEPatchesConfig.rftools.storageGuiShiftTweak) return;
 
         if(!guiModularStorage.shiftClickedSlot.isEmpty()){
-            if (guiModularStorage.lastClickSlot != null
-            && (guiModularStorage.lastClickSlot.inventory instanceof ModularStorageTileEntity
-            || guiModularStorage.lastClickSlot.inventory instanceof ModularStorageItemInventory
-            || guiModularStorage.lastClickSlot.inventory instanceof RemoteStorageItemInventory)
-                ){
-                MTEPatchesMod.logInfo(guiModularStorage.lastClickSlot.inventory.getClass().getName());
+            if (isSlotInStorageGUI(guiModularStorage.lastClickSlot)){
+//                MTEPatchesMod.logInfo(guiModularStorage.lastClickSlot.inventory.getClass().getName());
                 mte_patches$isShiftClickedItem = true;
             }
         }
@@ -63,7 +58,7 @@ public abstract class MixinGuiModularStorage {
         if(!MTEPatchesConfig.rftools.storageGuiInsertTweak) return;
         ItemStack heldStack = Minecraft.getMinecraft().player.inventory.getItemStack();
         Slot hoveredSlot = cir.getReturnValue();
-        if(heldStack.isEmpty() || hoveredSlot==null) return;
+        if(heldStack.isEmpty() || !RFTUtils.isSlotInStorageGUI(hoveredSlot)) return;
 
         ItemStack hoveredStack = hoveredSlot.getStack();
         if(!GuiScreen.isShiftKeyDown()

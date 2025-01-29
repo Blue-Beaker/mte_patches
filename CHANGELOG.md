@@ -24,3 +24,5 @@ Added tweaks for BuildCraft:
 ## 1.3.4
 Added tweaks for Moar Tinkers:
 - Disable Mining Boost when Sneaking
+## 1.3.5
+Fixed RFTools Insertion Tweak inserting items to storage on slots in player's inventory
