@@ -26,3 +26,5 @@ Added tweaks for Moar Tinkers:
 - Disable Mining Boost when Sneaking
 ## 1.3.5
 Fixed RFTools Insertion Tweak inserting items to storage on slots in player's inventory
+## 1.3.6
+Fixed Industrial Foregoing insertion converyor upgrade duplicating items

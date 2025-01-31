@@ -8,7 +8,9 @@ public enum LoadedModChecker {
     forestry("forestry"),
     thermalexpansion("thermalexpansion"),
     rftools("rftools"),
-    buildcrafttransport("buildcrafttransport");
+    buildcrafttransport("buildcrafttransport"),
+    moartinkers("moartinkers"),
+    industrialforegoing("industrialforegoing");
 
     public final String modid;
     private boolean isLoaded = false;

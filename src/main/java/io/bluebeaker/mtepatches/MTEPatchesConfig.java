@@ -103,4 +103,12 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.moarTinkers.sneakDisablesMiningBoost.name")
         public boolean sneakDisablesMiningBoost = true;
     }
+
+    @LangKey("config.mtepatches.industrialforegoing.name")
+    public static CategoryIF industrialforegoing = new CategoryIF();
+    public static class CategoryIF{
+        @Comment({"Fixes a item duplication bug for the insertion conveyor upgrade"})
+        @LangKey("config.mtepatches.industrialforegoing.fixConveyorInsertionDuplication.name")
+        public boolean fixConveyorInsertionDuplication = true;
+    }
 }

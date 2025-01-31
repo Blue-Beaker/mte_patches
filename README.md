@@ -49,3 +49,7 @@ Allows BuildCraft item pipes to accept items ejected from vanilla hoppers and ma
 ### Moar Tinkers
 #### Disable Mining Boost when Sneaking
 A QoL Feature, disables server-side mining speed boost of traits when sneaking, to prevent over-mining with it
+
+### Industrial Foregoing
+#### Insertion Converyor Upgrade Duplication Fix
+Fixed a item duplication bug for insertion converyor upgrade.

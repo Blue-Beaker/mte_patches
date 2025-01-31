@@ -13,6 +13,7 @@
     "ic2.MixinMassFabricator",
     "ic2.MixinTileEntityCrop",
     "ic2.MixinTileEntityCropmatron",
+    "industrialforegoing.MixinConveyorInsertionUpgrade",
     "moartinkers.MixinTraitEnergyEater",
     "moartinkers.MixinTraitLightboost",
     "moartinkers.MixinTraitManaEater",

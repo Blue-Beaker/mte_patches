@@ -23,3 +23,6 @@ config.mtepatches.buildcraft.itemPipeAcceptEjection.name=Item Pipe Accepts Eject
 
 config.mtepatches.moarTinkers.name=Moar Tinkers
 config.mtepatches.moarTinkers.sneakDisablesMiningBoost.name=Disable Mining Boost when Sneaking
+
+config.mtepatches.industrialforegoing.name=Industrial Foregoing
+config.mtepatches.industrialforegoing.fixConveyorInsertionDuplication.name=Insertion Conveyor Duplication Fix
