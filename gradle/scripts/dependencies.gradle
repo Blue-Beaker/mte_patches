@@ -71,6 +71,12 @@ dependencies {
     implementation rfg.deobf('libs:moartinkers-0.6.0')
     implementation rfg.deobf('libs:RedstoneArsenal-1.12.2-2.6.6.1-universal')
     implementation rfg.deobf('libs:TConstruct-1.12.2-2.13.0.183')
+
+    // Industrial Foregoing
+    implementation rfg.deobf('libs:industrialforegoing-1.12.2-1.12.13-237')
+    implementation rfg.deobf('libs:tesla-core-lib-1.12.2-1.0.18')
+    implementation rfg.deobf('libs:Forgelin-1.8.4')
+
     // Crafttweaker
     //implementation rfg.deobf("curse.maven:mtlib-253211:3308160")
     //implementation rfg.deobf("CraftTweaker2:CraftTweaker2-MC1120-Main:${project.version_crafttweaker}")
