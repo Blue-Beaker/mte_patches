@@ -1,6 +1,6 @@
 # MTE Patches
-Fixes bugs in mods for the modpack Minetech Evolution.  
-Use freely if you want any fixes in the mod. All fixes are togglable via config. 
+Fixes bugs and flaws in varoius mods.  
+Made for the modpack Minetech Evolution. Use freely if you want any fixes in the mod. All fixes are togglable via config. 
 This mod works outside of the modpack as well.  
 ## Current fixes:  
 ### Railcraft
