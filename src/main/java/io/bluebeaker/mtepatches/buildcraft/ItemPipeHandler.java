@@ -7,9 +7,9 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 import javax.annotation.Nonnull;
 
 public class ItemPipeHandler implements IItemHandlerModifiable {
-    protected final IItemTransactor transactor;
+    protected final @Nonnull IItemTransactor transactor;
 
-    public ItemPipeHandler(IItemTransactor transactor) {
+    public ItemPipeHandler(@Nonnull IItemTransactor transactor) {
         this.transactor = transactor;
     }
 

@@ -1,0 +1,6 @@
+@FieldsAreNonnullByDefault
+@MethodsReturnNonnullByDefault
+package io.bluebeaker.mtepatches.buildcraft;
+
+import forestry.core.utils.FieldsAreNonnullByDefault;
+import mcp.MethodsReturnNonnullByDefault;

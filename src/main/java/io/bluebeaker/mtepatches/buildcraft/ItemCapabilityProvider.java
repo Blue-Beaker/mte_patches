@@ -13,9 +13,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class ItemCapabilityProvider implements ICapabilityProvider {
-    public final TilePipeHolder tile;
+    public final @Nonnull TilePipeHolder tile;
 
-    public ItemCapabilityProvider(TilePipeHolder tile) {
+    public ItemCapabilityProvider(@Nonnull TilePipeHolder tile) {
         this.tile = tile;
     }
 
@@ -32,7 +32,8 @@ public class ItemCapabilityProvider implements ICapabilityProvider {
     public <T> T getCapability(@Nonnull Capability<T> capability, @Nullable EnumFacing facing) {
         if(MTEPatchesConfig.buildcraft.itemPipeAcceptEjection && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY){
             IItemTransactor transactor = tile.getCapability(CapUtil.CAP_ITEM_TRANSACTOR, facing);
-            return (T) new ItemPipeHandler(transactor);
+            if(transactor!=null)
+                return (T) new ItemPipeHandler(transactor);
         }
         return null;
     }

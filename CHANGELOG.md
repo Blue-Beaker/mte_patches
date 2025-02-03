@@ -27,4 +27,6 @@ Added tweaks for Moar Tinkers:
 ## 1.3.5
 Fixed RFTools Insertion Tweak inserting items to storage on slots in player's inventory
 ## 1.3.6
-Fixed Industrial Foregoing insertion converyor upgrade duplicating items
+Fixed Industrial Foregoing insertion converyor upgrade duplicating items  
+## 1.3.7
+Fixed a null pointer crash of BC Item Pipe tweak in this mod   
