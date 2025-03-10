@@ -39,6 +39,10 @@ public class MTEPatchesConfig {
                 "Fixes jetpack being activated when pressing jump with the inventory open."})
         @LangKey("config.mtepatches.ic2.blockKeybindInGUI.name")
         public boolean blockKeybindInGUI = true;
+
+        @Comment({"Fixes a bug that on a LAN server, all IC2 messages are sent to the host, instead of the player that should receive the message."})
+        @LangKey("config.mtepatches.ic2.lanMessageFix.name")
+        public boolean lanMessageFix = true;
     }
 
     @LangKey("config.mtepatches.thermal.name")

@@ -9,6 +9,7 @@
     "biomesoplenty.MixinTrailManager",
     "buildcraft.MixinPipeFlowItems",
     "forestry.MixinBeeKeepingLogic",
+    "ic2.AccessorPlatform",
     "ic2.MixinItemCrop",
     "ic2.MixinMassFabricator",
     "ic2.MixinTileEntityCrop",
@@ -25,6 +26,7 @@
   "server": [],
   "client": [
     "ic2.MixinIC2KeyboardClient",
+    "ic2.MixinPlatformClient",
     "rftools.MixinGuiModularStorage"
   ]
 }

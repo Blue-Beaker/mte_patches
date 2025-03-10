@@ -19,6 +19,8 @@ Mass fabricator stuck forever when its output is blocked once. This mod can fix 
 This is a enhancement for IC2, allowing crop sticks to be put on other mod's farmlands, as long as it extends from BlockFarmland.  
 #### Block Keybinds in GUI  
 Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump with the inventory open.  
+#### LAN message fix
+Fixes a bug that on a LAN server, all IC2 messages are sent to the host, instead of the player that should receive the message.  
 
 ### Thermal Series
 #### Fuzzy NBT Recycling  
