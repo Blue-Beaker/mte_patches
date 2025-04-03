@@ -79,17 +79,17 @@ public class MTEPatchesConfig {
         public boolean storageGuiInsertTweak = true;
     }
 
-    @LangKey("config.mtepatches.bop.name")
-    public static CategoryBOP bop = new CategoryBOP();
-    public static class CategoryBOP{
-
-        @Config.RequiresMcRestart
-        @Comment({"Add a timeout when it's retrieving trail info, prevent it from sticking the loading progress forever on a lossy internet connection.",
-                "Set to 0 for infinite timeout (original behaviour)."})
-        @LangKey("config.mtepatches.bop.connectionTimeout.name")
-        @Config.RangeInt(min = 0)
-        public int connectionTimeout = 5000;
-    }
+//    @LangKey("config.mtepatches.bop.name")
+//    public static CategoryBOP bop = new CategoryBOP();
+//    public static class CategoryBOP{
+//
+//        @Config.RequiresMcRestart
+//        @Comment({"Add a timeout when it's retrieving trail info, prevent it from sticking the loading progress forever on a lossy internet connection.",
+//                "Set to 0 for infinite timeout (original behaviour)."})
+//        @LangKey("config.mtepatches.bop.connectionTimeout.name")
+//        @Config.RangeInt(min = 0)
+//        public int connectionTimeout = 5000;
+//    }
 
     @LangKey("config.mtepatches.buildcraft.name")
     public static CategoryBC buildcraft = new CategoryBC();
@@ -114,5 +114,20 @@ public class MTEPatchesConfig {
         @Comment({"Fixes a item duplication bug for the insertion conveyor upgrade"})
         @LangKey("config.mtepatches.industrialforegoing.fixConveyorInsertionDuplication.name")
         public boolean fixConveyorInsertionDuplication = true;
+    }
+
+    public static CategoryConnectionTimeout connectionTimeout = new CategoryConnectionTimeout();
+    public static class CategoryConnectionTimeout{
+        @Config.RequiresMcRestart
+        @Comment({"Add a timeout when it's retrieving info for some mods, prevent it from sticking the loading progress forever on a lossy internet connection.",
+                "Set to 0 for infinite timeout."})
+        @LangKey("config.mtepatches.connectionTimeout.timeout.name")
+        @Config.RangeInt(min = 0)
+        public int timeout = 5000;
+
+        @Comment({"Enable timeout for Biomes o' Plenty when it's checking trail info."})
+        public boolean bop = true;
+        @Comment({"Enable timeout for Industrial Foregoing when it's checking contributors."})
+        public boolean industrialForegoing = true;
     }
 }

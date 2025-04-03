@@ -38,11 +38,7 @@ Prevent crashing when placing a faulty queen bee into apiary
 
 - Insertion Tweak  
 
-  When putting your held item into the storage, prevent swapping the hovered item out from the storage.  
-
-### Biomes O Plenty
-#### Connection Timeout
-Add a timeout when it's retrieving trail info, prevent it from freezing the loading progress forever on a lossy internet connection.  
+  When putting your held item into the storage, prevent swapping the hovered item out from the storage.
 
 ### BuildCraft
 #### Item Pipe Accepts Ejection
@@ -50,8 +46,14 @@ Allows BuildCraft item pipes to accept items ejected from vanilla hoppers and ma
 
 ### Moar Tinkers
 #### Disable Mining Boost when Sneaking
-A QoL Feature, disables server-side mining speed boost of traits when sneaking, to prevent over-mining with it
+A QoL Feature, disables server-side mining speed boost of traits when sneaking, to prevent over-mining with it  
 
 ### Industrial Foregoing
 #### Insertion Converyor Upgrade Duplication Fix
 Fixed a item duplication bug for insertion converyor upgrade.
+
+### Connection Timeout
+Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
+Supported mods:  
+- Biomes o' Plenty  
+- Industrial Foregoing  

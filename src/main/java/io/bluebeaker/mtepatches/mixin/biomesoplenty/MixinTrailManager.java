@@ -12,7 +12,8 @@ import java.net.HttpURLConnection;
 public abstract class MixinTrailManager {
     @ModifyVariable(method = "retrieveTrails()V",at = @At("STORE"),ordinal = 0)
     private static HttpURLConnection addTimeout(HttpURLConnection connection){
-        connection.setConnectTimeout(MTEPatchesConfig.bop.connectionTimeout);
+        if(MTEPatchesConfig.connectionTimeout.bop)
+            connection.setConnectTimeout(MTEPatchesConfig.connectionTimeout.timeout);
         return connection;
     }
 }

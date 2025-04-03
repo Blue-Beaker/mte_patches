@@ -16,7 +16,6 @@ config.mtepatches.rftools.storageGuiShiftTweak.name=Modular Storage Shift Tweak
 config.mtepatches.rftools.storageGuiInsertTweak.name=Modular Storage Insertion Tweak
 
 config.mtepatches.bop.name=Biomes O Plenty
-config.mtepatches.bop.connectionTimeout.name=Connection Timeout (ms)
 
 config.mtepatches.buildcraft.name=BuildCraft
 config.mtepatches.buildcraft.itemPipeAcceptEjection.name=Item Pipe Accepts Ejection
@@ -27,3 +26,7 @@ config.mtepatches.moarTinkers.sneakDisablesMiningBoost.name=Disable Mining Boost
 
 config.mtepatches.industrialforegoing.name=Industrial Foregoing
 config.mtepatches.industrialforegoing.fixConveyorInsertionDuplication.name=Insertion Conveyor Duplication Fix
+
+config.mtepatches.connectionTimeout.timeout.name=Connection Timeout (ms)
+config.mtepatches.connectionTimeout.bop.name=Enable for Biomes O Plenty
+config.mtepatches.connectionTimeout.industrialforegoing.name=Enable for Industrial Foregoing

@@ -30,3 +30,9 @@ Fixed RFTools Insertion Tweak inserting items to storage on slots in player's in
 Fixed Industrial Foregoing insertion converyor upgrade duplicating items  
 ## 1.3.7
 Fixed a null pointer crash of BC Item Pipe tweak in this mod   
+## 1.3.8
+Fix IC2 LAN message bug  
+## 1.3.9
+Added "Connection Timeout" tweak for industrial foregoing as well  
+Connection Timeout in config is now moved to a new category  
+When used on server, no longer require this mod on clients (It's still suggested to install on client as well)  
