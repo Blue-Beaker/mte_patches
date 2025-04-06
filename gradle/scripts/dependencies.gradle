@@ -69,15 +69,15 @@ dependencies {
     implementation rfg.deobf('libs:buildcraft-all-7.99.24.8')
 
     //Moar Tinkers
-    implementation rfg.deobf('libs:Mantle-1.12-1.3.3.55')
-    implementation rfg.deobf('libs:moartinkers-0.6.0')
-    implementation rfg.deobf('libs:RedstoneArsenal-1.12.2-2.6.6.1-universal')
-    implementation rfg.deobf('libs:TConstruct-1.12.2-2.13.0.183')
+    compileOnly rfg.deobf('libs:Mantle-1.12-1.3.3.55')
+    compileOnly rfg.deobf('libs:moartinkers-0.6.0')
+    compileOnly rfg.deobf('libs:RedstoneArsenal-1.12.2-2.6.6.1-universal')
+    compileOnly rfg.deobf('libs:TConstruct-1.12.2-2.13.0.183')
 
     // Industrial Foregoing
-    implementation rfg.deobf('libs:industrialforegoing-1.12.2-1.12.13-237')
-    implementation rfg.deobf('libs:tesla-core-lib-1.12.2-1.0.18')
-    implementation rfg.deobf('libs:Forgelin-1.8.4')
+    compileOnly rfg.deobf('libs:industrialforegoing-1.12.2-1.12.13-237')
+    compileOnly rfg.deobf('libs:tesla-core-lib-1.12.2-1.0.18')
+    compileOnly rfg.deobf('libs:Forgelin-1.8.4')
 
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')
