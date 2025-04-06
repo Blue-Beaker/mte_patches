@@ -20,15 +20,15 @@ public class EnergyAdaptorProviderMJtoFE implements ICapabilityProvider {
     @Override
     public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {
         if(this.shouldAddCapability(capability,facing)){
-            return tile.hasCapability(MjAPI.CAP_RECEIVER,facing);
+            return tile.hasCapability(MjAPI.CAP_CONNECTOR,facing);
         }
         return false;
     }
 
     @Override
     public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
-        if(this.shouldAddCapability(capability,facing)){
-            return (T) new EnergyAdaptorMJtoFE(tile.getCapability(MjAPI.CAP_RECEIVER,facing));
+        if(this.shouldAddCapability(capability,facing) && tile.hasCapability(MjAPI.CAP_CONNECTOR,facing)){
+            return (T) new EnergyAdaptorMJtoFE(tile.getCapability(MjAPI.CAP_CONNECTOR,facing));
         }
         return null;
     }

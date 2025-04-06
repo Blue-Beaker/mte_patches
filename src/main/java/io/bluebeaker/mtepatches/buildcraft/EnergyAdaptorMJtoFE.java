@@ -16,16 +16,27 @@ public class EnergyAdaptorMJtoFE implements IEnergyStorage {
         canReceive=mjConnector instanceof IMjReceiver;
         canRead=mjConnector instanceof IMjReadable;
     }
+
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
-        if(canReceive)
-            return maxReceive - BCUtils.convertMJtoFE (((IMjReceiver)mjConnector).receivePower(BCUtils.convertFEtoMJ(maxReceive),simulate));
+        if(canReceive) {
+            long mjReceive = Math.min(getMaxInsertMJ(), BCUtils.convertFEtoMJ(maxReceive));
+            return maxReceive - BCUtils.convertMJtoFE (((IMjReceiver)mjConnector).receivePower(mjReceive,simulate));
+        }
         return 0;
     }
 
     @Override
     public int extractEnergy(int maxExtract, boolean simulate) {
         return 0;
+    }
+
+    public long getMaxInsertMJ(){
+        if(mjConnector instanceof IMjReadable){
+            IMjReadable readable = (IMjReadable) mjConnector;
+            return readable.getCapacity()-readable.getStored();
+        }
+        return Long.MAX_VALUE;
     }
 
     @Override
