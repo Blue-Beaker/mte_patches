@@ -16,10 +16,12 @@ public class BCCapabilityAdapter {
 
     }
     private ResourceLocation itemCap;
-    private ResourceLocation powerCap;
+    private ResourceLocation powerMJtoFE;
+    private ResourceLocation powerFEtoMJ;
     public void init(){
         this.itemCap = new ResourceLocation(MTEPatchesMod.MODID,"BC_itemCapability");
-        this.powerCap = new ResourceLocation(MTEPatchesMod.MODID,"BC_powerCapability");
+        this.powerMJtoFE = new ResourceLocation(MTEPatchesMod.MODID,"BC_MJtoFE");
+        this.powerFEtoMJ = new ResourceLocation(MTEPatchesMod.MODID,"BC_FEtoMJ");
     }
     @SubscribeEvent
     public void subscribe(AttachCapabilitiesEvent<TileEntity> event){
@@ -28,9 +30,14 @@ public class BCCapabilityAdapter {
             event.addCapability(this.itemCap,
                     new ItemCapabilityProvider((TilePipeHolder) tile));
         }
-        if(MTEPatchesConfig.buildcraft.mjToForgeEnergyRatio >0 && tile instanceof TileBC_Neptune){
-            event.addCapability(this.powerCap,
-                    new EnergyCapabilityProvider((TileBC_Neptune)tile));
+        if(MTEPatchesConfig.buildcraft.mjToForgeEnergyRatio >0){
+            if(tile instanceof TileBC_Neptune){
+                event.addCapability(this.powerMJtoFE,
+                        new EnergyAdaptorProviderMJtoFE((TileBC_Neptune)tile));
+            }else{
+                event.addCapability(this.powerFEtoMJ,
+                        new EnergyAdaptorProviderFEtoMJ(tile));
+            }
         }
     }
 }

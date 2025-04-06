@@ -5,15 +5,21 @@ import buildcraft.api.mj.IMjReadable;
 import buildcraft.api.mj.IMjReceiver;
 import net.minecraftforge.energy.IEnergyStorage;
 
-public class EnergyAdaptationHandler implements IEnergyStorage {
+/** Exposes FE interface on MJ machines */
+public class EnergyAdaptorMJtoFE implements IEnergyStorage {
     public final IMjConnector mjConnector;
-    public EnergyAdaptationHandler(IMjConnector mjConnector){
+    public final boolean canReceive;
+    public final boolean canRead;
+
+    public EnergyAdaptorMJtoFE(IMjConnector mjConnector){
         this.mjConnector=mjConnector;
+        canReceive=mjConnector instanceof IMjReceiver;
+        canRead=mjConnector instanceof IMjReadable;
     }
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
-        if(mjConnector instanceof IMjReceiver)
-            return BCUtils.convertMJtoFE (((IMjReceiver)mjConnector).receivePower(BCUtils.convertFEtoMJ(maxReceive),simulate));
+        if(canReceive)
+            return maxReceive - BCUtils.convertMJtoFE (((IMjReceiver)mjConnector).receivePower(BCUtils.convertFEtoMJ(maxReceive),simulate));
         return 0;
     }
 
@@ -24,14 +30,14 @@ public class EnergyAdaptationHandler implements IEnergyStorage {
 
     @Override
     public int getEnergyStored() {
-        if(mjConnector instanceof IMjReadable)
+        if(canRead)
             return BCUtils.convertMJtoFE(((IMjReadable)mjConnector).getStored());
         return 0;
     }
 
     @Override
     public int getMaxEnergyStored() {
-        if(mjConnector instanceof IMjReadable)
+        if(canRead)
             return BCUtils.convertMJtoFE(((IMjReadable)mjConnector).getCapacity());
         return 0;
     }
@@ -43,6 +49,6 @@ public class EnergyAdaptationHandler implements IEnergyStorage {
 
     @Override
     public boolean canReceive() {
-        return mjConnector instanceof IMjReceiver;
+        return canReceive;
     }
 }

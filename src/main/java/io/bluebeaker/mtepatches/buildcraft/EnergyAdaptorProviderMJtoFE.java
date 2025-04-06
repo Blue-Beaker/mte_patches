@@ -11,9 +11,9 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 
-public class EnergyCapabilityProvider implements ICapabilityProvider {
+public class EnergyAdaptorProviderMJtoFE implements ICapabilityProvider {
     public final TileBC_Neptune tile;
-    public EnergyCapabilityProvider(TileBC_Neptune tile) {
+    public EnergyAdaptorProviderMJtoFE(TileBC_Neptune tile) {
         this.tile=tile;
     }
 
@@ -28,19 +28,12 @@ public class EnergyCapabilityProvider implements ICapabilityProvider {
     @Override
     public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
         if(this.shouldAddCapability(capability,facing)){
-            return (T) new EnergyAdaptationHandler(tile.getCapability(MjAPI.CAP_RECEIVER,facing));
+            return (T) new EnergyAdaptorMJtoFE(tile.getCapability(MjAPI.CAP_RECEIVER,facing));
         }
         return null;
     }
     
     protected boolean shouldAddCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing facing){
-        if(capability != CapabilityEnergy.ENERGY) return false;
-        if(facing==null) return false;
-//        TileEntity neighbourTile = this.tile.getNeighbourTile(facing);
-//
-//        MTEPatchesMod.getLogger().info("Getting capability of {} from side {} : {}",tile.getPos(),facing,tile.getNeighbourTile(facing));
-//
-//        if(neighbourTile instanceof IPipeHolder) return false;
-        return true;
+        return capability == CapabilityEnergy.ENERGY;
     }
 }
