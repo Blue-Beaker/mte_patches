@@ -5,7 +5,7 @@ import io.bluebeaker.mtepatches.MTEPatchesConfig;
 
 public class BCUtils {
 
-    private static double mjToFERatio = getMjToFERatio();
+    private static double mjToFERatio;
 
     public static void updateValues(){
         mjToFERatio=MTEPatchesConfig.buildcraft.mjToForgeEnergyRatio/MjAPI.MJ;
@@ -15,7 +15,8 @@ public class BCUtils {
     }
 
     public static int convertMJtoFE(long mj){
-        return (int) (mj*mjToFERatio);
+        double fe = (mj * mjToFERatio);
+        return fe<Integer.MAX_VALUE ? (int)fe : Integer.MAX_VALUE;
     }
 
     public static long convertFEtoMJ(int fe){

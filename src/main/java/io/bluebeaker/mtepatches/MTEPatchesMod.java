@@ -9,6 +9,7 @@ import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -30,7 +31,7 @@ public class MTEPatchesMod
         if(LoadedModChecker.railcraft.isLoaded()){
             MinecraftForge.EVENT_BUS.register(RCMultiblockPatch.class);
         }
-        if(LoadedModChecker.buildcrafttransport.isLoaded()){
+        if(LoadedModChecker.buildcraftcore.isLoaded()){
             BCCapabilityAdapter.INSTANCE.init();
             MinecraftForge.EVENT_BUS.register(BCCapabilityAdapter.INSTANCE);
         }
@@ -42,6 +43,11 @@ public class MTEPatchesMod
         for (LoadedModChecker checker: LoadedModChecker.values()){
             MTEPatchesMod.getLogger().info("Mod '{}' loaded: {}",checker.modid,checker.isLoaded());
         }
+    }
+
+    @EventHandler
+    public void init(FMLInitializationEvent event){
+        BCUtils.updateValues();
     }
 
     @EventHandler
