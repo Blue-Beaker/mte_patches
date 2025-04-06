@@ -8,6 +8,7 @@ public enum LoadedModChecker {
     forestry("forestry"),
     thermalexpansion("thermalexpansion"),
     rftools("rftools"),
+    buildcraftcore("buildcraftcore"),
     buildcrafttransport("buildcrafttransport"),
     moartinkers("moartinkers"),
     industrialforegoing("industrialforegoing");

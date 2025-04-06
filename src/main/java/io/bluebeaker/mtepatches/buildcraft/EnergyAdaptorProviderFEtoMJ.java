@@ -34,6 +34,9 @@ public class EnergyAdaptorProviderFEtoMJ implements ICapabilityProvider {
     }
     
     protected boolean shouldAddCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing facing){
-        return capability == MjAPI.CAP_RECEIVER;
+        return capability == MjAPI.CAP_RECEIVER
+                || capability == MjAPI.CAP_CONNECTOR
+                || capability == MjAPI.CAP_PASSIVE_PROVIDER
+                || capability == MjAPI.CAP_READABLE;
     }
 }

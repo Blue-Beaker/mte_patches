@@ -26,6 +26,11 @@ public class EnergyAdaptorFEtoMJ implements IMjReceiver, IMjReadable, IMjPassive
     }
 
     @Override
+    public boolean canReceive() {
+        return feStorage.canReceive();
+    }
+
+    @Override
     public boolean canConnect(@NotNull IMjConnector iMjConnector) {
         return true;
     }

@@ -1,6 +1,7 @@
 package io.bluebeaker.mtepatches;
 
 import io.bluebeaker.mtepatches.buildcraft.BCCapabilityAdapter;
+import io.bluebeaker.mtepatches.buildcraft.BCUtils;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Config.Type;
@@ -52,6 +53,9 @@ public class MTEPatchesMod
     public void onConfigChangedEvent(OnConfigChangedEvent event) {
         if (event.getModID().equals(MODID)) {
             ConfigManager.sync(MODID, Type.INSTANCE);
+            if(LoadedModChecker.buildcraftcore.isLoaded()){
+                BCUtils.updateValues();
+            }
         }
     }
     public static Logger getLogger(){return logger;}
