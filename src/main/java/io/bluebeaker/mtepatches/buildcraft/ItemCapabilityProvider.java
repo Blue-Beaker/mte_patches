@@ -3,7 +3,6 @@ package io.bluebeaker.mtepatches.buildcraft;
 import buildcraft.api.inventory.IItemTransactor;
 import buildcraft.lib.misc.CapUtil;
 import buildcraft.transport.tile.TilePipeHolder;
-import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
@@ -28,7 +27,7 @@ public class ItemCapabilityProvider implements ICapabilityProvider {
     }
 
     protected boolean shouldAddCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing facing){
-        if(!(MTEPatchesConfig.buildcraft.itemPipeAcceptEjection && (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY))) return false;
+        if(capability != CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) return false;
         if(facing==null) return false;
 //        TileEntity neighbourTile = this.tile.getNeighbourTile(facing);
 
