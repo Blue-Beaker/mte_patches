@@ -8,6 +8,7 @@
   "mixins": [
     "biomesoplenty.MixinTrailManager",
     "buildcraft.AccessorPipeFlowPower",
+    "buildcraft.MixinPluggablePowerAdaptor",
     "buildcraft.MixinPipeFlowPowerSection",
     "forestry.MixinBeeKeepingLogic",
     "ic2.AccessorPlatform",
