@@ -32,7 +32,7 @@ public class EnergyAdaptorProviderFEtoMJ extends CachingAdaptorProvider<IEnergyS
         if(this.shouldAddCapability(capability,facing)){
             IEnergyStorage capability1 = tile.getCapability(CapabilityEnergy.ENERGY, facing);
             if(capability1!=null)
-                return (T) getOrCreateAdaptor(capability1);
+                return (T) getOrCreateAdaptor(capability1,facing);
         }
         return null;
     }

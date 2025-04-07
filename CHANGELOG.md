@@ -36,3 +36,8 @@ Fix IC2 LAN message bug
 Added "Connection Timeout" tweak for industrial foregoing as well  
 Connection Timeout in config is now moved to a new category  
 When used on server, no longer require this mod on clients (It's still suggested to install on client as well)  
+## 1.4.0
+Added tweaks for BuildCraft:  
+- RF/FE Compatibility  
+- Enforce Power Limits  
+Also improved performance of adaptors for BC  

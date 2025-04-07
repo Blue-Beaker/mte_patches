@@ -43,7 +43,7 @@ public class ItemTransactorAdaptor extends CachingAdaptorProvider<IItemTransacto
         if(shouldAddCapability(capability,facing)){
             IItemTransactor transactor = tile.getCapability(CapUtil.CAP_ITEM_TRANSACTOR, facing);
             if(transactor!=null)
-                return (T) getOrCreateAdaptor(transactor);
+                return (T) getOrCreateAdaptor(transactor,facing);
         }
         return null;
     }

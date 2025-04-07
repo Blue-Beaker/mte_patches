@@ -100,6 +100,10 @@ public class MTEPatchesConfig {
         @Comment({"Apply the transfer rate limits to kinesis pipes.","Also limits how much power can be stored in it."})
         @LangKey("config.mtepatches.buildcraft.limitPipePower.name")
         public boolean limitPipePower = false;
+
+        @Comment({"Cache adaptor capabilities created by this mod. Only disable this for debug!"})
+        @LangKey("config.mtepatches.buildcraft.cacheAdaptors.name")
+        public boolean cacheAdaptors = true;
     }
 
     @LangKey("config.mtepatches.moarTinkers.name")

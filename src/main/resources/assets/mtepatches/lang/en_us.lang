@@ -22,7 +22,7 @@ config.mtepatches.buildcraft.itemPipeAcceptEjection.name=Item Pipe Accepts Eject
 config.mtepatches.buildcraft.mjToForgeEnergy.name=Use RF/FE
 config.mtepatches.buildcraft.mjToForgeEnergyRatio.name=MJ to FE Ratio
 config.mtepatches.buildcraft.limitPipePower.name=Enforce Power Limits
-
+config.mtepatches.buildcraft.cacheAdaptors.name=Cache Adaptors
 
 config.mtepatches.moarTinkers.name=Moar Tinkers
 config.mtepatches.moarTinkers.sneakDisablesMiningBoost.name=Disable Mining Boost when Sneaking

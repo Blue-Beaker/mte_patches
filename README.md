@@ -46,7 +46,7 @@ Allows BuildCraft item pipes to accept items ejected from vanilla hoppers and ma
 #### RF/FE Compatibility
 (Disabled by default) Simply make BuildCraft works with RF/FE.  
 #### Enforce Power Limits
-Apply the transfer rate limits to kinesis pipes. Also limits how much power can be stored in it.  
+(Disabled by default) Apply the transfer rate limits to kinesis pipes. Also limits how much power can be stored in it.  
 
 ### Moar Tinkers
 #### Disable Mining Boost when Sneaking
