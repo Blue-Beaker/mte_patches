@@ -10,6 +10,7 @@ public class EnergyAdaptorMJtoFE implements IEnergyStorage {
     public final IMjConnector mjConnector;
     public final boolean canReceive;
     public final boolean canRead;
+    private long mjRemaining = 0;
 
     public EnergyAdaptorMJtoFE(IMjConnector mjConnector){
         this.mjConnector=mjConnector;
@@ -21,16 +22,20 @@ public class EnergyAdaptorMJtoFE implements IEnergyStorage {
     public int receiveEnergy(int maxReceive, boolean simulate) {
         if(canReceive) {
             IMjReceiver receiver = (IMjReceiver) mjConnector;
-            long mjReceive = Math.min(getMaxInsertMJ(), BCUtils.convertFEtoMJ(maxReceive));
+            long mjReceive = Math.min(getMaxInsertMJ(), BCUtils.convertFEtoMJ(maxReceive)+mjRemaining);
+//            mjReceive=Math.min(mjReceive, receiver.getPowerRequested());
             // Check how many MJ we can convert to precisely
             // Be careful that BC returns remaining energy, but we need the inserted energy
-            long actualMJtoSend = BCUtils.convertFEtoMJ(
-                    BCUtils.convertMJtoFE(
-                            BCUtils.receiveMJGetTransfered(receiver,mjReceive,true)));
 
-            long mjTransfered = BCUtils.receiveMJGetTransfered(receiver,actualMJtoSend, simulate);
+//            long actualMJtoSend = BCUtils.convertFEtoMJ(
+//                    BCUtils.convertMJtoFE(
+//                            BCUtils.receiveMJGetTransfered(receiver,mjReceive,true)));
 
-            return BCUtils.convertMJtoFE (mjTransfered);
+            long mjTransfered = BCUtils.receiveMJGetTransfered(receiver,mjReceive, simulate);
+
+            int leftFE = BCUtils.convertMJtoFE(mjTransfered);
+            mjRemaining=mjTransfered-BCUtils.convertFEtoMJ(leftFE);
+            return leftFE;
         }
         return 0;
     }
