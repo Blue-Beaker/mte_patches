@@ -1,5 +1,6 @@
 package io.bluebeaker.mtepatches.buildcraft;
 
+import buildcraft.api.mj.IMjConnector;
 import buildcraft.api.mj.MjAPI;
 import buildcraft.lib.tile.TileBC_Neptune;
 import net.minecraft.util.EnumFacing;
@@ -28,7 +29,8 @@ public class EnergyAdaptorProviderMJtoFE implements ICapabilityProvider {
     @Override
     public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
         if(this.shouldAddCapability(capability,facing) && tile.hasCapability(MjAPI.CAP_CONNECTOR,facing)){
-            return (T) new EnergyAdaptorMJtoFE(tile.getCapability(MjAPI.CAP_CONNECTOR,facing));
+            IMjConnector capability1 = tile.getCapability(MjAPI.CAP_CONNECTOR, facing);
+            return capability1!=null ? (T) new EnergyAdaptorMJtoFE(capability1) : null;
         }
         return null;
     }

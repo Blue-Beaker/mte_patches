@@ -58,6 +58,7 @@ dependencies {
     implementation rfg.deobf('libs:CoFHCore-1.12.2-4.6.6.1-universal')
     implementation rfg.deobf('libs:CoFHWorld-1.12.2-1.4.0.1-universal')
     implementation rfg.deobf('libs:RedstoneFlux-1.12-2.1.1.1-universal')
+    implementation rfg.deobf('libs:ThermalDynamics-1.12.2-2.5.6.1-universal')
     implementation rfg.deobf('libs:ThermalExpansion-1.12.2-5.5.7.1-universal')
     implementation rfg.deobf('libs:ThermalFoundation-1.12.2-2.6.7.1-universal')
 
