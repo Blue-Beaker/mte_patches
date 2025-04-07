@@ -13,7 +13,7 @@ public class EnergyAdaptorMJtoFE implements IEnergyStorage {
 
     public EnergyAdaptorMJtoFE(IMjConnector mjConnector){
         this.mjConnector=mjConnector;
-        canReceive=mjConnector instanceof IMjReceiver;
+        canReceive=(mjConnector instanceof IMjReceiver && ((IMjReceiver) mjConnector).canReceive());
         canRead=mjConnector instanceof IMjReadable;
     }
 
