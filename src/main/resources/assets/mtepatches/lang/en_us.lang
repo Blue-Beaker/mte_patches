@@ -21,6 +21,7 @@ config.mtepatches.buildcraft.name=BuildCraft
 config.mtepatches.buildcraft.itemPipeAcceptEjection.name=Item Pipe Accepts Ejection
 config.mtepatches.buildcraft.mjToForgeEnergy.name=Use RF/FE
 config.mtepatches.buildcraft.mjToForgeEnergyRatio.name=MJ to FE Ratio
+config.mtepatches.buildcraft.limitPipePower.name=Enforce Power Limits
 
 
 config.mtepatches.moarTinkers.name=Moar Tinkers

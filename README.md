@@ -45,6 +45,8 @@ Prevent crashing when placing a faulty queen bee into apiary
 Allows BuildCraft item pipes to accept items ejected from vanilla hoppers and machines from other mods.  
 #### RF/FE Compatibility
 (Disabled by default) Simply make BuildCraft works with RF/FE.  
+#### Enforce Power Limits
+Apply the power limits to kinesis pipes.  
 
 ### Moar Tinkers
 #### Disable Mining Boost when Sneaking
