@@ -1,6 +1,6 @@
 # MTE Patches
-Fixes bugs and flaws in varoius mods.  
-Made for the modpack Minetech Evolution. Use freely if you want any fixes in the mod. All fixes are togglable via config. 
+Fix bugs and add useful patches for various mods.  
+Made for the modpack Minetech Evolution. Use freely if you want any fixes in the mod. All fixes are toggleable via config. 
 This mod works outside of the modpack as well.  
 ## Current fixes:  
 ### Railcraft
@@ -43,14 +43,16 @@ Prevent crashing when placing a faulty queen bee into apiary
 ### BuildCraft
 #### Item Pipe Accepts Ejection
 Allows BuildCraft item pipes to accept items ejected from vanilla hoppers and machines from other mods.  
+#### RF/FE Compatibility
+(Disabled by default) Simply make BuildCraft works with RF/FE.  
 
 ### Moar Tinkers
 #### Disable Mining Boost when Sneaking
 A QoL Feature, disables server-side mining speed boost of traits when sneaking, to prevent over-mining with it  
 
 ### Industrial Foregoing
-#### Insertion Converyor Upgrade Duplication Fix
-Fixed a item duplication bug for insertion converyor upgrade.
+#### Insertion Conveyor Upgrade Duplication Fix
+Fixed a item duplication bug for insertion conveyor upgrade.
 
 ### Connection Timeout
 Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
