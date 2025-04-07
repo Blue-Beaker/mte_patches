@@ -6,6 +6,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -28,7 +29,8 @@ public class EnergyAdaptorProviderFEtoMJ implements ICapabilityProvider {
     @Override
     public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
         if(this.shouldAddCapability(capability,facing)){
-            return (T) new EnergyAdaptorFEtoMJ(tile.getCapability(CapabilityEnergy.ENERGY,facing));
+            IEnergyStorage capability1 = tile.getCapability(CapabilityEnergy.ENERGY, facing);
+            return capability1!=null ? (T) new EnergyAdaptorFEtoMJ(capability1) : null;
         }
         return null;
     }
