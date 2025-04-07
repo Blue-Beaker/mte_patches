@@ -92,8 +92,9 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.buildcraft.mjToForgeEnergy.name")
         @Config.RequiresWorldRestart
         public boolean mjToForgeEnergy = false;
-        @Comment({"Conversion ratio from MJ to FE."})
+        @Comment({"Conversion ratio from MJ to FE. Should not be zero."})
         @LangKey("config.mtepatches.buildcraft.mjToForgeEnergyRatio.name")
+        @Config.RangeDouble(min = 0, max = 2147483647)
         public double mjToForgeEnergyRatio = 10.0;
     }
 

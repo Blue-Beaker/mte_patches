@@ -21,6 +21,7 @@ public class BCUtils {
     }
 
     public static long convertFEtoMJ(int fe){
+        if(mjToFERatio==0) return 0;
         return (long) (fe/mjToFERatio);
     }
 
