@@ -12,8 +12,9 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 
-public class EnergyAdaptorProviderFEtoMJ implements ICapabilityProvider {
+public class EnergyAdaptorProviderFEtoMJ extends CachingAdaptorProvider<IEnergyStorage,EnergyAdaptorFEtoMJ> implements ICapabilityProvider {
     public final TileEntity tile;
+
     public EnergyAdaptorProviderFEtoMJ(TileEntity tile) {
         this.tile=tile;
     }
@@ -30,15 +31,22 @@ public class EnergyAdaptorProviderFEtoMJ implements ICapabilityProvider {
     public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
         if(this.shouldAddCapability(capability,facing)){
             IEnergyStorage capability1 = tile.getCapability(CapabilityEnergy.ENERGY, facing);
-            return capability1!=null ? (T) new EnergyAdaptorFEtoMJ(capability1) : null;
+            if(capability1!=null)
+                return (T) getOrCreateAdaptor(capability1);
         }
         return null;
     }
-    
+
+    @Override
+    protected EnergyAdaptorFEtoMJ createNewAdaptor(IEnergyStorage cap) {
+        return new EnergyAdaptorFEtoMJ(cap);
+    }
+
     protected boolean shouldAddCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing facing){
         return capability == MjAPI.CAP_RECEIVER
                 || capability == MjAPI.CAP_CONNECTOR
                 || capability == MjAPI.CAP_PASSIVE_PROVIDER
                 || capability == MjAPI.CAP_READABLE;
     }
+
 }

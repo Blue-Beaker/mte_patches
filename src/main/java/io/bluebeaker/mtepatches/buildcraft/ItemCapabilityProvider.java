@@ -11,7 +11,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class ItemCapabilityProvider implements ICapabilityProvider {
+public class ItemCapabilityProvider extends CachingAdaptorProvider<IItemTransactor,ItemPipeHandler> implements ICapabilityProvider {
     public final @Nonnull TilePipeHolder tile;
 
     public ItemCapabilityProvider(@Nonnull TilePipeHolder tile) {
@@ -43,8 +43,13 @@ public class ItemCapabilityProvider implements ICapabilityProvider {
         if(shouldAddCapability(capability,facing)){
             IItemTransactor transactor = tile.getCapability(CapUtil.CAP_ITEM_TRANSACTOR, facing);
             if(transactor!=null)
-                return (T) new ItemPipeHandler(transactor);
+                return (T) getOrCreateAdaptor(transactor);
         }
         return null;
+    }
+
+    @Override
+    protected ItemPipeHandler createNewAdaptor(IItemTransactor cap) {
+        return new ItemPipeHandler(cap);
     }
 }
