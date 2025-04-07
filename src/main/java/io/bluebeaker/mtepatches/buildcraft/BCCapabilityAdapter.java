@@ -15,15 +15,17 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class BCCapabilityAdapter {
     public static BCCapabilityAdapter INSTANCE = new BCCapabilityAdapter();
     private BCCapabilityAdapter(){
-
+        this.itemCap = new ResourceLocation(MTEPatchesMod.MODID,"BC_itemCapability");
+        this.powerMJtoFE = new ResourceLocation(MTEPatchesMod.MODID,"BC_MJtoFE");
+        this.powerFEtoMJ = new ResourceLocation(MTEPatchesMod.MODID,"BC_FEtoMJ");
     }
     private ResourceLocation itemCap;
     private ResourceLocation powerMJtoFE;
     private ResourceLocation powerFEtoMJ;
     public void init(){
-        this.itemCap = new ResourceLocation(MTEPatchesMod.MODID,"BC_itemCapability");
-        this.powerMJtoFE = new ResourceLocation(MTEPatchesMod.MODID,"BC_MJtoFE");
-        this.powerFEtoMJ = new ResourceLocation(MTEPatchesMod.MODID,"BC_FEtoMJ");
+//        this.itemCap = new ResourceLocation(MTEPatchesMod.MODID,"BC_itemCapability");
+//        this.powerMJtoFE = new ResourceLocation(MTEPatchesMod.MODID,"BC_MJtoFE");
+//        this.powerFEtoMJ = new ResourceLocation(MTEPatchesMod.MODID,"BC_FEtoMJ");
     }
     @SubscribeEvent(priority = EventPriority.LOW)
     public void subscribe(AttachCapabilitiesEvent<TileEntity> event){

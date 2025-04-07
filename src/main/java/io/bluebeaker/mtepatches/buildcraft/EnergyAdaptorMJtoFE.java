@@ -21,7 +21,13 @@ public class EnergyAdaptorMJtoFE implements IEnergyStorage {
     public int receiveEnergy(int maxReceive, boolean simulate) {
         if(canReceive) {
             long mjReceive = Math.min(getMaxInsertMJ(), BCUtils.convertFEtoMJ(maxReceive));
-            return maxReceive - BCUtils.convertMJtoFE (((IMjReceiver)mjConnector).receivePower(mjReceive,simulate));
+            // Check how many MJ we can convert to precisely
+            // Be careful that BC returns remaining energy, but we need the inserted energy
+            long actualMJtoSend = mjReceive - BCUtils.convertFEtoMJ(
+                    BCUtils.convertMJtoFE(
+                            ((IMjReceiver)mjConnector).receivePower(mjReceive,true)));
+
+            return maxReceive - BCUtils.convertMJtoFE (((IMjReceiver)mjConnector).receivePower(actualMJtoSend,simulate));
         }
         return 0;
     }
