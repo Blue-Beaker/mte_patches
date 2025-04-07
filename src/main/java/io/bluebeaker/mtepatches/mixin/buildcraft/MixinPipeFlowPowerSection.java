@@ -23,14 +23,14 @@ public class MixinPipeFlowPowerSection {
 
     @Unique
     private long mte_patches$powerLimitRemaining = 0;
-//    @Unique
-//    private int mte_patches$ticks = 0;
 
     @Inject(method = "receivePowerInternal(J)J", at = @At("HEAD"),cancellable = true)
     private void applyPowerCap(long sent, CallbackInfoReturnable<Long> cir){
         if(!MTEPatchesConfig.buildcraft.limitPipePower || sent==0) return;
-
-        long cappedPower = Math.min(mte_patches$powerLimitRemaining, sent);
+        // The limit is an average
+        long cappedPower = Math.min(Math.min(mte_patches$powerLimitRemaining, sent)
+        // Also add a cap on the internal power
+                ,((AccessorPipeFlowPower) this.this$0).getMaxPower()*20-internalNextPower);
 
         mte_patches$powerLimitRemaining -=cappedPower;
 
@@ -41,10 +41,9 @@ public class MixinPipeFlowPowerSection {
 
     @Inject(method = "step()V",at = @At("HEAD"))
     private void step(CallbackInfo ci){
-//        if(mte_patches$ticks %20==0){
+        if(!MTEPatchesConfig.buildcraft.limitPipePower) return;
+
         long maxPower = ((AccessorPipeFlowPower) this.this$0).getMaxPower();
         mte_patches$powerLimitRemaining =Math.min(maxPower*20, mte_patches$powerLimitRemaining +maxPower);
-//        }
-//        mte_patches$ticks++;
     }
 }
