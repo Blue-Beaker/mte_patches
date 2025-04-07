@@ -17,7 +17,8 @@ public class EnergyAdaptorFEtoMJ implements IMjReceiver, IMjReadable, IMjPassive
 
     @Override
     public long getPowerRequested() {
-        return BCUtils.convertFEtoMJ(feStorage.getMaxEnergyStored()-feStorage.getEnergyStored());
+        return BCUtils.convertFEtoMJ(Integer.MAX_VALUE);
+//        return BCUtils.convertFEtoMJ(feStorage.getMaxEnergyStored()-feStorage.getEnergyStored());
     }
     //This method from BC should return remaining energy instead of inserted
     @Override
