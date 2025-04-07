@@ -1,5 +1,6 @@
 package io.bluebeaker.mtepatches.buildcraft;
 
+import buildcraft.api.mj.IMjReceiver;
 import buildcraft.api.mj.MjAPI;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
 
@@ -23,6 +24,9 @@ public class BCUtils {
     public static long convertFEtoMJ(int fe){
         if(mjToFERatio==0) return 0;
         return (long) (fe/mjToFERatio);
+    }
+    public static long receiveMJGetTransfered(IMjReceiver receiver, long mjReceive, boolean simulate){
+        return mjReceive - receiver.receivePower(mjReceive,simulate);
     }
 
 }

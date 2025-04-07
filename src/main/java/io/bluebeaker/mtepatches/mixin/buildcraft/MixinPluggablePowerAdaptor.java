@@ -26,7 +26,7 @@ public abstract class MixinPluggablePowerAdaptor extends PipePluggable {
     @Inject(method = "getCapability(Lnet/minecraftforge/common/capabilities/Capability;)Ljava/lang/Object;",at=@At("RETURN"),cancellable = true)
     public <T> void getCapability(Capability<T> cap, CallbackInfoReturnable<T> cir){
         if(MTEPatchesConfig.buildcraft.mjToForgeEnergy && cir.getReturnValue()==null && cap == CapabilityEnergy.ENERGY){
-            IMjConnector capability = (IMjConnector) holder.getPipe().getBehaviour().getCapability(MjAPI.CAP_CONNECTOR, side);
+            IMjConnector capability = holder.getPipe().getBehaviour().getCapability(MjAPI.CAP_CONNECTOR, side);
             if(capability!=null){
                 cir.setReturnValue((T) new EnergyAdaptorMJtoFE(capability));
             }
