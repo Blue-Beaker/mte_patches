@@ -14,22 +14,16 @@ public class EnergyAdaptorMJtoFE implements IEnergyStorage {
 
     public EnergyAdaptorMJtoFE(IMjConnector mjConnector){
         this.mjConnector=mjConnector;
-        canReceive=(mjConnector instanceof IMjReceiver && ((IMjReceiver) mjConnector).canReceive());
+        canReceive=(mjConnector instanceof IMjReceiver);
         canRead=mjConnector instanceof IMjReadable;
     }
 
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
-        if(canReceive) {
+        if(canReceive && ((IMjReceiver) mjConnector).canReceive()) {
             IMjReceiver receiver = (IMjReceiver) mjConnector;
             long mjReceive = Math.min(getMaxInsertMJ(), BCUtils.convertFEtoMJ(maxReceive)+mjRemaining);
 //            mjReceive=Math.min(mjReceive, receiver.getPowerRequested());
-            // Check how many MJ we can convert to precisely
-            // Be careful that BC returns remaining energy, but we need the inserted energy
-
-//            long actualMJtoSend = BCUtils.convertFEtoMJ(
-//                    BCUtils.convertMJtoFE(
-//                            BCUtils.receiveMJGetTransfered(receiver,mjReceive,true)));
 
             long mjTransfered = BCUtils.receiveMJGetTransfered(receiver,mjReceive, simulate);
 
@@ -74,6 +68,6 @@ public class EnergyAdaptorMJtoFE implements IEnergyStorage {
 
     @Override
     public boolean canReceive() {
-        return canReceive;
+        return canReceive && ((IMjReceiver) mjConnector).canReceive();
     }
 }

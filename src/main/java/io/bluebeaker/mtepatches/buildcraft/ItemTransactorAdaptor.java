@@ -11,10 +11,10 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class ItemCapabilityProvider extends CachingAdaptorProvider<IItemTransactor,ItemPipeHandler> implements ICapabilityProvider {
+public class ItemTransactorAdaptor extends CachingAdaptorProvider<IItemTransactor,ItemPipeHandler> implements ICapabilityProvider {
     public final @Nonnull TilePipeHolder tile;
 
-    public ItemCapabilityProvider(@Nonnull TilePipeHolder tile) {
+    public ItemTransactorAdaptor(@Nonnull TilePipeHolder tile) {
         this.tile = tile;
     }
 

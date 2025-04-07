@@ -32,7 +32,7 @@ public class BCCapabilityAdapter {
         TileEntity tile = event.getObject();
         if(MTEPatchesConfig.buildcraft.itemPipeAcceptEjection && LoadedModChecker.buildcrafttransport.isLoaded() && tile instanceof TilePipeHolder){
             event.addCapability(this.itemCap,
-                    new ItemCapabilityProvider((TilePipeHolder) tile));
+                    new ItemTransactorAdaptor((TilePipeHolder) tile));
         }
         if(MTEPatchesConfig.buildcraft.mjToForgeEnergy){
             if(tile instanceof TileBC_Neptune){
