@@ -17,12 +17,13 @@ public class BCUtils {
     }
 
     public static int convertMJtoFE(long mj){
+        if(mj<=0) return 0;
         double fe = (mj * mjToFERatio);
         return fe<Integer.MAX_VALUE ? (int)fe : Integer.MAX_VALUE;
     }
 
     public static long convertFEtoMJ(int fe){
-        if(mjToFERatio==0) return 0;
+        if(mjToFERatio==0 || fe<=0) return 0;
         return (long) (fe/mjToFERatio);
     }
     public static long receiveMJGetTransfered(IMjReceiver receiver, long mjReceive, boolean simulate){
