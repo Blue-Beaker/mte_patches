@@ -97,7 +97,7 @@ public class MTEPatchesConfig {
         @Config.RangeDouble(min = 0, max = 2147483647)
         public double mjToForgeEnergyRatio = 10.0;
 
-        @Comment({"Apply the power limits to kinesis pipes."})
+        @Comment({"Apply the transfer rate limits to kinesis pipes.","Also limits how much power can be stored in it."})
         @LangKey("config.mtepatches.buildcraft.limitPipePower.name")
         public boolean limitPipePower = false;
     }
