@@ -2,14 +2,14 @@
 Fix bugs and add useful patches for various mods.  
 Made for the modpack Minetech Evolution. Use freely if you want any fixes in the mod. All fixes are toggleable via config. 
 This mod works outside of the modpack as well.  
-## Current fixes:  
+## Current patches:  
 ### Railcraft
-#### Multiblock Desync  
+#### Multiblock Desync fix  
   Fix a desync bug of multiblock that when the multiblock is across chunks.
   This can be easily reproduced by building a multiblock tank across 4 chunks, forceload one chunk of them, walk away from the tank, quit and rejoin world, then walk back slowly. 
   When desync, client can get its inventory scrambled when right-clicking at the bugged multiblock.  
   
-#### Free Turbine Repair  
+#### Free Turbine Repair fix  
   Fix turbine being fixed for free when putting in crafting slot with a blade and take it out.
 
 ### IndustrialCraft 2
