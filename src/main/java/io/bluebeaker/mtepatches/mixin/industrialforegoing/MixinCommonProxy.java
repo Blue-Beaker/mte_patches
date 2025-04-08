@@ -2,6 +2,7 @@ package io.bluebeaker.mtepatches.mixin.industrialforegoing;
 
 import com.buuz135.industrial.proxy.CommonProxy;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
+import io.bluebeaker.mtepatches.Utils;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -16,8 +17,9 @@ public class MixinCommonProxy {
     @Redirect(method = "readUrl(Ljava/lang/String;)Ljava/lang/String;",at = @At(value = "INVOKE", target = "Ljava/net/URL;openStream()Ljava/io/InputStream;"))
     private static InputStream addTimeout(URL url) throws IOException {
         URLConnection urlConnection = url.openConnection();
-        if(MTEPatchesConfig.connectionTimeout.industrialForegoing)
-            urlConnection.setConnectTimeout(MTEPatchesConfig.connectionTimeout.timeout);
+        if(MTEPatchesConfig.connectionTimeout.industrialForegoing){
+            Utils.setTimeout(urlConnection);
+        }
         return urlConnection.getInputStream();
     }
 }

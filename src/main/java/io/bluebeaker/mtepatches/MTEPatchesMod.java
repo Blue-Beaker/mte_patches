@@ -15,6 +15,8 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.Logger;
 
+import javax.annotation.Nullable;
+
 @Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION,acceptableRemoteVersions = "*")
 public class MTEPatchesMod
 {
@@ -64,7 +66,7 @@ public class MTEPatchesMod
             }
         }
     }
-    public static Logger getLogger(){return logger;}
+    public static @Nullable Logger getLogger(){return logger;}
     public static void logInfo(String log){
         logger.info(log);
     }

@@ -79,9 +79,9 @@ dependencies {
     compileOnly rfg.deobf('libs:TConstruct-1.12.2-2.13.0.183')
 
     // Industrial Foregoing
-    compileOnly rfg.deobf('libs:industrialforegoing-1.12.2-1.12.13-237')
-    compileOnly rfg.deobf('libs:tesla-core-lib-1.12.2-1.0.18')
-    compileOnly rfg.deobf('libs:Forgelin-1.8.4')
+    implementation rfg.deobf('libs:industrialforegoing-1.12.2-1.12.13-237')
+    implementation rfg.deobf('libs:tesla-core-lib-1.12.2-1.0.18')
+    implementation rfg.deobf('libs:Forgelin-1.8.4')
 
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')

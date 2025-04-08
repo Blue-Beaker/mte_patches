@@ -41,3 +41,5 @@ Added tweaks for BuildCraft:
 - RF/FE Compatibility  
 - Enforce Power Limits  
 Also improved performance of adaptors for BC  
+## 1.4.1
+Fixed connection timeout feature  
