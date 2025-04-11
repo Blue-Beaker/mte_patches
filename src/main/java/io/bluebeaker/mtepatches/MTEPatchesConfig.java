@@ -136,4 +136,12 @@ public class MTEPatchesConfig {
         @Comment({"Enable timeout for Industrial Foregoing when it's checking contributors."})
         public boolean industrialForegoing = true;
     }
+
+    @LangKey("config.mtepatches.projectred.name")
+    public static CategoryProjectRed projectred = new CategoryProjectRed();
+    public static class CategoryProjectRed{
+        @Comment({"Fixes mining speed on ProjectRed"})
+        @LangKey("config.mtepatches.projectred.fixMiningSpeed.name")
+        public boolean fixMiningSpeed = true;
+    }
 }

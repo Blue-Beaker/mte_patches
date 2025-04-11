@@ -89,6 +89,7 @@ dependencies {
     implementation rfg.deobf('libs:ChickenASM-1.12-1.0.2.7')
     implementation rfg.deobf('libs:MrTJPCore-1.12.2-2.1.4.43-universal')
     implementation rfg.deobf('libs:ForgeMultipart-1.12.2-2.6.2.83-universal')
+    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-lighting')
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-integration')
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-Base')
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-mechanical')

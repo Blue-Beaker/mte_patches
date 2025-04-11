@@ -1,5 +1,6 @@
-package io.bluebeaker.mtepatches.mixin.mrtjpcore;
+package io.bluebeaker.mtepatches.mixin.projectred;
 
+import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import mrtjp.core.block.MTBlockTile;
 import mrtjp.core.block.MultiTileBlock;
 import net.minecraft.block.Block;
@@ -24,11 +25,13 @@ public abstract class MixinMultiTileBlock extends Block {
 
     @Inject(method = "getPlayerRelativeBlockHardness(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F",at=@At("HEAD"),cancellable = true)
     public void getPlayerRelativeBlockHardness(IBlockState state, EntityPlayer player, World world, BlockPos pos, CallbackInfoReturnable<Float> cir){
+        if(!MTEPatchesConfig.projectred.fixMiningSpeed) return;
         cir.setReturnValue(super.getPlayerRelativeBlockHardness(state, player, world, pos));
     }
 
     @Inject(method = "getBlockHardness(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F",at=@At("HEAD"),cancellable = true)
     public void getHardness(IBlockState state, World world, BlockPos pos, CallbackInfoReturnable<Float> cir){
+        if(!MTEPatchesConfig.projectred.fixMiningSpeed) return;
         TileEntity tile = world.getTileEntity(pos);
         if(tile instanceof MTBlockTile){
             cir.setReturnValue(((MTBlockTile)tile).getHardness());
