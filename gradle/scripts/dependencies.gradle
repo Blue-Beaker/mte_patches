@@ -49,8 +49,9 @@ dependencies {
 
     runtimeOnly rfg.deobf('libs:theoneprobe-1.12-1.4.28')
 
-    
+    // IC2
     implementation rfg.deobf('industrialcraft-2:industrialcraft-2-2.8.222-ex112')
+    // Railcraft
     implementation rfg.deobf('libs:railcraft-12.0.0')
 
     //Thermal
@@ -68,8 +69,9 @@ dependencies {
     //Rftools
     implementation rfg.deobf('libs:mcjtylib-1.12-3.5.4')
     implementation rfg.deobf('libs:rftools-1.12-7.73')
-    
+
     implementation rfg.deobf('libs:BiomesOPlenty-1.12.2-7.0.1.2445-universal')
+    // BuildCraft
     implementation rfg.deobf('libs:buildcraft-all-7.99.24.8')
 
     //Moar Tinkers
@@ -82,6 +84,13 @@ dependencies {
     implementation rfg.deobf('libs:industrialforegoing-1.12.2-1.12.13-237')
     implementation rfg.deobf('libs:tesla-core-lib-1.12.2-1.0.18')
     implementation rfg.deobf('libs:Forgelin-1.8.4')
+
+    // ProjectRed
+    implementation rfg.deobf('libs:ChickenASM-1.12-1.0.2.7')
+    implementation rfg.deobf('libs:MrTJPCore-1.12.2-2.1.4.43-universal')
+    implementation rfg.deobf('libs:ForgeMultipart-1.12.2-2.6.2.83-universal')
+    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-Base')
+    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-mechanical')
 
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')
