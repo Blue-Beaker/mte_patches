@@ -8,8 +8,8 @@
   "mixins": [
     "biomesoplenty.MixinTrailManager",
     "buildcraft.AccessorPipeFlowPower",
-    "buildcraft.MixinPluggablePowerAdaptor",
     "buildcraft.MixinPipeFlowPowerSection",
+    "buildcraft.MixinPluggablePowerAdaptor",
     "forestry.MixinBeeKeepingLogic",
     "ic2.AccessorPlatform",
     "ic2.MixinItemCrop",
@@ -22,6 +22,7 @@
     "moartinkers.MixinTraitLightboost",
     "moartinkers.MixinTraitManaEater",
     "moartinkers.MixinTraitPsiEater",
+    "mrtjpcore.MixinMultiTileBlock",
     "railcraft.MixinRotorRepairRecipe",
     "thermal.MixinSawmillManager",
     "thermal.MixinSmelterManager"

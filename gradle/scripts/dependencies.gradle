@@ -67,8 +67,8 @@ dependencies {
     implementation rfg.deobf("curse.maven:forestry-59751:2918418")
 
     //Rftools
-    implementation rfg.deobf('libs:mcjtylib-1.12-3.5.4')
-    implementation rfg.deobf('libs:rftools-1.12-7.73')
+    compileOnly rfg.deobf('libs:mcjtylib-1.12-3.5.4')
+    compileOnly rfg.deobf('libs:rftools-1.12-7.73')
 
     implementation rfg.deobf('libs:BiomesOPlenty-1.12.2-7.0.1.2445-universal')
     // BuildCraft
@@ -81,14 +81,15 @@ dependencies {
     compileOnly rfg.deobf('libs:TConstruct-1.12.2-2.13.0.183')
 
     // Industrial Foregoing
-    implementation rfg.deobf('libs:industrialforegoing-1.12.2-1.12.13-237')
-    implementation rfg.deobf('libs:tesla-core-lib-1.12.2-1.0.18')
-    implementation rfg.deobf('libs:Forgelin-1.8.4')
+    compileOnly rfg.deobf('libs:industrialforegoing-1.12.2-1.12.13-237')
+    compileOnly rfg.deobf('libs:tesla-core-lib-1.12.2-1.0.18')
+    compileOnly rfg.deobf('libs:Forgelin-1.8.4')
 
     // ProjectRed
     implementation rfg.deobf('libs:ChickenASM-1.12-1.0.2.7')
     implementation rfg.deobf('libs:MrTJPCore-1.12.2-2.1.4.43-universal')
     implementation rfg.deobf('libs:ForgeMultipart-1.12.2-2.6.2.83-universal')
+    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-integration')
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-Base')
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-mechanical')
 
