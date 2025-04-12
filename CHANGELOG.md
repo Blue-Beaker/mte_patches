@@ -43,3 +43,6 @@ Added tweaks for BuildCraft:
 Also improved performance of adaptors for BC  
 ## 1.4.1
 Fixed connection timeout feature  
+## 1.4.2
+Added patch for ProjectRed:
+- Breaking Speed Fix

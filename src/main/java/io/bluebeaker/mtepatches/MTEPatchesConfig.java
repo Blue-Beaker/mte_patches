@@ -140,7 +140,7 @@ public class MTEPatchesConfig {
     @LangKey("config.mtepatches.projectred.name")
     public static CategoryProjectRed projectred = new CategoryProjectRed();
     public static class CategoryProjectRed{
-        @Comment({"Fixes mining speed on ProjectRed"})
+        @Comment({"Fix mining speed for machines and parts on ProjectRed"})
         @LangKey("config.mtepatches.projectred.fixMiningSpeed.name")
         public boolean fixMiningSpeed = true;
     }

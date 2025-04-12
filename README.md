@@ -54,7 +54,11 @@ A QoL Feature, disables server-side mining speed boost of traits when sneaking, 
 
 ### Industrial Foregoing
 #### Insertion Conveyor Upgrade Duplication Fix
-Fixed a item duplication bug for insertion conveyor upgrade.
+Fixed a item duplication bug for insertion conveyor upgrade.  
+
+### ProjectRed
+#### Breaking Speed Fix
+Fix breaking speed for machines and parts on ProjectRed. Now their breaking speed are affected by player's tool and effects.  
 
 ### Connection Timeout
 Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
