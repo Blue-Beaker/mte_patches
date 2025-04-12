@@ -6,8 +6,6 @@ import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import io.bluebeaker.mtepatches.projectred.FakeBlocks;
 import mrtjp.projectred.illumination.BaseLightPart;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.common.ForgeHooks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -18,6 +16,6 @@ public abstract class MixinLightPart extends TMultiPart {
     @Inject(method = "getStrength",at = @At("HEAD"),cancellable = true)
     public void getStrength(EntityPlayer player, CuboidRayTraceResult hit, CallbackInfoReturnable<Float> cir){
         if(!MTEPatchesConfig.projectred.fixMiningSpeed) return;
-        cir.setReturnValue(ForgeHooks.blockStrength(FakeBlocks.LIGHT.getDefaultState(),player, this.world(), new BlockPos(0,-1,0)));
+        cir.setReturnValue(FakeBlocks.getStrength(FakeBlocks.LIGHT.getDefaultState(),player, this.world()));
     }
 }

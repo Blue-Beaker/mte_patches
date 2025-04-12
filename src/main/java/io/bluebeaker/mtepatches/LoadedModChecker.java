@@ -11,7 +11,11 @@ public enum LoadedModChecker {
     buildcraftcore("buildcraftcore"),
     buildcrafttransport("buildcrafttransport"),
     moartinkers("moartinkers"),
-    industrialforegoing("industrialforegoing");
+    industrialforegoing("industrialforegoing"),
+    projectredcore("projectred-core"),
+    projectredexpansion("projectred-expansion"),
+    projectredintegration("projectred-integration"),
+    projectredillumination("projectred-illumination");
 
     public final String modid;
     private boolean isLoaded = false;
