@@ -26,7 +26,7 @@ public class EnergyAdaptorProviderFEtoMJ extends CachingAdaptorProvider<IEnergyS
         }
         return false;
     }
-
+    @SuppressWarnings("unchecked")
     @Override
     public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
         if(this.shouldAddCapability(capability,facing)){

@@ -63,6 +63,9 @@ public class MTEPatchesConfig {
                 "They will be replaced with a princess with the same NBT."})
         @LangKey("config.mtepatches.forestry.faultyQueenFix.name")
         public boolean faultyQueenFix = true;
+        @Comment({"Fix multi-farm does not return dirt or sand when replacing soil."})
+        @LangKey("config.mtepatches.forestry.multiFarmSoilReplaceFix.name")
+        public boolean multiFarmSoilReplaceFix = true;
     }
 
     @LangKey("config.mtepatches.rftools.name")

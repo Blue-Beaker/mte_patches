@@ -49,7 +49,9 @@ public class MTEPatchesMod
 
     @EventHandler
     public void init(FMLInitializationEvent event){
-        BCUtils.updateValues();
+        if(LoadedModChecker.buildcraftcore.isLoaded()){
+            BCUtils.updateValues();
+        }
     }
 
     @EventHandler

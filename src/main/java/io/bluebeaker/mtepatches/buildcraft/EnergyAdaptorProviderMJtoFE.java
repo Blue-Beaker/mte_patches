@@ -27,6 +27,7 @@ public class EnergyAdaptorProviderMJtoFE extends CachingAdaptorProvider<IMjConne
         return false;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
         if(this.shouldAddCapability(capability,facing) && tile.hasCapability(MjAPI.CAP_CONNECTOR,facing)){
