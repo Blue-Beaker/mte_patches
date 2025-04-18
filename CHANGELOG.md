@@ -46,3 +46,6 @@ Fixed connection timeout feature
 ## 1.4.2
 Added patch for ProjectRed:
 - Breaking Speed Fix
+## 1.4.3
+Added patch for forestry:  
+- MultiFarm Soil Replacement Fix  

@@ -29,6 +29,8 @@ Enhancement for Thermal Expansion, allows recycling enchanted items with inducti
 ### Forestry  
 #### Faulty Queen Bee Fix  
 Prevent crashing when placing a faulty queen bee into apiary  
+#### MultiFarm Soil Replacement Fix
+Fix multi-farm does not return dirt or sand when replacing soil  
 
 ### RFTools
 #### Modular Storage GUI Tweaks  
