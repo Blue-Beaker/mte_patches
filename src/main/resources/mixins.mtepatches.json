@@ -15,6 +15,7 @@
     "ic2.AccessorPlatform",
     "ic2.MixinItemCrop",
     "ic2.MixinMassFabricator",
+    "ic2.MixinPlatform",
     "ic2.MixinTileEntityCrop",
     "ic2.MixinTileEntityCropmatron",
     "industrialforegoing.MixinCommonProxy",
