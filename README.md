@@ -23,7 +23,7 @@ Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump w
 Fixes a bug that on a LAN server, all IC2 messages are sent to the host, instead of the player that should receive the message.  
 
 #### Server message fix
-Some IC2 messages can cause stack overflow exceptions on dedicated server. This fixes them. (This fix can't be disabled due to how mixin works)  
+Some IC2 messages can cause stack overflow exceptions on dedicated server. This fixes them. (This fix can't be disabled)  
 
 ### Thermal Series
 #### Fuzzy NBT Recycling  
