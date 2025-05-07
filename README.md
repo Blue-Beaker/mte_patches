@@ -1,6 +1,6 @@
 # MTE Patches
 Fix bugs and add useful patches for various mods.  
-Made for the modpack Minetech Evolution. Use freely if you want any fixes in the mod. All fixes are toggleable via config. 
+Made for the modpack Minetech Evolution. Use freely if you want any fixes in the mod. Most fixes are toggleable via config. 
 This mod works outside of the modpack as well.  
 ## Current patches:  
 ### Railcraft
@@ -21,6 +21,9 @@ This is a enhancement for IC2, allowing crop sticks to be put on other mod's far
 Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump with the inventory open.  
 #### LAN message fix
 Fixes a bug that on a LAN server, all IC2 messages are sent to the host, instead of the player that should receive the message.  
+
+#### Server message fix
+Some IC2 messages can cause stack overflow exceptions on dedicated server. This fixes them. (This fix can't be disabled due to how mixin works)  
 
 ### Thermal Series
 #### Fuzzy NBT Recycling  
@@ -61,7 +64,9 @@ Fixed a item duplication bug for insertion conveyor upgrade.
 ### ProjectRed
 #### Breaking Speed Fix
 Fix breaking speed for machines and parts on ProjectRed. Now their breaking speed are affected by player's tool and effects.  
-
+#### Pressure Tube Overflow Limit
+Items can cram up in ProjectRed's pressure tubes under some conditions.  
+With this feature, pressure tubes with wandering stacks more than this value will be considered unpassable when pathfinding, so items won't cram up infinitely and cause huge lags.  
 ### Connection Timeout
 Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
 Supported mods:  
