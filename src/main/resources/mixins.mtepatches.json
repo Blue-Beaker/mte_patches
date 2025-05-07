@@ -30,6 +30,7 @@
     "projectred.MixinLightPart",
     "projectred.MixinMultiTileBlock",
     "projectred.MixinPipePart",
+    "projectred.MixinPressurePathFinder",
     "projectred.MixinWirePart",
     "railcraft.MixinRotorRepairRecipe",
     "thermal.MixinSawmillManager",
