@@ -40,3 +40,4 @@ config.mtepatches.connectionTimeout.industrialforegoing.name=Enable for Industri
 
 config.mtepatches.projectred.name=ProjectRed
 config.mtepatches.projectred.fixMiningSpeed.name=Breaking Speed Fix
+config.mtepatches.projectred.pressureTubeOverflowLimit.name=Pressure Tube Overflow Limit
