@@ -12,7 +12,6 @@
     "buildcraft.MixinPluggablePowerAdaptor",
     "forestry.MixinBeeKeepingLogic",
     "forestry.MixinFarmController",
-    "ic2.AccessorPlatform",
     "ic2.MixinItemCrop",
     "ic2.MixinMassFabricator",
     "ic2.MixinPlatform",
