@@ -64,9 +64,9 @@ Fixed a item duplication bug for insertion conveyor upgrade.
 ### ProjectRed
 #### Breaking Speed Fix
 Fix breaking speed for machines and parts on ProjectRed. Now their breaking speed are affected by player's tool and effects.  
-#### Pressure Tube Overflow Limit
+#### Pressure Tube Item Limit
 Items can cram up in ProjectRed's pressure tubes under some conditions.  
-With this feature, pressure tubes with wandering stacks more than this value will be considered unpassable when pathfinding, so items won't cram up infinitely and cause huge lags.  
+With this feature, pressure tubes with item stacks more than this value will be considered unpassable when pathfinding, so items won't cram up infinitely and cause huge lags.  
 ### Connection Timeout
 Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
 Supported mods:  
