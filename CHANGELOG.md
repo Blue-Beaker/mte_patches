@@ -51,4 +51,6 @@ Added patch for forestry:
 - MultiFarm Soil Replacement Fix  
 ## 1.4.4
 - Patched IC2 server message causing stack overflow  
-- Added cramming limit feature for ProjectRed's pressure tubes  
+- Added cramming limit feature for ProjectRed's pressure tubes
+## 1.4.5
+- Increased default cramming limit for pressure tubes
