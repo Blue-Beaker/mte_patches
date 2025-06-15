@@ -56,3 +56,4 @@ Added patch for forestry:
 - Increased default cramming limit for pressure tubes
 ## 1.4.6
 - QoL feature for Storage Drawers: Unmark empty slot  
+- Fix a crash on IC2 message fix  

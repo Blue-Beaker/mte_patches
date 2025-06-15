@@ -4,7 +4,6 @@ import ic2.core.Platform;
 import ic2.core.PlatformClient;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.text.TextComponentTranslation;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,7 +21,9 @@ public abstract class MixinPlatformClient extends Platform {
         } else {
             textComponentTranslation = new TextComponentTranslation(message);
         }
-        ((EntityPlayerMP)player).sendMessage(textComponentTranslation);
+        if(player instanceof EntityPlayer){
+            (player).sendMessage(textComponentTranslation);
+        }
         ci.cancel();
     }
 }
