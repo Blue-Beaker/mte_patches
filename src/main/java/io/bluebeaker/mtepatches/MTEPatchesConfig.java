@@ -152,4 +152,12 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.projectred.pressureTubeOverflowLimit.name")
         public int pressureTubeOverflowLimit = 64;
     }
+
+    @LangKey("config.mtepatches.storageDrawers.name")
+    public static CategoryStorageDrawers storageDrawers = new CategoryStorageDrawers();
+    public static class CategoryStorageDrawers{
+        @Comment({"QoL feature: Unmark an slot from an formerly-locked drawer with a left-click."})
+        @LangKey("config.mtepatches.storageDrawers.clearEmptySlot.name")
+        public boolean clearEmptySlot = true;
+    }
 }

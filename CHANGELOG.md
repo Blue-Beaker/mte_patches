@@ -54,3 +54,5 @@ Added patch for forestry:
 - Added cramming limit feature for ProjectRed's pressure tubes
 ## 1.4.5
 - Increased default cramming limit for pressure tubes
+## 1.4.6
+- QoL feature for Storage Drawers: Unmark empty slot  

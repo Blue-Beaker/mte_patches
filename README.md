@@ -67,6 +67,11 @@ Fix breaking speed for machines and parts on ProjectRed. Now their breaking spee
 #### Pressure Tube Item Limit
 Items can cram up in ProjectRed's pressure tubes under some conditions.  
 With this feature, pressure tubes with item stacks more than this value will be considered unpassable when pathfinding, so items won't cram up infinitely and cause huge lags.  
+
+### Storage Drawers
+#### Clear empty slot
+QoL feature: Unmark an empty slot from an formerly-locked drawer with a left-click.  
+
 ### Connection Timeout
 Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
 Supported mods:  

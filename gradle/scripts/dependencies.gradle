@@ -75,8 +75,8 @@ dependencies {
     implementation rfg.deobf('libs:buildcraft-all-7.99.24.8')
 
     //Moar Tinkers
-    implementation rfg.deobf('libs:Mantle-1.12-1.3.3.55')
-    implementation rfg.deobf('libs:TConstruct-1.12.2-2.13.0.183')
+    compileOnly rfg.deobf('libs:Mantle-1.12-1.3.3.55')
+    compileOnly rfg.deobf('libs:TConstruct-1.12.2-2.13.0.183')
     compileOnly rfg.deobf('libs:moartinkers-0.6.0')
     compileOnly rfg.deobf('libs:RedstoneArsenal-1.12.2-2.6.6.1-universal')
 
@@ -86,13 +86,17 @@ dependencies {
     compileOnly rfg.deobf('libs:Forgelin-1.8.4')
 
     // ProjectRed
-    implementation rfg.deobf('libs:ChickenASM-1.12-1.0.2.7')
-    implementation rfg.deobf('libs:MrTJPCore-1.12.2-2.1.4.43-universal')
-    implementation rfg.deobf('libs:ForgeMultipart-1.12.2-2.6.2.83-universal')
-    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-lighting')
-    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-integration')
-    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-Base')
-    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-mechanical')
+    compileOnly rfg.deobf('libs:ChickenASM-1.12-1.0.2.7')
+    compileOnly rfg.deobf('libs:MrTJPCore-1.12.2-2.1.4.43-universal')
+    compileOnly rfg.deobf('libs:ForgeMultipart-1.12.2-2.6.2.83-universal')
+    compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-lighting')
+    compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-integration')
+    compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-Base')
+    compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-mechanical')
+
+    // Drawers
+    implementation rfg.deobf('libs:Chameleon-1.12-4.1.3')
+    implementation rfg.deobf('libs:StorageDrawers-1.12.2-5.4.2')
 
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')
