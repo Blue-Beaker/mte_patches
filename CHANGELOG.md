@@ -57,3 +57,5 @@ Added patch for forestry:
 ## 1.4.6
 - QoL feature for Storage Drawers: Unmark empty slot  
 - Fix a crash on IC2 message fix  
+## 1.4.7
+- QoL feature for IC2: Crop Trample Prevention

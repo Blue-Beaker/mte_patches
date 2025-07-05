@@ -17,6 +17,8 @@ This mod works outside of the modpack as well.
 Mass fabricator stuck forever when its output is blocked once. This mod can fix this.  
 #### Crops and Farmlands  
 This is a enhancement for IC2, allowing crop sticks to be put on other mod's farmlands, as long as it extends from BlockFarmland.  
+#### Crop Trample Prevention
+Prevent breaking crop sticks when walking over it  
 #### Block Keybinds in GUI  
 Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump with the inventory open.  
 #### LAN message fix

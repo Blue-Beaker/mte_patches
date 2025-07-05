@@ -31,6 +31,11 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.ic2.cropOnAllFarmlands.name")
         public boolean cropOnAllFarmlands = true;
 
+        @Comment("Prevent breaking crop sticks when walking over it")
+        @LangKey("config.mtepatches.ic2.noTrampleCrops.name")
+        public boolean noTrampleCrops = true;
+
+
         @Comment("Fix mass fabricator stuck permanently after it's output is blocked.")
         @LangKey("config.mtepatches.ic2.massFabStuckFix.name")
         public boolean massFabStuckFix = true;

@@ -7,6 +7,7 @@ config.mtepatches.ic2.cropOnAllFarmlands.name=Crop on all farmlands
 config.mtepatches.ic2.massFabStuckFix.name=MassFab stuck fix
 config.mtepatches.ic2.blockKeybindInGUI.name=Block Keybinds in GUI
 config.mtepatches.ic2.lanMessageFix.name=LAN message fix
+config.mtepatches.ic2.noTrampleCrops.name=Crop Trample Prevention
 
 config.mtepatches.thermal.name=Thermal Series
 config.mtepatches.thermal.recycleRecipesFuzzyNBT.name=Recycling with Fuzzy NBT
