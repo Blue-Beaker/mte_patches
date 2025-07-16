@@ -17,6 +17,8 @@ config.mtepatches.rftools.storageGuiShiftTweak.name=Modular Storage Shift Tweak
 config.mtepatches.rftools.storageGuiInsertTweak.name=Modular Storage Insertion Tweak
 
 config.mtepatches.bop.name=Biomes O Plenty
+config.mtepatches.bop.fogCheckRange.name=Fog Check Range
+config.mtepatches.bop.disableFog.name=Disable Fog
 
 config.mtepatches.buildcraft.name=BuildCraft
 config.mtepatches.buildcraft.itemPipeAcceptEjection.name=Item Pipe Accepts Ejection

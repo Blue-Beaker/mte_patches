@@ -165,4 +165,15 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.storageDrawers.clearEmptySlot.name")
         public boolean clearEmptySlot = true;
     }
+
+    @LangKey("config.mtepatches.bop.name")
+    public static CategoryBOP bop = new CategoryBOP();
+    public static class CategoryBOP{
+        @Comment({"The range for BOP to check fog. BOP Default is 20. Reduce for better performance but worse custom fog quality."})
+        @LangKey("config.mtepatches.bop.fogCheckRange.name")
+        public int fogCheckRange = 5;
+        @Comment({"Disables BOP custom fog completely."})
+        @LangKey("config.mtepatches.bop.disableFog.name")
+        public boolean disableFog = false;
+    }
 }
