@@ -74,6 +74,10 @@ With this feature, pressure tubes with item stacks more than this value will be 
 #### Clear empty slot
 QoL feature: Unmark an empty slot from an formerly-locked drawer with a left-click.  
 
+### Biomes o' Plenty
+#### Fog performance fix
+Improves FPS by reducing looped calculations on every frame in BOP's event listener.  
+
 ### Connection Timeout
 Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
 Supported mods:  
