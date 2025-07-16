@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = FogEventHandler.class,remap = false)
-public class MixinFogEventHandler {
+public abstract class MixinFogEventHandler {
     @ModifyVariable(method = "onRenderFog(Lnet/minecraftforge/client/event/EntityViewRenderEvent$RenderFogEvent;)V", at = @At("STORE"), ordinal = 3)
     public int setDistance(int dist){
         return MTEPatchesConfig.bop.fogCheckRange;
