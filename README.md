@@ -78,6 +78,10 @@ QoL feature: Unmark an empty slot from an formerly-locked drawer with a left-cli
 #### Fog performance fix
 Improves FPS by reducing looped calculations on every frame in BOP's event listener.  
 
+### Vanilla
+#### Don't receive item entities when dead
+Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags.  
+
 ### Connection Timeout
 Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
 Supported mods:  

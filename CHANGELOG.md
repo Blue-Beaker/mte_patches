@@ -60,4 +60,6 @@ Added patch for forestry:
 ## 1.4.7
 - QoL feature for IC2: Crop Trample Prevention  
 ## 1.4.8
-- Performance patches for Biomes o' Plenty  
+- Performance patches for Biomes o' Plenty
+## 1.4.9
+- Patch a potential lag at death screen on client-side for vanilla  

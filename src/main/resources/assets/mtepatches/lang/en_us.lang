@@ -48,3 +48,6 @@ config.mtepatches.projectred.pressureTubeOverflowLimit.name=Pressure Tube Overfl
 
 config.mtepatches.storageDrawers.name=Storage Drawers
 config.mtepatches.storageDrawers.clearEmptySlot.name=Unmark empty slot
+
+config.mtepatches.vanilla.name=Vanilla
+config.mtepatches.vanilla.dontReceiveItemsWhenDead.name=Don't receive item entities when dead

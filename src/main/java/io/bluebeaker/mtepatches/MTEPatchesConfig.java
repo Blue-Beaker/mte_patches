@@ -7,7 +7,14 @@ import net.minecraftforge.common.config.Config.Type;
 
 @Config(modid = MTEPatchesMod.MODID,type = Type.INSTANCE,category = "general")
 public class MTEPatchesConfig {
-    
+
+    @LangKey("config.mtepatches.vanilla.name")
+    public static CategoryVanilla vanilla = new CategoryVanilla();
+    public static class CategoryVanilla{
+        @Comment({"Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags."})
+        @LangKey("config.mtepatches.vanilla.dontReceiveItemsWhenDead.name")
+        public boolean dontReceiveItemsWhenDead = true;
+    }
     @LangKey("config.mtepatches.railcraft.name")
     public static CategoryRailcraft railcraft = new CategoryRailcraft();
 
