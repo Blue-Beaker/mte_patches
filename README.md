@@ -38,7 +38,7 @@ Prevent crashing when placing a faulty queen bee into apiary
 Fix multi-farm does not return dirt or sand when replacing soil  
 
 ### RFTools
-#### Modular Storage GUI Tweaks  
+#### [Client] Modular Storage GUI Tweaks  
 - Shift Tweak  
 
   When pulling out items with shift, don't refresh the list until the mouse is released.  Improves compatibility with MouseTweaks.  
@@ -75,11 +75,11 @@ With this feature, pressure tubes with item stacks more than this value will be 
 QoL feature: Unmark an empty slot from an formerly-locked drawer with a left-click.  
 
 ### Biomes o' Plenty
-#### Fog performance fix
+#### [Client] Fog performance fix
 Improves FPS by reducing looped calculations on every frame in BOP's event listener.  
 
 ### Vanilla
-#### Don't receive item entities when dead
+#### [Client] Don't receive item entities when dead
 Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags.  
 
 ### Connection Timeout
