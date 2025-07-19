@@ -30,6 +30,7 @@ config.mtepatches.buildcraft.cacheAdaptors.name=Cache Adaptors
 config.mtepatches.forestry.name=Forestry
 config.mtepatches.forestry.faultyQueenFix.name=Faulty Queen Fix
 config.mtepatches.forestry.multiFarmSoilReplaceFix.name=MultiFarm Soil Replacement Fix
+config.mtepatches.forestry.bc8Compat.name=BuildCraft 8.0 compatibility
 
 config.mtepatches.moarTinkers.name=Moar Tinkers
 config.mtepatches.moarTinkers.sneakDisablesMiningBoost.name=Disable Mining Boost when Sneaking

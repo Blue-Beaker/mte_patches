@@ -36,6 +36,8 @@ Enhancement for Thermal Expansion, allows recycling enchanted items with inducti
 Prevent crashing when placing a faulty queen bee into apiary  
 #### MultiFarm Soil Replacement Fix
 Fix multi-farm does not return dirt or sand when replacing soil  
+#### BuildCraft Compat Fix
+Fix BuildCraft compat modules not working with BC8.0.  
 
 ### RFTools
 #### [Client] Modular Storage GUI Tweaks  

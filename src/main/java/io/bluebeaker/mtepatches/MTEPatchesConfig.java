@@ -78,6 +78,11 @@ public class MTEPatchesConfig {
         @Comment({"Fix multi-farm does not return dirt or sand when replacing soil."})
         @LangKey("config.mtepatches.forestry.multiFarmSoilReplaceFix.name")
         public boolean multiFarmSoilReplaceFix = true;
+
+        @Config.RequiresMcRestart
+        @Comment({"Remove Buildcraft version check for the compat modules. Fixes the module not loading with BC 8.0."})
+        @LangKey("config.mtepatches.forestry.bc8Compat.name")
+        public boolean bc8Compat = true;
     }
 
     @LangKey("config.mtepatches.rftools.name")

@@ -72,7 +72,7 @@ dependencies {
 
     implementation rfg.deobf('libs:BiomesOPlenty-1.12.2-7.0.1.2445-universal')
     // BuildCraft
-    implementation rfg.deobf('libs:buildcraft-all-7.99.24.8')
+    implementation rfg.deobf('libs:buildcraft-all-8.0.0')
 
     //Moar Tinkers
     compileOnly rfg.deobf('libs:Mantle-1.12-1.3.3.55')

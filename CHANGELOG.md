@@ -63,3 +63,5 @@ Added patch for forestry:
 - Performance patches for Biomes o' Plenty
 ## 1.4.9
 - Patch a potential lag at death screen on client-side for vanilla  
+## 1.4.10
+- Fix Forestry's BuildCraft compat modules not working with BC8.0.  
