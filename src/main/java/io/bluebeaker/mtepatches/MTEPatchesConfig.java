@@ -55,6 +55,10 @@ public class MTEPatchesConfig {
         @Comment({"Fixes a bug that on a LAN server, all IC2 messages are sent to the host, instead of the player that should receive the message."})
         @LangKey("config.mtepatches.ic2.lanMessageFix.name")
         public boolean lanMessageFix = true;
+
+        @Comment({"Fixes crops detecting additional dirt under farmland."})
+        @LangKey("config.mtepatches.ic2.cropDirtDetectionFix.name")
+        public boolean cropDirtDetectionFix = true;
     }
 
     @LangKey("config.mtepatches.thermal.name")

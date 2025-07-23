@@ -65,3 +65,5 @@ Added patch for forestry:
 - Patch a potential lag at death screen on client-side for vanilla  
 ## 1.4.10
 - Fix Forestry's BuildCraft compat modules not working with BC8.0.  
+## 1.4.11
+- Fix IC2 Crop Dirt Detection.  

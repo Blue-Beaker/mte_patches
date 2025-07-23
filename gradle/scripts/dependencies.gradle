@@ -49,6 +49,8 @@ dependencies {
 
     runtimeOnly rfg.deobf('libs:theoneprobe-1.12-1.4.28')
 
+    runtimeOnly rfg.deobf('io.bluebeaker.mtetweaks:mtetweaks-1.4.2')
+
     // IC2
     implementation rfg.deobf('industrialcraft-2:industrialcraft-2-2.8.222-ex112')
     // Railcraft

@@ -4,6 +4,8 @@ import ic2.core.crop.TileEntityCrop;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFarmland;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -29,5 +31,14 @@ public abstract class MixinTileEntityCrop {
     public int preventTrample(Random instance, int i){
         if(MTEPatchesConfig.ic2.noTrampleCrops) return 1;
         return instance.nextInt(i);
+    }
+
+    @Redirect(method = "updateTerrainNutrients",at = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;getBlock()Lnet/minecraft/block/Block;"))
+    public Block fixDirtDetection(IBlockState state){
+        Block block = state.getBlock();
+        if(MTEPatchesConfig.ic2.cropDirtDetectionFix && block instanceof BlockFarmland){
+            return Blocks.DIRT;
+        }
+        return block;
     }
 }
