@@ -67,3 +67,5 @@ Added patch for forestry:
 - Fix Forestry's BuildCraft compat modules not working with BC8.0.  
 ## 1.4.11
 - Fix IC2 Crop Dirt Detection.  
+## 1.4.12
+- Fix inventory size of ProjectRed TileFilteredImporter.  
