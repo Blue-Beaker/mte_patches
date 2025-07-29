@@ -71,6 +71,8 @@ Fix breaking speed for machines and parts on ProjectRed. Now their breaking spee
 #### Pressure Tube Item Limit
 Items can cram up in ProjectRed's pressure tubes under some conditions.  
 With this feature, pressure tubes with item stacks more than this value will be considered unpassable when pathfinding, so items won't cram up infinitely and cause huge lags.  
+#### Machine inventory size fix
+Fix inventory sizes of certain machines to fix related crashes.  
 
 ### Storage Drawers
 #### Clear empty slot

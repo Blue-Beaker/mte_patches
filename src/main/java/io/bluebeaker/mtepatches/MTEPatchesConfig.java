@@ -167,6 +167,9 @@ public class MTEPatchesConfig {
         @Comment({"Fix mining speed for machines and parts on ProjectRed"})
         @LangKey("config.mtepatches.projectred.fixMiningSpeed.name")
         public boolean fixMiningSpeed = true;
+        @Comment({"Fix inventory size for certain machines to fix crashes"})
+        @LangKey("config.mtepatches.projectred.fixMachineInventorySizes.name")
+        public boolean fixMachineInventorySizes = true;
         @Comment({"Prevent overflow items cramming in pressure tubes.",
                 "Pressure tubes with stacks more than this value will be considered unpassable when pathfinding, so items won't cram up infinitely and cause huge lags.",
                 "Set to 0 to disable this feature."})
