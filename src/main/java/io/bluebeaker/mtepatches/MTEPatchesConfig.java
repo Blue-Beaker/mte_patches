@@ -32,6 +32,9 @@ public class MTEPatchesConfig {
         @Comment("Fix outfitted tracks drops only the kit but not the track when destroyed.")
         @LangKey("config.mtepatches.railcraft.outfittedDropsFix.name")
         public boolean outfittedDropsFix = true;
+        @Comment("Allow track relayer to replace outfitted track.")
+        @LangKey("config.mtepatches.railcraft.replaceOutfittedTrack.name")
+        public boolean replaceOutfittedTrack = true;
     }
 
     @LangKey("config.mtepatches.ic2.name")

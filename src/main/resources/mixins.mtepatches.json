@@ -37,6 +37,7 @@
     "projectred.MixinWirePart",
     "railcraft.MixinBlockTrackOutfitted",
     "railcraft.MixinBlockTrackTile",
+    "railcraft.MixinCartTrackRelayer",
     "railcraft.MixinRotorRepairRecipe",
     "storagedrawers.MixinTileEntityDrawers",
     "thermal.MixinSawmillManager",
