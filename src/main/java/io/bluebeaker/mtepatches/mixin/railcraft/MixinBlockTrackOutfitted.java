@@ -8,6 +8,7 @@ import mods.railcraft.common.blocks.tracks.outfitted.TileTrackOutfitted;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -38,10 +39,20 @@ public abstract class MixinBlockTrackOutfitted extends BlockTrackTile<TileTrackO
 
     @Override
     public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-        mtepatches_isBeingRemovedByPlayer.set(true);
-        boolean result=super.removedByPlayer(state, world, pos, player, willHarvest);
-        mtepatches_isBeingRemovedByPlayer.set(false);
-        return result;
+        if(MTEPatchesConfig.railcraft.outfittedDropsFix){
+            //noinspection ConstantConditions
+            player.addStat(StatList.getBlockStats(this));
+            player.addExhaustion(0.005F);
+            if (world.isRemote) return true;
+
+            mtepatches_isBeingRemovedByPlayer.set(true);
+            dropBlockAsItem(world,pos,state,0);
+            boolean result = clearBlock(state, world, pos, player);
+            mtepatches_isBeingRemovedByPlayer.set(false);
+            return result;
+        }else {
+            return super.removedByPlayer(state, world, pos, player, willHarvest);
+        }
     }
 
     public void breakRail(World world, BlockPos pos) {
@@ -50,8 +61,6 @@ public abstract class MixinBlockTrackOutfitted extends BlockTrackTile<TileTrackO
             return;
         }
         if (world.isRemote) return;
-//        NonNullList<ItemStack> ret = NonNullList.create();
-//        this.getDrops(ret,world,pos,world.getBlockState(pos),0);
         this.dropBlockAsItem(world,pos,world.getBlockState(pos),0);
         world.destroyBlock(pos, false);
     }
