@@ -69,3 +69,7 @@ Added patch for forestry:
 - Fix IC2 Crop Dirt Detection.  
 ## 1.4.12
 - Fix inventory size of ProjectRed TileFilteredImporter.  
+## 1.5.0
+Added patches for RailCraft:  
+- Fix block drops of outfitted track.  
+- Allow track relayer to replace outfitted track.  

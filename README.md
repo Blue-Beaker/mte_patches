@@ -11,6 +11,10 @@ This mod works outside of the modpack as well.
   
 #### Free Turbine Repair fix  
   Fix turbine being fixed for free when putting in crafting slot with a blade and take it out.
+#### Outfitted Track Drops fix
+Fix outfitted tracks drops only the kit but not the track when destroyed.  
+#### Replace Outfitted Track
+Allow track relayer to replace outfitted track.  
 
 ### IndustrialCraft 2
 #### Mass Fabricator Stuck  
