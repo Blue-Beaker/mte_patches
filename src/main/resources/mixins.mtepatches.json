@@ -36,6 +36,7 @@
     "projectred.MixinTileFilteredImporter",
     "projectred.MixinWirePart",
     "railcraft.MixinBlockTrackOutfitted",
+    "railcraft.MixinBlockTrackTile",
     "railcraft.MixinRotorRepairRecipe",
     "storagedrawers.MixinTileEntityDrawers",
     "thermal.MixinSawmillManager",

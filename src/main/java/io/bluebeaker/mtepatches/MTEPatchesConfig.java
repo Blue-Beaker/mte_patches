@@ -27,7 +27,11 @@ public class MTEPatchesConfig {
 
         @Comment("Fix turbine being fixed for free when putting in crafting slot with a blade and take it out.")
         @LangKey("config.mtepatches.railcraft.turbineCraftingFix.name")
-        public boolean turbineRepairingFix = true; 
+        public boolean turbineRepairingFix = true;
+
+        @Comment("Fix outfitted tracks drops only the kit but not the track when destroyed.")
+        @LangKey("config.mtepatches.railcraft.outfittedDropsFix.name")
+        public boolean outfittedDropsFix = true;
     }
 
     @LangKey("config.mtepatches.ic2.name")
