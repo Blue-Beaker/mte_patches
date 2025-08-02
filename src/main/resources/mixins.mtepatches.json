@@ -35,6 +35,7 @@
     "projectred.MixinPressurePathFinder",
     "projectred.MixinTileFilteredImporter",
     "projectred.MixinWirePart",
+    "railcraft.MixinBlockTrackOutfitted",
     "railcraft.MixinRotorRepairRecipe",
     "storagedrawers.MixinTileEntityDrawers",
     "thermal.MixinSawmillManager",
