@@ -22,7 +22,7 @@ public abstract class MixinTileItemUnloader {
     @Redirect(method = "clearInv()V",at = @At(value = "INVOKE", target = "Lmods/railcraft/common/util/inventory/wrappers/InventoryMapper;moveOneItemTo(Lmods/railcraft/common/util/inventory/IInventoryComposite;)Lnet/minecraft/item/ItemStack;"))
     public ItemStack redirectMoveOneItem2(InventoryMapper instance, IInventoryComposite dest){
         if(railcraft.itemMoveInterval==0) return instance.moveOneItemTo(dest);
-        ItemStack itemStack = InventoryUtils.redirectMoveOneItem(instance, dest, Predicates.alwaysTrue());
+        ItemStack itemStack = InventoryUtils.moveStackInternal(instance, dest, Predicates.alwaysTrue());
         mte_patches$cooldown=InventoryUtils.getCooldownFromMovedStack(itemStack);
         return itemStack;
     }

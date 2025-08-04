@@ -48,7 +48,7 @@ public abstract class MixinTileItemManipulator extends TileManipulatorCart {
     // Optimized method to move items
     @Unique
     private ItemStack mte_patches$moveItems(IInventoryComposite instance, IInventoryComposite dest, Predicate<ItemStack> filter) {
-        ItemStack itemStack = InventoryUtils.redirectMoveOneItem(instance, dest, filter);
+        ItemStack itemStack = InventoryUtils.moveStackInternal(instance, dest, filter);
         mte_patches$cooldown=InventoryUtils.getCooldownFromMovedStack(itemStack);
         mte_patches$lastProcessing=!itemStack.isEmpty();
         return itemStack;
