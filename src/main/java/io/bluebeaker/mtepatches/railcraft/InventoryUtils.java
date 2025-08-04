@@ -32,4 +32,7 @@ public class InventoryUtils {
         }
         return emptyStack();
     }
+    public static int getCooldownFromMovedStack(ItemStack stack){
+        return (stack.isEmpty()?railcraft.itemMoveInterval:Math.min(railcraft.itemMoveInterval, stack.getCount()))-1;
+    }
 }

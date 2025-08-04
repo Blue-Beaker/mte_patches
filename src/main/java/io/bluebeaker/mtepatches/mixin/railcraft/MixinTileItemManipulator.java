@@ -49,7 +49,7 @@ public abstract class MixinTileItemManipulator extends TileManipulatorCart {
     @Unique
     private ItemStack mte_patches$moveItems(IInventoryComposite instance, IInventoryComposite dest, Predicate<ItemStack> filter) {
         ItemStack itemStack = InventoryUtils.redirectMoveOneItem(instance, dest, filter);
-        mte_patches$cooldown=railcraft.itemMoveInterval;
+        mte_patches$cooldown=InventoryUtils.getCooldownFromMovedStack(itemStack);
         mte_patches$lastProcessing=!itemStack.isEmpty();
         return itemStack;
     }
@@ -57,6 +57,7 @@ public abstract class MixinTileItemManipulator extends TileManipulatorCart {
     //Add transfer cooldown
     @Inject(method = "processCart(Lnet/minecraft/entity/item/EntityMinecart;)V",at = @At("HEAD"),cancellable = true)
     public void transferCooldown(EntityMinecart cart, CallbackInfo ci){
+        if(railcraft.itemMoveInterval==0) return;
         //Reset cooldown if cart changed
         UUID cartID = cart.getUniqueID();
         if(cartID!= mte_patches$lastCartID){

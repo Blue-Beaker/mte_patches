@@ -23,7 +23,7 @@ public abstract class MixinTileItemUnloader {
     public ItemStack redirectMoveOneItem2(InventoryMapper instance, IInventoryComposite dest){
         if(railcraft.itemMoveInterval==0) return instance.moveOneItemTo(dest);
         ItemStack itemStack = InventoryUtils.redirectMoveOneItem(instance, dest, Predicates.alwaysTrue());
-        mte_patches$cooldown=railcraft.itemMoveInterval;
+        mte_patches$cooldown=InventoryUtils.getCooldownFromMovedStack(itemStack);
         return itemStack;
     }
     //Add transfer cooldown
