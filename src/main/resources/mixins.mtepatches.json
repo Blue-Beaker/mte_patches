@@ -39,6 +39,7 @@
     "railcraft.MixinBlockTrackTile",
     "railcraft.MixinCartTrackRelayer",
     "railcraft.MixinRotorRepairRecipe",
+    "railcraft.MixinTileItemManipulator",
     "storagedrawers.MixinTileEntityDrawers",
     "thermal.MixinSawmillManager",
     "thermal.MixinSmelterManager"
