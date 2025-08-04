@@ -6,6 +6,7 @@ import mods.railcraft.common.blocks.machine.manipulator.TileManipulatorCart;
 import mods.railcraft.common.util.inventory.IInventoryComposite;
 import mods.railcraft.common.util.misc.Predicates;
 import net.minecraft.item.ItemStack;
+import org.spongepowered.asm.mixin.Intrinsic;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -49,5 +50,9 @@ public abstract class MixinTileItemManipulator extends TileManipulatorCart {
         mte_patches$cooldown=railcraft.itemMoveInterval;
         mte_patches$lastProcessing=!itemStack.isEmpty();
         return itemStack;
+    }
+    @Intrinsic
+    protected void onNoCart() {
+        mte_patches$cooldown=0;
     }
 }
