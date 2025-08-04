@@ -3,6 +3,7 @@ config.mtepatches.railcraft.multiblockfix.name=Multiblock Sync Fix
 config.mtepatches.railcraft.turbineCraftingFix.name=Turbine Repairing Fix
 config.mtepatches.railcraft.outfittedDropsFix.name=Outfitted Tracks Drop Fix
 config.mtepatches.railcraft.replaceOutfittedTrack.name=Allow Replace Outfitted Tracks
+config.mtepatches.railcraft.itemMoveInterval.name=Item Transfer Interval
 
 config.mtepatches.ic2.name=IC2
 config.mtepatches.ic2.cropOnAllFarmlands.name=Crop on all farmlands

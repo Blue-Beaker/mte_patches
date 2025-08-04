@@ -36,8 +36,8 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.railcraft.replaceOutfittedTrack.name")
         public boolean replaceOutfittedTrack = true;
 
-        @Comment({"Optimize Item Manipulators by moving more items at a time, reducing lag. ",
-            "This config Minimal interval to move items. ","Set to 0 to disable the optimization."})
+        @Comment({"Optimize Item Loader/Unloaders by moving more multiple items at a time, then wait for a cooldown, reducing lag. ",
+            "This changes the interval to move items. Also affects maximum moved stacksize.","Set to 0 to disable the optimization."})
         @LangKey("config.mtepatches.railcraft.itemMoveInterval.name")
         @Config.RangeInt(min = 0)
         public int itemMoveInterval = 16;
