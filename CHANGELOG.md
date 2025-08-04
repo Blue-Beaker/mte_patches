@@ -73,3 +73,5 @@ Added patch for forestry:
 Added patches for RailCraft:  
 - Fix block drops of outfitted track.  
 - Allow track relayer to replace outfitted track.  
+## 1.5.1
+Added item loader/unloader optimization for RailCraft  

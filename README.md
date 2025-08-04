@@ -15,6 +15,8 @@ This mod works outside of the modpack as well.
 Fix outfitted tracks drops only the kit but not the track when destroyed.  
 #### Replace Outfitted Track
 Allow track relayer to replace outfitted track.  
+#### Item Loader/Unloader Optimization
+Optimize item loader/unloaders by moving many items at an interval, instead of moving one item every tick  
 
 ### IndustrialCraft 2
 #### Mass Fabricator Stuck  
