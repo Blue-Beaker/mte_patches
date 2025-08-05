@@ -37,10 +37,18 @@ public class MTEPatchesConfig {
         public boolean replaceOutfittedTrack = true;
 
         @Comment({"Optimize Item Loader/Unloaders by moving more multiple items at a time, then wait for a cooldown, reducing lag. ",
-            "This changes the interval to move items. Also affects maximum moved stacksize.","Set to 0 to disable the optimization."})
+        "This option changes the interval to move items. Also affects maximum moved stacksize.","Set to 0 to disable the optimization."})
         @LangKey("config.mtepatches.railcraft.itemMoveInterval.name")
         @Config.RangeInt(min = 0)
         public int itemMoveInterval = 16;
+
+        @Comment({"Tile caches can miss some updates occuring in neighbouring tileentities, like multiblock formation. ",
+        "This patch adds an interval(in ticks) to purge the cache.",
+        "Even when the interval is reached, the cache only will be purged when it's accessed, like when item unloader unloading items.",
+        "Set to 0 to disable."})
+        @LangKey("config.mtepatches.railcraft.tileCachePurgeInterval.name")
+        @Config.RangeInt(min = 0)
+        public int tileCachePurgeInterval = 200;
     }
 
     @LangKey("config.mtepatches.ic2.name")

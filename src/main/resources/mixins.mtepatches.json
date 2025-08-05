@@ -35,6 +35,7 @@
     "projectred.MixinPressurePathFinder",
     "projectred.MixinTileFilteredImporter",
     "projectred.MixinWirePart",
+    "railcraft.MixinAdjacentTileCache",
     "railcraft.MixinBlockTrackOutfitted",
     "railcraft.MixinBlockTrackTile",
     "railcraft.MixinCartTrackRelayer",
