@@ -75,3 +75,5 @@ Added patches for RailCraft:
 - Allow track relayer to replace outfitted track.  
 ## 1.5.1
 Added item loader/unloader optimization for RailCraft  
+## 1.5.2
+Added Tile Cache Purging for RailCraft

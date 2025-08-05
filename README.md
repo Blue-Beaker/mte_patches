@@ -17,6 +17,9 @@ Fix outfitted tracks drops only the kit but not the track when destroyed.
 Allow track relayer to replace outfitted track.  
 #### Item Loader/Unloader Optimization
 Optimize item loader/unloaders by moving many items at an interval, instead of moving one item every tick  
+#### Tile Cache Purging
+Tile caches can miss some updates occuring in neighbouring tileentities, like multiblock formation.  
+This patch adds an interval(in ticks) to purge the cache.  
 
 ### IndustrialCraft 2
 #### Mass Fabricator Stuck  
