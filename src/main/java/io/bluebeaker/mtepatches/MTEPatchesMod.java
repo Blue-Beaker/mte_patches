@@ -30,9 +30,6 @@ public class MTEPatchesMod
     
     public MTEPatchesMod() {
         MinecraftForge.EVENT_BUS.register(this);
-        if(LoadedModChecker.railcraft.isLoaded()){
-            MinecraftForge.EVENT_BUS.register(RCMultiblockPatch.class);
-        }
         if(LoadedModChecker.buildcraftcore.isLoaded()){
             BCCapabilityAdapter.INSTANCE.init();
             MinecraftForge.EVENT_BUS.register(BCCapabilityAdapter.INSTANCE);
@@ -51,6 +48,14 @@ public class MTEPatchesMod
     public void init(FMLInitializationEvent event){
         if(LoadedModChecker.buildcraftcore.isLoaded()){
             BCUtils.updateValues();
+        }
+        if(LoadedModChecker.railcraft.isLoaded()){
+            try {
+                Class.forName("mods.railcraft.common.blocks.multi.TileMultiBlock");
+                MinecraftForge.EVENT_BUS.register(RCMultiblockPatch.class);
+            } catch (ClassNotFoundException e) {
+                logger.error("Could not load RCMultiblockPatch: ", e);
+            }
         }
     }
 
