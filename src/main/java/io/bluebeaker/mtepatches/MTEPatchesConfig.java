@@ -216,4 +216,6 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.bop.disableFog.name")
         public boolean disableFog = false;
     }
+    @Comment("Enable debug output for some patches. May cause log spamming!")
+    public static boolean debugOutput = false;
 }

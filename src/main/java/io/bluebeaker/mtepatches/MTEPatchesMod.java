@@ -77,4 +77,8 @@ public class MTEPatchesMod
     public static void logInfo(String log){
         logger.info(log);
     }
+    public static void logDebug(String log,Object... params){
+        if(MTEPatchesConfig.debugOutput)
+            logger.info(log,params);
+    }
 }

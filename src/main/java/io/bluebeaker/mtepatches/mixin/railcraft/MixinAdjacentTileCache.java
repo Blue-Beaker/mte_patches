@@ -35,6 +35,6 @@ public abstract class MixinAdjacentTileCache {
         mtepatches_last_world_time=newTime;
 
         purge();
-        MTEPatchesMod.getLogger().info("Purging tile at {}",source.getPos());
+        MTEPatchesMod.logDebug("Purging tile at {}",source.getPos());
     }
 }

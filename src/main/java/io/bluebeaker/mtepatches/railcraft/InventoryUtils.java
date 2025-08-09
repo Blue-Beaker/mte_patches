@@ -10,7 +10,7 @@ import static mods.railcraft.common.util.inventory.InvTools.emptyStack;
 
 public class InventoryUtils {
     public static ItemStack moveStackInternal(IInventoryComposite instance, IInventoryComposite dest, Predicate<ItemStack> filter){
-//        MTEPatchesMod.getLogger().info("Redirect move item: {} {}",instance,dest);
+//        MTEPatchesMod.logDebug("Redirect move item: {} {}",instance,dest);
         return instance.stream().map(src -> moveStackInternal(src,dest, filter))
                 .filter(InvTools::nonEmpty)
                 .findFirst().orElseGet(InvTools::emptyStack);

@@ -106,3 +106,6 @@ Added item loader/unloader optimization for RailCraft
 ## 1.5.2
 Added Tile Cache Purging for RailCraft  
 Fix crash with RailCraft 12.1.0-beta. TileMultiBlock patch still not work with that version.  
+
+## 1.5.3
+Configurable debug output  

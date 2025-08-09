@@ -1,9 +1,5 @@
 package io.bluebeaker.mtepatches;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 import mods.railcraft.common.blocks.multi.TileMultiBlock;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -11,6 +7,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.event.world.ChunkWatchEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class RCMultiblockPatch {
     
@@ -20,8 +20,8 @@ public class RCMultiblockPatch {
         Chunk chunk = event.getChunkInstance();
         RCMultiblockPatch patch = new RCMultiblockPatch(chunk);
         patch.updateRecursive(chunk);
-        // if(patch.markedChunks.size()>0)
-        // MTEPatchesMod.logInfo(patch.markedChunks.toString());
+         if(!patch.markedChunks.isEmpty())
+            MTEPatchesMod.logDebug("Marked chunks: {}",patch.markedChunks.toString());
     }
 
     public Set<Chunk> markedChunks = new HashSet<Chunk>();
