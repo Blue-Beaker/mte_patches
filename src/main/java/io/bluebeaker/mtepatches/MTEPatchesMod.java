@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.versioning.ComparableVersion;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Nullable;
@@ -50,11 +51,17 @@ public class MTEPatchesMod
             BCUtils.updateValues();
         }
         if(LoadedModChecker.railcraft.isLoaded()){
-            try {
-                Class.forName("mods.railcraft.common.blocks.multi.TileMultiBlock");
-                MinecraftForge.EVENT_BUS.register(RCMultiblockPatch.class);
-            } catch (ClassNotFoundException e) {
-                logger.error("Could not load RCMultiblockPatch: ", e);
+            ComparableVersion rcVersion = new ComparableVersion(LoadedModChecker.railcraft.getVersion());
+            int compared = rcVersion.compareTo(new ComparableVersion("12.1.0"));
+            if(compared < 0){
+                try {
+                    Class.forName("mods.railcraft.common.blocks.multi.TileMultiBlock");
+                    MinecraftForge.EVENT_BUS.register(RCMultiblockPatch.class);
+                } catch (ClassNotFoundException e) {
+                    logger.error("Could not load RCMultiblockPatch: ", e);
+                }
+            }else {
+                logger.info("RCMultiblockPatch is not needed for Railcraft version {}, not loading it",rcVersion);
             }
         }
     }

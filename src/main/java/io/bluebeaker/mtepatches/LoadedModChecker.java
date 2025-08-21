@@ -30,5 +30,7 @@ public enum LoadedModChecker {
         this.isLoaded = Loader.isModLoaded(this.modid);
         return this.isLoaded;
     }
-
+    public String getVersion(){
+        return Loader.instance().getIndexedModList().get(this.modid).getVersion();
+    }
 }
