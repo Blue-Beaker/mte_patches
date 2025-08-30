@@ -109,3 +109,6 @@ Fix crash with RailCraft 12.1.0-beta. TileMultiBlock patch still not work with t
 
 ## 1.5.3
 Reduce debug output and make them configurable  
+
+## 1.5.4
+Fix the 'fitted track drop' patch causing NullPointerException  

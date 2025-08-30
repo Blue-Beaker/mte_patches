@@ -29,13 +29,13 @@ public abstract class MixinBlockTrackOutfitted extends BlockTrackTile<TileTrackO
         try {
             if (tile instanceof TileTrackOutfitted)
                 ((TileTrackOutfitted) tile).getTrackType().getBaseBlock().getDrops(items,world,pos,state,fortune);
-        } catch (Error e) {
+        } catch (Exception e) {
             MTEPatchesMod.getLogger().error("Exception in MixinBlockTrackOutfitted:",e);
         }
     }
 
     @Unique
-    ThreadLocal<Boolean> mtepatches_isBeingRemovedByPlayer = new ThreadLocal<>();
+    ThreadLocal<Boolean> mtepatches_isBeingRemovedByPlayer = ThreadLocal.withInitial(() -> false);
 
     @Override
     public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
