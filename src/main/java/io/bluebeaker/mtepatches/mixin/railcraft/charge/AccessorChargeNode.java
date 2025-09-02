@@ -11,9 +11,7 @@ public interface AccessorChargeNode {
     @Accessor("invalid")
     void setInvalid(boolean value);
     @Accessor("chargeGrid")
-    ChargeGrid getChargeGrid();
-    @Accessor("chargeGrid")
-    void setChargeGrid(ChargeGrid grid);
+    void setGrid(ChargeGrid grid);
     @Accessor("pos")
     BlockPos getPos();
 }

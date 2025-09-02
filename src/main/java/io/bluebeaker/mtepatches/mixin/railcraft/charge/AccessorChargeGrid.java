@@ -11,6 +11,8 @@ import java.util.Set;
 public interface AccessorChargeGrid {
     @Accessor("invalid")
     void setInvalid(boolean value);
+    @Accessor("invalid")
+    boolean getInvalid();
     @Accessor("chargeNodes")
     Set<ChargeNetwork.ChargeNode> getChargeNodes();
     @Invoker("destroy")

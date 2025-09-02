@@ -36,6 +36,11 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.railcraft.replaceOutfittedTrack.name")
         public boolean replaceOutfittedTrack = true;
 
+        @Comment({"Fixes charge network, improving its stability.",
+                "Charge network should break less with this option on."})
+        @LangKey("config.mtepatches.railcraft.chargeNetworkFix.name")
+        public boolean chargeNetworkFix = true;
+
         @Comment({"Optimize Item Loader/Unloaders by moving more multiple items at a time, then wait for a cooldown, reducing lag. ",
         "This option changes the interval to move items. Also affects maximum moved stacksize.","Set to 0 to disable the optimization."})
         @LangKey("config.mtepatches.railcraft.itemMoveInterval.name")
