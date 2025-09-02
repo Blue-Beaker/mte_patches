@@ -42,6 +42,10 @@
     "railcraft.MixinRotorRepairRecipe",
     "railcraft.MixinTileItemManipulator",
     "railcraft.MixinTileItemUnloader",
+    "railcraft.charge.AccessorChargeGrid",
+    "railcraft.charge.AccessorChargeNode",
+    "railcraft.charge.MixinChargeGrid",
+    "railcraft.charge.MixinChargeNetwork",
     "storagedrawers.MixinTileEntityDrawers",
     "thermal.MixinSawmillManager",
     "thermal.MixinSmelterManager"
