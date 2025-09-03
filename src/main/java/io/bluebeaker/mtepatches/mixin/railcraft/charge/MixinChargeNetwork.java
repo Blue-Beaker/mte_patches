@@ -4,6 +4,7 @@ import com.google.common.collect.ForwardingCollection;
 import com.google.common.collect.ForwardingMap;
 import com.google.common.collect.ImmutableSet;
 import com.llamalad7.mixinextras.sugar.Local;
+import io.bluebeaker.mtepatches.MTEPatchesMod;
 import io.bluebeaker.mtepatches.railcraft.ChargeDebug;
 import mods.railcraft.api.charge.IChargeBlock;
 import mods.railcraft.common.util.charge.ChargeNetwork;
@@ -60,9 +61,29 @@ public abstract class MixinChargeNetwork {
     @Unique
     private final Set<BlockPos> mte_patches$lastUpdatedBlocks = new HashSet<>();
 
+    @Unique
+    int mte_patches$loopcounter = 0;
+
     @Inject(method = "tick",at = @At("TAIL"))
     private void afterAddedNodes(CallbackInfo ci, @Local(ordinal = 0) Set<BlockPos> added){
         if(!railcraft.chargeNetworkFix) return;
+
+        if(mte_patches$changedGrids.isEmpty() && mte_patches$destroyedUpdatePos.isEmpty() && mte_patches$addNodeUpdated.isEmpty() && mte_patches$lastUpdatedBlocks.isEmpty()){
+            mte_patches$loopcounter=0;
+        }else {
+            mte_patches$loopcounter++;
+            if(mte_patches$loopcounter==500){
+                MTEPatchesMod.getLogger().warn("Charge Network Patch has kept running for {} ticks, maybe there's something keeps updating charge blocks, or problems in the code?",mte_patches$loopcounter);
+            }
+            if(mte_patches$loopcounter>=1000){
+                MTEPatchesMod.getLogger().warn("Charge Network Patch has kept running for {} ticks, force cleaning...",mte_patches$loopcounter);
+                mte_patches$changedGrids.clear();
+                mte_patches$destroyedUpdatePos.clear();
+                mte_patches$addNodeUpdated.clear();
+                mte_patches$lastUpdatedBlocks.clear();
+            }
+        }
+
         World world1 = world.get();
         if(world1==null) return;
         for (ChargeGrid grid1 : mte_patches$changedGrids) {
