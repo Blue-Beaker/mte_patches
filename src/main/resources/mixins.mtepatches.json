@@ -46,6 +46,7 @@
     "railcraft.charge.AccessorChargeNode",
     "railcraft.charge.MixinChargeGrid",
     "railcraft.charge.MixinChargeNetwork",
+    "railcraft.charge.MixinChargeNode",
     "storagedrawers.MixinTileEntityDrawers",
     "thermal.MixinSawmillManager",
     "thermal.MixinSmelterManager"

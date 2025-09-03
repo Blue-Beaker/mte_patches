@@ -43,7 +43,7 @@ public class ChargeDebug {
 //                    nodesMessage.append(pos1.getX()+","+pos1.getY()+","+pos1.getZ()+";");
                 }
                 ChargeNetwork.ChargeGrid grid = node.getGrid();
-                player.sendStatusMessage(new TextComponentString("Size="+grid.size()+", Grid="+node.getGrid()),true);
+                player.sendStatusMessage(new TextComponentString("Size="+grid.size()+", Grid="+grid),true);
             }
         }
     }
@@ -58,14 +58,14 @@ public class ChargeDebug {
     public static void summonDebugParticle(World world1, EnumParticleTypes particle, BlockPos pos1){
         if(!railcraft.chargeNetworkFixDebug) return;
         if(world1 instanceof WorldServer){
-            ((WorldServer)world1).spawnParticle(particle, pos1.getX()+0.5, pos1.getY()+1, pos1.getZ()+0.5, 10, 0.0, 0.0,0.0,0);
+            ((WorldServer)world1).spawnParticle(particle, pos1.getX()+0.5, pos1.getY()+1, pos1.getZ()+0.5, 5, 0.0, 0.0,0.0,0);
         }
     }
     public static void summonDebugParticle(World world1, EnumParticleTypes particle, BlockPos pos1, Item item, int meta) {
         if(!railcraft.chargeNetworkFixDebug) return;
         int id = Item.REGISTRY.getIDForObject(item);
         if(world1 instanceof WorldServer){
-            ((WorldServer)world1).spawnParticle(particle, pos1.getX()+0.5, pos1.getY()+1, pos1.getZ()+0.5, 10, 0.0, 0.0,0.0,0,id,meta);
+            ((WorldServer)world1).spawnParticle(particle, pos1.getX()+0.5, pos1.getY()+1, pos1.getZ()+0.5, 5, 0.0, 0.0,0.0,0,id,meta);
         }
     }
 }

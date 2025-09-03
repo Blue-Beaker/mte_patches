@@ -1,17 +1,22 @@
 package io.bluebeaker.mtepatches.mixin.railcraft.charge;
 
+import com.google.common.collect.ForwardingCollection;
+import com.google.common.collect.ForwardingMap;
+import com.google.common.collect.ImmutableSet;
 import com.llamalad7.mixinextras.sugar.Local;
 import io.bluebeaker.mtepatches.railcraft.ChargeDebug;
 import mods.railcraft.api.charge.IChargeBlock;
 import mods.railcraft.common.util.charge.ChargeNetwork;
 import mods.railcraft.common.util.charge.ChargeNetwork.ChargeGrid;
+import mods.railcraft.common.util.charge.ChargeNetwork.ChargeNode;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,17 +27,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.lang.ref.WeakReference;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.BiConsumer;
 
 import static io.bluebeaker.mtepatches.MTEPatchesConfig.railcraft;
+import static mods.railcraft.common.util.charge.ChargeNetwork.CONNECTION_MAPS;
 
 @Mixin(value = ChargeNetwork.class,remap = false)
 public abstract class MixinChargeNetwork {
-    @Shadow @Final private Map<BlockPos, ChargeNetwork.ChargeNode> nodes;
+    @Shadow @Final private Map<BlockPos, ChargeNode> nodes;
     @Shadow protected abstract void forConnections(BlockPos pos, BiConsumer<BlockPos, IBlockState> action);
     @Shadow @Final private WeakReference<World> world;
 
@@ -40,23 +43,34 @@ public abstract class MixinChargeNetwork {
 
     @Shadow public abstract ChargeGrid grid(BlockPos pos);
 
+    @Shadow public abstract boolean addNode(BlockPos pos, IBlockState state);
+
+    @Shadow @Final private Set<ChargeGrid> grids;
+
+    @Shadow @Nullable protected abstract IChargeBlock.ChargeSpec getChargeSpec(IBlockState state, BlockPos pos);
+
+    @Shadow public abstract void removeNode(BlockPos pos);
+
     @Unique
     private final Set<ChargeGrid> mte_patches$changedGrids = new HashSet<>();
     @Unique
+    private final Set<BlockPos> mte_patches$destroyedUpdatePos = new HashSet<>();
+    @Unique
     private final Set<BlockPos> mte_patches$extraBlocksToUpdate = new HashSet<>();
+    @Unique
+    private final Set<BlockPos> mte_patches$lastUpdatedBlocks = new HashSet<>();
 
     @Inject(method = "tick",at = @At("TAIL"))
     private void afterAddedNodes(CallbackInfo ci, @Local(ordinal = 0) Set<BlockPos> added){
         if(!railcraft.chargeNetworkFix) return;
         World world1 = world.get();
         if(world1==null) return;
-
         for (ChargeGrid grid1 : mte_patches$changedGrids) {
             if(((AccessorChargeGrid)grid1).getInvalid()) continue;
 
             Map<BlockPos,IBlockState> blockStateMap = new HashMap<>();
             // Get blocks neighbouring to the grid1
-            for (ChargeNetwork.ChargeNode chargeNode : grid1) {
+            for (ChargeNode chargeNode : grid1) {
                 forConnections(((AccessorChargeNode)chargeNode).getPos(), blockStateMap::put);
             }
             // Register every block in the map
@@ -66,78 +80,118 @@ public abstract class MixinChargeNetwork {
                 Block block = state.getBlock();
                 if(!(block instanceof IChargeBlock)) continue;
 
-                ChargeNetwork.ChargeNode node2 = nodes.get(pos2);
+                ChargeNode node2 = nodes.get(pos2);
                 if(node2!=null){
                     ChargeGrid grid2 = node2.getGrid();
-                    if(grid1==grid2) continue;
+                    if(grid1==grid2) {
+                        ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.BLOCK_CRACK, pos2, Blocks.BROWN_SHULKER_BOX);
+                        continue;
+                    };
+
 //                    if(grid2.isEmpty()){
-//                        ((AccessorChargeGrid) grid2).invokeDestroy(false);
+//                      ((AccessorChargeGrid) grid2).invokeDestroy(false);
 //                    }
-                    for (ChargeNetwork.ChargeNode chargeNode : grid2) {
+                    for (ChargeNode chargeNode : grid2) {
                         BlockPos pos3 = ((AccessorChargeNode) chargeNode).getPos();
                         ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.BLOCK_CRACK, pos3, Blocks.GOLD_BLOCK);
-                        ((AccessorChargeNode) chargeNode).setInvalid(true);
-                        mte_patches$extraBlocksToUpdate.add(pos3);
+//                        ((AccessorChargeNode) chargeNode).setInvalid(true);
+//                        mte_patches$extraBlocksToUpdate.add(pos3);
                     }
+                    ((AccessorChargeGrid) grid2).invokeDestroy(false);
+                    grid1.addAll(grid2);
+
                     BlockPos pos = ((AccessorChargeNode) node2).getPos();
                     ChargeDebug.summonDebugParticle(world1, EnumParticleTypes.VILLAGER_HAPPY, pos);
 //                    grid1.addAll(grid2);
 //                    ((AccessorChargeGrid) grid2).invokeDestroy(false);
 //                    ((AccessorChargeNode)node2).setInvalid(true);
-                    ((AccessorChargeNode)node2).setGrid(NULL_GRID);
-                    mte_patches$extraBlocksToUpdate.add(pos2);
+//                    ((AccessorChargeNode)node2).setGrid(NULL_GRID);
+//                    mte_patches$extraBlocksToUpdate.add(pos2);
                 }else {
                     ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.BLOCK_CRACK, pos2, Blocks.EMERALD_BLOCK);
                 }
-                ((IChargeBlock) block).registerNode(state,world1,pos2);
+                addNode(pos2,state);
             }
         }
         mte_patches$changedGrids.clear();
 
         // Update extra blocks
+        // But don't update the one updated in last tick
+        mte_patches$extraBlocksToUpdate.removeAll(mte_patches$lastUpdatedBlocks);
         for (BlockPos pos3 : mte_patches$extraBlocksToUpdate){
             IBlockState state = world1.getBlockState(pos3);
             Block block = state.getBlock();
             if(!(block instanceof IChargeBlock)) continue;
             ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.WATER_SPLASH, pos3);
-            ((IChargeBlock) block).registerNode(state,world1,pos3);
+            addNode(pos3,state);
         }
+        mte_patches$lastUpdatedBlocks.clear();
         mte_patches$extraBlocksToUpdate.clear();
+
+        // Update connections of removed nodes
+        for (BlockPos updatePos : ImmutableSet.copyOf(mte_patches$destroyedUpdatePos)) {
+            removeNode(updatePos);
+            addNode(updatePos, world1.getBlockState(updatePos));
+        }
+        mte_patches$destroyedUpdatePos.clear();
+
+        // Remove empty grids
+        grids.removeIf(ForwardingCollection::isEmpty);
     }
 
     // Mark grid of added node
-    @Inject(method = "addNodeImpl",at = @At("TAIL"))
-    private void afterAddedNode(BlockPos pos, ChargeNetwork.ChargeNode node,CallbackInfo ci){
+    @Inject(method = "addNodeImpl",at = @At("HEAD"))
+    private void afterAddNode(BlockPos pos, ChargeNode node, CallbackInfo ci){
         World world1 = world.get();
         if(!railcraft.chargeNetworkFix) return;
+        mte_patches$lastUpdatedBlocks.add(pos);
         mte_patches$changedGrids.add(node.getGrid());
-        if(!node.getGrid().contains(node)){
-            node.getGrid().add(node);
-
-            ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.LAVA, pos);
-        }
+//        if(!node.getGrid().contains(node)){
+//            node.getGrid().add(node);
+//            ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.LAVA, pos);
+//        }
+        forConnections(pos,(pos2,state)->{
+            mte_patches$extraBlocksToUpdate.add(pos2);
+            ChargeDebug.summonDebugParticle(world.get(),EnumParticleTypes.BLOCK_CRACK,pos,Blocks.PINK_SHULKER_BOX);
+        });
     }
     // Mark changed blocks around removed node
     @Inject(method = "removeNodeImpl",at = @At("HEAD"))
     private void beforeRemoveNode(BlockPos pos, CallbackInfo ci){
         if(!railcraft.chargeNetworkFix) return;
-        ChargeNetwork.ChargeNode chargeNode = nodes.get(pos);
+        if(mte_patches$lastUpdatedBlocks.contains(pos)) return;
+        mte_patches$lastUpdatedBlocks.add(pos);
+        ChargeNode chargeNode = nodes.get(pos);
         if(chargeNode==null) return;
 
-        for (EnumFacing value : EnumFacing.values()) {
-            BlockPos pos1 = pos.offset(value);
-            mte_patches$extraBlocksToUpdate.add(pos1);
-//            ChargeNetwork.ChargeNode node1 = nodes.get(pos1);
+        World world1 = world.get();
+        if(world1==null) return;
 
+        IChargeBlock.ChargeSpec chargeSpec = chargeNode.getChargeSpec();
+        ForwardingMap<Vec3i, EnumSet<IChargeBlock.ConnectType>> connectionMap = CONNECTION_MAPS.get(chargeSpec.getConnectType());
+        connectionMap.forEach((offset,types)->{
+            BlockPos pos1 = pos.add(offset);
+            mte_patches$destroyedUpdatePos.add(pos1);
+        });
+//        for (EnumFacing value : EnumFacing.values()) {
+//            BlockPos pos1 = pos.offset(value);
+//            mte_patches$destroyedGridsPos.add(pos1);
+//            ChargeNetwork.ChargeNode node1 = nodes.get(pos1);
+//
 //            if(node1!=null && node1.isValid()){
-//                mte_patches$changedGrids.add(node1.getGrid());
+//                ((AccessorChargeNode)node1).setGrid(NULL_GRID);
 //            }
-        }
+//        }
     }
 
     @Inject(method = "needsNode",at = @At("RETURN"), cancellable = true)
-    public void setNodeWithNullGrid(BlockPos pos, IChargeBlock.ChargeSpec chargeSpec, CallbackInfoReturnable<Boolean> cir, @Local ChargeNetwork.ChargeNode node){
-        if(!railcraft.chargeNetworkFix || cir.getReturnValue()) return;
-        if(node.getGrid().isNull() || node.getGrid().isEmpty()) cir.setReturnValue(true);
+    public void needsNodeExtra(BlockPos pos, IChargeBlock.ChargeSpec chargeSpec, CallbackInfoReturnable<Boolean> cir, @Local ChargeNode node){
+        if(!railcraft.chargeNetworkFix) return;
+        if(cir.getReturnValue()){
+            return;
+        };
+        if(node.getGrid().isNull() || node.getGrid().isEmpty() || !node.getGrid().contains(node)){
+            cir.setReturnValue(true);
+        }
     }
 }
