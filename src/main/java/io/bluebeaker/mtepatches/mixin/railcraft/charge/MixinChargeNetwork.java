@@ -56,7 +56,7 @@ public abstract class MixinChargeNetwork {
     @Unique
     private final Set<BlockPos> mte_patches$destroyedUpdatePos = new HashSet<>();
     @Unique
-    private final Set<BlockPos> mte_patches$extraBlocksToUpdate = new HashSet<>();
+    private final Set<BlockPos> mte_patches$addNodeUpdated = new HashSet<>();
     @Unique
     private final Set<BlockPos> mte_patches$lastUpdatedBlocks = new HashSet<>();
 
@@ -88,17 +88,18 @@ public abstract class MixinChargeNetwork {
                         continue;
                     };
 
-//                    if(grid2.isEmpty()){
-//                      ((AccessorChargeGrid) grid2).invokeDestroy(false);
-//                    }
+                    if(grid2.isEmpty()){
+                      grid1.add(node2);
+                      grids.remove(grid2);
+                    }
                     for (ChargeNode chargeNode : grid2) {
                         BlockPos pos3 = ((AccessorChargeNode) chargeNode).getPos();
                         ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.BLOCK_CRACK, pos3, Blocks.GOLD_BLOCK);
 //                        ((AccessorChargeNode) chargeNode).setInvalid(true);
 //                        mte_patches$extraBlocksToUpdate.add(pos3);
                     }
-                    ((AccessorChargeGrid) grid2).invokeDestroy(false);
                     grid1.addAll(grid2);
+                    ((AccessorChargeGrid) grid2).invokeDestroy(false);
 
                     BlockPos pos = ((AccessorChargeNode) node2).getPos();
                     ChargeDebug.summonDebugParticle(world1, EnumParticleTypes.VILLAGER_HAPPY, pos);
@@ -115,10 +116,20 @@ public abstract class MixinChargeNetwork {
         }
         mte_patches$changedGrids.clear();
 
+        mte_patches$updateAddedConnections(world1);
+
+        mte_patches$updateRemovedConnections(world1);
+
+        // Remove empty grids
+        grids.removeIf(ForwardingCollection::isEmpty);
+    }
+
+    @Unique
+    private void mte_patches$updateAddedConnections(World world1) {
         // Update extra blocks
         // But don't update the one updated in last tick
-        mte_patches$extraBlocksToUpdate.removeAll(mte_patches$lastUpdatedBlocks);
-        for (BlockPos pos3 : mte_patches$extraBlocksToUpdate){
+        mte_patches$addNodeUpdated.removeAll(mte_patches$lastUpdatedBlocks);
+        for (BlockPos pos3 : mte_patches$addNodeUpdated){
             IBlockState state = world1.getBlockState(pos3);
             Block block = state.getBlock();
             if(!(block instanceof IChargeBlock)) continue;
@@ -126,17 +137,20 @@ public abstract class MixinChargeNetwork {
             addNode(pos3,state);
         }
         mte_patches$lastUpdatedBlocks.clear();
-        mte_patches$extraBlocksToUpdate.clear();
+        mte_patches$addNodeUpdated.clear();
+    }
 
+    @Unique
+    private void mte_patches$updateRemovedConnections(World world1) {
         // Update connections of removed nodes
         for (BlockPos updatePos : ImmutableSet.copyOf(mte_patches$destroyedUpdatePos)) {
-            removeNode(updatePos);
+//            removeNode(updatePos);
+            ChargeNode node = nodes.remove(updatePos);
+            if(node==null) continue;
+            ((AccessorChargeNode)node).setInvalid(true);
             addNode(updatePos, world1.getBlockState(updatePos));
         }
         mte_patches$destroyedUpdatePos.clear();
-
-        // Remove empty grids
-        grids.removeIf(ForwardingCollection::isEmpty);
     }
 
     // Mark grid of added node
@@ -151,7 +165,7 @@ public abstract class MixinChargeNetwork {
 //            ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.LAVA, pos);
 //        }
         forConnections(pos,(pos2,state)->{
-            mte_patches$extraBlocksToUpdate.add(pos2);
+            mte_patches$addNodeUpdated.add(pos2);
             ChargeDebug.summonDebugParticle(world.get(),EnumParticleTypes.BLOCK_CRACK,pos,Blocks.PINK_SHULKER_BOX);
         });
     }
