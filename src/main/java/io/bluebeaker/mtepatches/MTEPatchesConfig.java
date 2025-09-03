@@ -40,6 +40,7 @@ public class MTEPatchesConfig {
                 "Charge network should break less with this option on."})
         @LangKey("config.mtepatches.railcraft.chargeNetworkFix.name")
         public boolean chargeNetworkFix = true;
+        public boolean chargeNetworkFixDebug = false;
 
         @Comment({"Optimize Item Loader/Unloaders by moving more multiple items at a time, then wait for a cooldown, reducing lag. ",
         "This option changes the interval to move items. Also affects maximum moved stacksize.","Set to 0 to disable the optimization."})

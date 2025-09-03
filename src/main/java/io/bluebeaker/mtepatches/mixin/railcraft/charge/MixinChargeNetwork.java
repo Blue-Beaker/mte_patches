@@ -1,12 +1,15 @@
 package io.bluebeaker.mtepatches.mixin.railcraft.charge;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import io.bluebeaker.mtepatches.railcraft.ChargeDebug;
 import mods.railcraft.api.charge.IChargeBlock;
 import mods.railcraft.common.util.charge.ChargeNetwork;
 import mods.railcraft.common.util.charge.ChargeNetwork.ChargeGrid;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
@@ -52,9 +55,8 @@ public abstract class MixinChargeNetwork {
             if(((AccessorChargeGrid)grid1).getInvalid()) continue;
 
             Map<BlockPos,IBlockState> blockStateMap = new HashMap<>();
-            AccessorChargeGrid grid = (AccessorChargeGrid) grid1;
             // Get blocks neighbouring to the grid1
-            for (ChargeNetwork.ChargeNode chargeNode : grid.getChargeNodes()) {
+            for (ChargeNetwork.ChargeNode chargeNode : grid1) {
                 forConnections(((AccessorChargeNode)chargeNode).getPos(), blockStateMap::put);
             }
             // Register every block in the map
@@ -71,9 +73,21 @@ public abstract class MixinChargeNetwork {
 //                    if(grid2.isEmpty()){
 //                        ((AccessorChargeGrid) grid2).invokeDestroy(false);
 //                    }
-                    ((AccessorChargeGrid) grid2).invokeDestroy(true);
-                    ((AccessorChargeNode)node2).setInvalid(true);
+                    for (ChargeNetwork.ChargeNode chargeNode : grid2) {
+                        BlockPos pos3 = ((AccessorChargeNode) chargeNode).getPos();
+                        ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.BLOCK_CRACK, pos3, Blocks.GOLD_BLOCK);
+                        ((AccessorChargeNode) chargeNode).setInvalid(true);
+                        mte_patches$extraBlocksToUpdate.add(pos3);
+                    }
+                    BlockPos pos = ((AccessorChargeNode) node2).getPos();
+                    ChargeDebug.summonDebugParticle(world1, EnumParticleTypes.VILLAGER_HAPPY, pos);
+//                    grid1.addAll(grid2);
+//                    ((AccessorChargeGrid) grid2).invokeDestroy(false);
+//                    ((AccessorChargeNode)node2).setInvalid(true);
+                    ((AccessorChargeNode)node2).setGrid(NULL_GRID);
                     mte_patches$extraBlocksToUpdate.add(pos2);
+                }else {
+                    ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.BLOCK_CRACK, pos2, Blocks.EMERALD_BLOCK);
                 }
                 ((IChargeBlock) block).registerNode(state,world1,pos2);
             }
@@ -85,6 +99,7 @@ public abstract class MixinChargeNetwork {
             IBlockState state = world1.getBlockState(pos3);
             Block block = state.getBlock();
             if(!(block instanceof IChargeBlock)) continue;
+            ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.WATER_SPLASH, pos3);
             ((IChargeBlock) block).registerNode(state,world1,pos3);
         }
         mte_patches$extraBlocksToUpdate.clear();
@@ -93,8 +108,14 @@ public abstract class MixinChargeNetwork {
     // Mark grid of added node
     @Inject(method = "addNodeImpl",at = @At("TAIL"))
     private void afterAddedNode(BlockPos pos, ChargeNetwork.ChargeNode node,CallbackInfo ci){
+        World world1 = world.get();
         if(!railcraft.chargeNetworkFix) return;
         mte_patches$changedGrids.add(node.getGrid());
+        if(!node.getGrid().contains(node)){
+            node.getGrid().add(node);
+
+            ChargeDebug.summonDebugParticle(world1,EnumParticleTypes.LAVA, pos);
+        }
     }
     // Mark changed blocks around removed node
     @Inject(method = "removeNodeImpl",at = @At("HEAD"))
@@ -106,11 +127,11 @@ public abstract class MixinChargeNetwork {
         for (EnumFacing value : EnumFacing.values()) {
             BlockPos pos1 = pos.offset(value);
             mte_patches$extraBlocksToUpdate.add(pos1);
-            ChargeNetwork.ChargeNode node1 = nodes.get(pos1);
+//            ChargeNetwork.ChargeNode node1 = nodes.get(pos1);
 
-            if(node1!=null && node1.isValid()){
-                mte_patches$changedGrids.add(node1.getGrid());
-            }
+//            if(node1!=null && node1.isValid()){
+//                mte_patches$changedGrids.add(node1.getGrid());
+//            }
         }
     }
 
