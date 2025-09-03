@@ -156,7 +156,6 @@ public abstract class MixinChargeNetwork {
     // Mark grid of added node
     @Inject(method = "addNodeImpl",at = @At("HEAD"))
     private void afterAddNode(BlockPos pos, ChargeNode node, CallbackInfo ci){
-        World world1 = world.get();
         if(!railcraft.chargeNetworkFix) return;
         mte_patches$lastUpdatedBlocks.add(pos);
         mte_patches$changedGrids.add(node.getGrid());

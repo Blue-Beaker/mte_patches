@@ -36,10 +36,13 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.railcraft.replaceOutfittedTrack.name")
         public boolean replaceOutfittedTrack = true;
 
-        @Comment({"Fixes charge network, improving its stability.",
-                "Charge network should break less with this option on."})
+        @Comment({"This fix improves stability of charge network by a lot, but it's still a bit buggy yet.",
+                "Try to place and break cables when ran into problem with charge network."})
         @LangKey("config.mtepatches.railcraft.chargeNetworkFix.name")
         public boolean chargeNetworkFix = true;
+
+        @Comment({"Show debug particles and message for the charge network fix."})
+        @LangKey("config.mtepatches.railcraft.chargeNetworkFixDebug.name")
         public boolean chargeNetworkFixDebug = false;
 
         @Comment({"Optimize Item Loader/Unloaders by moving more multiple items at a time, then wait for a cooldown, reducing lag. ",
