@@ -112,3 +112,6 @@ Reduce debug output and make them configurable
 
 ## 1.5.4
 Fix the 'fitted track drop' patch causing NullPointerException  
+
+## 1.5.5
+Added experimental charge network patch to RailCraft  

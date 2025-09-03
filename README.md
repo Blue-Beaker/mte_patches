@@ -20,6 +20,8 @@ Optimize item loader/unloaders by moving many items at an interval, instead of m
 #### Tile Cache Purging
 Tile caches can miss some updates occuring in neighbouring tileentities, like multiblock formation.  
 This patch adds an interval(in ticks) to purge the cache.  
+#### Charge Network Fix[EXPERIMENTAL]
+Charge Network in RC is very buggy. This fix improves its stability by a lot, but it's still a bit buggy yet.  
 
 ### IndustrialCraft 2
 #### Mass Fabricator Stuck  
