@@ -6,9 +6,9 @@ This mod works outside of the modpack as well.
 ### Railcraft
 #### Multiblock Desync fix  
   Fix a desync bug of multiblock that when the multiblock is across chunks.
-  This can be easily reproduced by building a multiblock tank across 4 chunks, forceload one chunk of them, walk away from the tank, quit and rejoin world, then walk back slowly. 
+  This can be easily reproduced by building a multiblock tank across 4 chunks, forceload one chunk of them, walk away from the tank, quit and rejoin world, then walk back slowly.  
   When desync, client can get its inventory scrambled when right-clicking at the bugged multiblock.  
-  
+  RC 12.1.0-beta8 doesn't need this fix. Other fixes may still work.  
 #### Free Turbine Repair fix  
   Fix turbine being fixed for free when putting in crafting slot with a blade and take it out.
 #### Outfitted Track Drops fix
