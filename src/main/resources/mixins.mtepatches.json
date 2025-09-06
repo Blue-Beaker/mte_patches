@@ -11,6 +11,7 @@
     "buildcraft.MixinPipeFlowPowerSection",
     "buildcraft.MixinPluggablePowerAdaptor",
     "forestry.MixinBeeKeepingLogic",
+    "forestry.MixinBlockEngine",
     "forestry.MixinFarmController",
     "forestry.MixinPluginBuildCraftFuels",
     "forestry.MixinPluginBuildCraftRecipes",
