@@ -178,6 +178,9 @@ public class MTEPatchesConfig {
         @Comment({"Fixes a item duplication bug for the insertion conveyor upgrade"})
         @LangKey("config.mtepatches.industrialforegoing.fixConveyorInsertionDuplication.name")
         public boolean fixConveyorInsertionDuplication = true;
+        @Comment({"Do null check before meat feeder drains fluid from containers. Prevents potential NullPointerException."})
+        @LangKey("config.mtepatches.industrialforegoing.fixMeatFeederTickNull.name")
+        public boolean fixMeatFeederTickNull = true;
     }
 
     public static CategoryConnectionTimeout connectionTimeout = new CategoryConnectionTimeout();

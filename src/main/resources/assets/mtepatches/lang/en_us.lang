@@ -45,6 +45,7 @@ config.mtepatches.moarTinkers.sneakDisablesMiningBoost.name=Disable Mining Boost
 
 config.mtepatches.industrialforegoing.name=Industrial Foregoing
 config.mtepatches.industrialforegoing.fixConveyorInsertionDuplication.name=Insertion Conveyor Duplication Fix
+config.mtepatches.industrialforegoing.fixMeatFeederTickNull.name=Meat Feeder Null Handler Check
 
 config.mtepatches.connectionTimeout.name=Connection Timeout
 config.mtepatches.connectionTimeout.timeout.name=Connection Timeout (ms)

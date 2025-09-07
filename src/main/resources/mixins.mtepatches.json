@@ -23,6 +23,8 @@
     "ic2.MixinTileEntityCropmatron",
     "industrialforegoing.MixinCommonProxy",
     "industrialforegoing.MixinConveyorInsertionUpgrade",
+    "industrialforegoing.MixinMeatFeederBaubles",
+    "industrialforegoing.MixinMeatFeederHandler",
     "moartinkers.MixinTraitEnergyEater",
     "moartinkers.MixinTraitLightboost",
     "moartinkers.MixinTraitManaEater",

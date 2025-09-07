@@ -115,3 +115,7 @@ Fix the 'fitted track drop' patch causing NullPointerException
 
 ## 1.5.5
 Added experimental charge network patch to RailCraft  
+
+## 1.5.6
+- Fix forestry bio generator collision box
+- Patch Industrial Foregoing, add null handler check before Meat Feeder ticks: Do null check before meat feeder drains fluid from containers. Prevents potential NullPointerException

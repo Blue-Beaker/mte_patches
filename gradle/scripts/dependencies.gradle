@@ -65,6 +65,8 @@ dependencies {
     implementation rfg.deobf('libs:ThermalExpansion-1.12.2-5.5.7.1-universal')
     implementation rfg.deobf('libs:ThermalFoundation-1.12.2-2.6.7.1-universal')
 
+    //Baubles
+    implementation rfg.deobf('libs:Baubles-1.12-1.5.2')
 
     implementation rfg.deobf("curse.maven:forestry-59751:2918418")
 

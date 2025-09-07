@@ -75,6 +75,8 @@ A QoL Feature, disables server-side mining speed boost of traits when sneaking, 
 ### Industrial Foregoing
 #### Insertion Conveyor Upgrade Duplication Fix
 Fixed a item duplication bug for insertion conveyor upgrade.  
+#### Meat Feeder Null Handler Check
+Do null check before meat feeder drains fluid from containers. Prevents potential NullPointerException
 
 ### ProjectRed
 #### Breaking Speed Fix
