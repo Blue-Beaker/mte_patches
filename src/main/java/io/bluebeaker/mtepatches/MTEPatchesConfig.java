@@ -232,6 +232,15 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.bop.disableFog.name")
         public boolean disableFog = false;
     }
+
+    @LangKey("config.mtepatches.steveCarts.name")
+    public static CategorySteveCarts steveCarts = new CategorySteveCarts();
+    public static class CategorySteveCarts{
+        @Comment({"Allow using any opaque, solid, non-falling block in bridger."})
+        @LangKey("config.mtepatches.steveCarts.moreBridgingBlocks.name")
+        public boolean moreBridgingBlocks = true;
+    }
+
     @Comment("Enable debug output for some patches. May cause log spamming!")
     public static boolean debugOutput = false;
 }

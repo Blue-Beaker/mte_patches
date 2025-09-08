@@ -60,5 +60,8 @@ config.mtepatches.projectred.fixMachineInventorySizes.name=Machine inventory siz
 config.mtepatches.storageDrawers.name=Storage Drawers
 config.mtepatches.storageDrawers.clearEmptySlot.name=Unmark empty slot
 
+config.mtepatches.steveCarts.name=Steve's Carts
+config.mtepatches.steveCarts.moreBridgingBlocks.name=More Bridge Blocks
+
 config.mtepatches.vanilla.name=Vanilla
 config.mtepatches.vanilla.dontReceiveItemsWhenDead.name=Don't receive item entities when dead

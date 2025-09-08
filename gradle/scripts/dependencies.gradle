@@ -48,6 +48,7 @@ dependencies {
     runtimeOnly rfg.deobf('libs:LagGoggles-THIN-1.12.2-4.11-92')
 
     runtimeOnly rfg.deobf('libs:theoneprobe-1.12-1.4.28')
+    runtimeOnly rfg.deobf('libs:WTS-1.1.0')
 
     runtimeOnly rfg.deobf('io.bluebeaker.mtetweaks:mtetweaks-1.4.2')
 
@@ -101,6 +102,10 @@ dependencies {
     // Drawers
     implementation rfg.deobf('libs:Chameleon-1.12-4.1.3')
     implementation rfg.deobf('libs:StorageDrawers-1.12.2-5.4.2')
+
+    // Steve's Carts
+    implementation rfg.deobf('libs:RebornCore-1.12.2-3.19.5-universal')
+    implementation rfg.deobf('libs:StevesCarts-1.12.2-2.4.32.137')
 
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')

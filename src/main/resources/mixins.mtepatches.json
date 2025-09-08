@@ -50,6 +50,7 @@
     "railcraft.charge.MixinChargeGrid",
     "railcraft.charge.MixinChargeNetwork",
     "railcraft.charge.MixinChargeNode",
+    "stevescarts.MixinSlotBridge",
     "storagedrawers.MixinTileEntityDrawers",
     "thermal.MixinSawmillManager",
     "thermal.MixinSmelterManager"
