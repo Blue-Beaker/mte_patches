@@ -95,6 +95,10 @@ QoL feature: Unmark an empty slot from an formerly-locked drawer with a left-cli
 #### [Client] Fog performance fix
 Improves FPS by reducing looped calculations on every frame in BOP's event listener.  
 
+### Steve's Carts Reborn
+#### More Bridger Blocks
+Allows all solid, opaque, non-falling blocks to be used in bridger module.  
+
 ### Vanilla
 #### [Client] Don't receive item entities when dead
 Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags.  
