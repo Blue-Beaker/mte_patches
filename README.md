@@ -99,6 +99,10 @@ Improves FPS by reducing looped calculations on every frame in BOP's event liste
 #### More Bridger Blocks
 Allows all solid, opaque, non-falling blocks to be used in bridger module.  
 
+### IC2 crop breeding plugin
+#### Calculator GUI fix
+Fix wrong items appearing in crop calculator GUI on inventory update.  
+
 ### Vanilla
 #### [Client] Don't receive item entities when dead
 Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags.  

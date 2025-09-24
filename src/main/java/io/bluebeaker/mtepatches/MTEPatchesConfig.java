@@ -91,6 +91,14 @@ public class MTEPatchesConfig {
         public boolean cropDirtDetectionFix = true;
     }
 
+    @LangKey("config.mtepatches.ic2cropcalc.name")
+    public static CategoryIC2CropCalc categoryIC2CropCalc = new CategoryIC2CropCalc();
+    public static class CategoryIC2CropCalc{
+        @Comment({"Fix wrong items appearing in crop calculator GUI on inventory update"})
+        @LangKey("config.mtepatches.ic2cropcalc.fixCalcWindowID.name")
+        public boolean fixCalcWindowID = true;
+    }
+
     @LangKey("config.mtepatches.thermal.name")
     public static CategoryThermal thermal = new CategoryThermal();
     public static class CategoryThermal{

@@ -122,3 +122,6 @@ Added experimental charge network patch to RailCraft
 
 ## 1.5.7
 Added More Bridger Blocks Feature to Steve's Carts Reborn
+
+## 1.5.8
+Added Calculator GUI fix for "IC2 crop breeding plugin"

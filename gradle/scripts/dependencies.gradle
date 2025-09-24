@@ -54,6 +54,9 @@ dependencies {
 
     // IC2
     implementation rfg.deobf('industrialcraft-2:industrialcraft-2-2.8.222-ex112')
+    // Crop breeding simulator
+    implementation rfg.deobf('libs:IC2CropBreeding Plugin V1.12-1.1')
+
     // Railcraft
     implementation rfg.deobf('libs:railcraft-12.0.0')
 

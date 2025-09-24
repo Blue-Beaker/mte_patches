@@ -21,6 +21,7 @@
     "ic2.MixinPlatform",
     "ic2.MixinTileEntityCrop",
     "ic2.MixinTileEntityCropmatron",
+    "ic2cropplugin.MixinBreedingContainer",
     "industrialforegoing.MixinCommonProxy",
     "industrialforegoing.MixinConveyorInsertionUpgrade",
     "industrialforegoing.MixinMeatFeederBaubles",
