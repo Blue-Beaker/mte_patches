@@ -14,6 +14,12 @@ public class MTEPatchesConfig {
         @Comment({"Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags."})
         @LangKey("config.mtepatches.vanilla.dontReceiveItemsWhenDead.name")
         public boolean dontReceiveItemsWhenDead = true;
+
+
+        @Comment({"Stops vanilla falling block duplication with end portal,",
+                "by blocking it from being teleported by the portal."})
+        @LangKey("config.mtepatches.vanilla.fallingBlockDupeFix.name")
+        public boolean fallingBlockDupeFix = false;
     }
     @LangKey("config.mtepatches.railcraft.name")
     public static CategoryRailcraft railcraft = new CategoryRailcraft();
