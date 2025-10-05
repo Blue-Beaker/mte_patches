@@ -125,3 +125,7 @@ Added More Bridger Blocks Feature to Steve's Carts Reborn
 
 ## 1.5.8
 Added Calculator GUI fix for "IC2 crop breeding plugin"
+
+## 1.6.0
+Added Fix for vanilla falling block dupe glitch  
+Added coremod and early mixin support  

@@ -106,6 +106,8 @@ Fix wrong items appearing in crop calculator GUI on inventory update.
 ### Vanilla
 #### [Client] Don't receive item entities when dead
 Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags.  
+#### Falling block dupe glitch
+(Disabled by default) Stops vanilla falling block duplication with end portal, by blocking falling block entities from being teleported by the portal.  
 
 ### Connection Timeout
 Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
