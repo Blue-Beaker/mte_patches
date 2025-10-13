@@ -62,6 +62,7 @@ config.mtepatches.projectred.fixMachineInventorySizes.name=Machine inventory siz
 
 config.mtepatches.storageDrawers.name=Storage Drawers
 config.mtepatches.storageDrawers.clearEmptySlot.name=Unmark empty slot
+config.mtepatches.storageDrawers.fixTrimPickBlock.name=Fix Trim Pick Block
 config.mtepatches.storageDrawers.extraTrimSubtypes.name=Extras trim subtypes patch
 config.mtepatches.storageDrawers.extraDrawersTranslation.name=Extras translation patch
 

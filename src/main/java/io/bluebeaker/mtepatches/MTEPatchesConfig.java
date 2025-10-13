@@ -235,10 +235,14 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.storageDrawers.clearEmptySlot.name")
         public boolean clearEmptySlot = true;
 
-        @Comment({"Fix extra trim subtypes, correct the silk touch drop"})
+        @Comment({"Fix trim picked with pick block key",
+                "Also fixes TOP info"})
+        @LangKey("config.mtepatches.storageDrawers.fixTrimPickBlock.name")
+        public boolean fixTrimPickBlock = true;
+        @Comment({"Fix extra trim subtypes, fix the silk touch drop"})
         @LangKey("config.mtepatches.storageDrawers.extraTrimSubtypes.name")
         public boolean extraTrimSubtypes = true;
-        
+
         @Comment({"Fix extra drawers translation key"})
         @LangKey("config.mtepatches.storageDrawers.extraDrawersTranslation.name")
         public boolean extraDrawersTranslation = true;

@@ -52,7 +52,9 @@
     "railcraft.charge.MixinChargeNetwork",
     "railcraft.charge.MixinChargeNode",
     "stevescarts.MixinSlotBridge",
+    "storagedrawers.MixinBlockTrim",
     "storagedrawers.MixinTileEntityDrawers",
+    "storagedrawersextra.MixinBlockTrimExtra",
     "storagedrawersextra.MixinItemTrimExtra",
     "thermal.MixinSawmillManager",
     "thermal.MixinSmelterManager"
@@ -60,6 +62,7 @@
   "server": [],
   "client": [
     "biomesoplenty.MixinFogEventHandler",
+    "storagedrawersextra.MixinItemTrimExtraClient",
     "ic2.MixinIC2KeyboardClient",
     "ic2.MixinPlatformClient",
     "rftools.MixinGuiModularStorage"
