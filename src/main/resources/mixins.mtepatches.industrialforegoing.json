@@ -1,11 +1,15 @@
 {
-  "package": "io.bluebeaker.mtepatches.mixin",
+  "package": "io.bluebeaker.mtepatches.mixin.industrialforegoing",
   "required": false,
   "refmap": "${mixin_refmap}",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8.5",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MixinCommonProxy",
+    "MixinConveyorInsertionUpgrade",
+    "MixinMeatFeederBaubles",
+    "MixinMeatFeederHandler"
   ],
   "server": [],
   "client": [

@@ -1,0 +1,25 @@
+{
+  "package": "io.bluebeaker.mtepatches.mixin.railcraft",
+  "required": false,
+  "refmap": "${mixin_refmap}",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinAdjacentTileCache",
+    "MixinBlockTrackOutfitted",
+    "MixinBlockTrackTile",
+    "MixinCartTrackRelayer",
+    "MixinRotorRepairRecipe",
+    "MixinTileItemManipulator",
+    "MixinTileItemUnloader",
+    "charge.AccessorChargeGrid",
+    "charge.AccessorChargeNode",
+    "charge.MixinChargeGrid",
+    "charge.MixinChargeNetwork",
+    "charge.MixinChargeNode"
+  ],
+  "server": [],
+  "client": [
+  ]
+}

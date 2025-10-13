@@ -1,5 +1,5 @@
 {
-  "package": "io.bluebeaker.mtepatches.mixin",
+  "package": "io.bluebeaker.mtepatches.mixin.rftools",
   "required": false,
   "refmap": "${mixin_refmap}",
   "target": "@env(DEFAULT)",
@@ -9,5 +9,6 @@
   ],
   "server": [],
   "client": [
+    "MixinGuiModularStorage"
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "package": "io.bluebeaker.mtepatches.mixin.ic2",
+  "required": false,
+  "refmap": "${mixin_refmap}",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinItemCrop",
+    "MixinMassFabricator",
+    "MixinPlatform",
+    "MixinTileEntityCrop",
+    "MixinTileEntityCropmatron",
+    "generators.MixinSolarGenerator",
+    "generators.MixinWaterGenerator"
+  ],
+  "server": [],
+  "client": [
+    "MixinIC2KeyboardClient",
+    "MixinPlatformClient"
+  ]
+}

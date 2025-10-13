@@ -1,0 +1,22 @@
+{
+  "package": "io.bluebeaker.mtepatches.mixin.projectred",
+  "required": false,
+  "refmap": "${mixin_refmap}",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinFramedWirePart",
+    "MixinFramePart",
+    "MixinGatePart",
+    "MixinLightPart",
+    "MixinMultiTileBlock",
+    "MixinPipePart",
+    "MixinPressurePathFinder",
+    "MixinTileFilteredImporter",
+    "MixinWirePart"
+  ],
+  "server": [],
+  "client": [
+  ]
+}

@@ -1,13 +1,15 @@
 {
-  "package": "io.bluebeaker.mtepatches.mixin",
+  "package": "io.bluebeaker.mtepatches.mixin.biomesoplenty",
   "required": false,
   "refmap": "${mixin_refmap}",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8.5",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MixinTrailManager"
   ],
   "server": [],
   "client": [
+    "MixinFogEventHandler"
   ]
 }

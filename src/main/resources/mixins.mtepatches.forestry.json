@@ -1,0 +1,19 @@
+{
+  "package": "io.bluebeaker.mtepatches.mixin.forestry",
+  "required": false,
+  "refmap": "${mixin_refmap}",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinBeeKeepingLogic",
+    "MixinBlockEngine",
+    "MixinFarmController",
+    "MixinPluginBuildCraftFuels",
+    "MixinPluginBuildCraftRecipes",
+    "MixinPluginBuildCraftStatements"
+  ],
+  "server": [],
+  "client": [
+  ]
+}

@@ -1,11 +1,12 @@
 {
-  "package": "io.bluebeaker.mtepatches.mixin",
+  "package": "io.bluebeaker.mtepatches.mixin.ic2cropplugin",
   "required": false,
   "refmap": "${mixin_refmap}",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8.5",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MixinBreedingContainer"
   ],
   "server": [],
   "client": [
