@@ -130,6 +130,7 @@ Added Calculator GUI fix for "IC2 crop breeding plugin"
 Added Fix for vanilla falling block dupe glitch  
 Added coremod and early mixin support  
 ## 1.6.1
+Added Trim Pick Block Patch for storage drawers  
 Added Fix for storage drawers extras:  
 - Extra trim subtypes, which fixes silk touch drop of it  
 - Localization key fix  

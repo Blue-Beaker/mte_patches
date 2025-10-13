@@ -89,7 +89,14 @@ Fix inventory sizes of certain machines to fix related crashes.
 
 ### Storage Drawers
 #### Clear empty slot
-QoL feature: Unmark an empty slot from an formerly-locked drawer with a left-click.  
+QoL feature: Unmark an empty slot from an formerly-locked drawer with a left-click.
+#### Trim Pick Block Patch
+Fixes pick block on trims from storage drawers and storage drawers extra.  
+### Storage Drawers Extras
+#### Extra trim subtypes
+Fixes silk touch drops for Extra Trims
+#### Localization key fix
+Fix unlocalized keys in trim tooltips
 
 ### Biomes o' Plenty
 #### [Client] Fog performance fix
