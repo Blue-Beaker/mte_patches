@@ -95,6 +95,11 @@ public class MTEPatchesConfig {
         @Comment({"Fixes crops detecting additional dirt under farmland."})
         @LangKey("config.mtepatches.ic2.cropDirtDetectionFix.name")
         public boolean cropDirtDetectionFix = true;
+
+        @Comment({"Increase buffer size of generators that had very small buffers with energy generation factors in config,",
+                "to prevent output capping of them."})
+        @LangKey("config.mtepatches.ic2.scaleGeneratorBuffers.name")
+        public boolean scaleGeneratorBuffers = true;
     }
 
     @LangKey("config.mtepatches.ic2cropcalc.name")

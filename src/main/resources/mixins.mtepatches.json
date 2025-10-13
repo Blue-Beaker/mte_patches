@@ -21,6 +21,8 @@
     "ic2.MixinPlatform",
     "ic2.MixinTileEntityCrop",
     "ic2.MixinTileEntityCropmatron",
+    "ic2.generators.MixinSolarGenerator",
+    "ic2.generators.MixinWaterGenerator",
     "ic2cropplugin.MixinBreedingContainer",
     "industrialforegoing.MixinCommonProxy",
     "industrialforegoing.MixinConveyorInsertionUpgrade",
