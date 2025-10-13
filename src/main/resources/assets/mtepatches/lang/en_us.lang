@@ -15,6 +15,7 @@ config.mtepatches.ic2.blockKeybindInGUI.name=Block Keybinds in GUI
 config.mtepatches.ic2.lanMessageFix.name=LAN message fix
 config.mtepatches.ic2.noTrampleCrops.name=Crop Trample Prevention
 config.mtepatches.ic2.cropDirtDetectionFix.name=Crop Dirt Detection Fix
+config.mtepatches.ic2.scaleGeneratorBuffers.name=Scale generator buffers
 
 config.mtepatches.ic2cropcalc.name=IC2 Crop Breeding Plugin
 config.mtepatches.ic2cropcalc.fixCalcWindowID.name=Calculator GUI fix

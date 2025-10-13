@@ -134,3 +134,5 @@ Added Trim Pick Block Patch for storage drawers
 Added Fix for storage drawers extras:  
 - Extra trim subtypes, which fixes silk touch drop of it  
 - Localization key fix  
+## 1.6.2
+Add 

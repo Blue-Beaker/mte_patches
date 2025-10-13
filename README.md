@@ -34,9 +34,8 @@ Prevent breaking crop sticks when walking over it
 Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump with the inventory open.  
 #### LAN message fix
 Fixes a bug that on a LAN server, all IC2 messages are sent to the host, instead of the player that should receive the message.  
-
-#### Server message fix
-Some IC2 messages can cause stack overflow exceptions on dedicated server. This fixes them. (This fix can't be disabled)  
+#### Scale Generator Buffers
+Increase buffer size of generators that had very small buffers with energy generation factors in config, to prevent output capping when a large factor is set.
 
 ### Thermal Series
 #### Fuzzy NBT Recycling  
