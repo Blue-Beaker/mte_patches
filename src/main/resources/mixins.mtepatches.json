@@ -62,9 +62,9 @@
   "server": [],
   "client": [
     "biomesoplenty.MixinFogEventHandler",
-    "storagedrawersextra.MixinItemTrimExtraClient",
     "ic2.MixinIC2KeyboardClient",
     "ic2.MixinPlatformClient",
-    "rftools.MixinGuiModularStorage"
+    "rftools.MixinGuiModularStorage",
+    "storagedrawersextra.MixinItemTrimExtraClient"
   ]
 }
