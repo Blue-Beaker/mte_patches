@@ -234,6 +234,14 @@ public class MTEPatchesConfig {
         @Comment({"QoL feature: Unmark an slot from an formerly-locked drawer with a left-click."})
         @LangKey("config.mtepatches.storageDrawers.clearEmptySlot.name")
         public boolean clearEmptySlot = true;
+
+        @Comment({"Fix extra trim subtypes, correct the silk touch drop"})
+        @LangKey("config.mtepatches.storageDrawers.extraTrimSubtypes.name")
+        public boolean extraTrimSubtypes = true;
+        
+        @Comment({"Fix extra drawers translation key"})
+        @LangKey("config.mtepatches.storageDrawers.extraDrawersTranslation.name")
+        public boolean extraDrawersTranslation = true;
     }
 
     @LangKey("config.mtepatches.bop.name")
