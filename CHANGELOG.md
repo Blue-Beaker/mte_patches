@@ -135,4 +135,5 @@ Added Fix for storage drawers extras:
 - Extra trim subtypes, which fixes silk touch drop of it  
 - Localization key fix  
 ## 1.6.2
-Add 
+Add Scale generator buffers patch for IC2  
+Split mixin configs by mod so most mixins will only load when certain mod is present  
