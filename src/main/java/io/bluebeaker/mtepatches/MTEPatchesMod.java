@@ -2,18 +2,22 @@ package io.bluebeaker.mtepatches;
 
 import io.bluebeaker.mtepatches.buildcraft.BCCapabilityAdapter;
 import io.bluebeaker.mtepatches.buildcraft.BCUtils;
+import io.bluebeaker.mtepatches.render.RenderSkipRegistry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Config.Type;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.versioning.ComparableVersion;
+import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Nullable;
@@ -67,6 +71,13 @@ public class MTEPatchesMod
     }
 
     @EventHandler
+    public void postInit(FMLPostInitializationEvent event){
+        if(event.getSide()== Side.CLIENT){
+            RenderSkipRegistry.INSTANCE.reloadConfigs();
+        }
+    }
+
+    @EventHandler
     public void onServerStart(FMLServerStartingEvent event){
         this.server=event.getServer();
     }
@@ -77,6 +88,9 @@ public class MTEPatchesMod
             ConfigManager.sync(MODID, Type.INSTANCE);
             if(LoadedModChecker.buildcraftcore.isLoaded()){
                 BCUtils.updateValues();
+            }
+            if(FMLCommonHandler.instance().getSide() == Side.CLIENT){
+                RenderSkipRegistry.INSTANCE.reloadConfigs();
             }
         }
     }

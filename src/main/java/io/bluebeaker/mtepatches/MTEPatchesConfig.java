@@ -8,6 +8,7 @@ import net.minecraftforge.common.config.Config.Type;
 @Config(modid = MTEPatchesMod.MODID,type = Type.INSTANCE,category = "general")
 public class MTEPatchesConfig {
 
+    @LangKey("config.mtepatches.render.name")
     public static CategoryRender render = new CategoryRender();
     public static class CategoryRender{
         @Config.RangeInt(min = 0)
@@ -18,8 +19,14 @@ public class MTEPatchesConfig {
         public boolean buildcraft = true;
         public boolean thermaldynamics = true;
         public boolean projectred = true;
+
+        @Comment({"Additional TileEntity special renderers to skip when far away.",
+                "Note that renderers in this list will COMPLETELY skipped!"})
+        @LangKey("config.mtepatches.render.renderers_skip_far.name")
+        public String[] renderers_skip_far = {};
     }
 
+    @LangKey("config.mtepatches.connectionTimeout.name")
     public static CategoryConnectionTimeout connectionTimeout = new CategoryConnectionTimeout();
     public static class CategoryConnectionTimeout{
         @Config.RequiresMcRestart
