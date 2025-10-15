@@ -19,7 +19,9 @@ public enum LoadedModChecker {
     rftools("rftools"),
     stevescarts("stevescarts"),
     storagedrawers("storagedrawers"),
-    storagedrawersextra("storagedrawersextra"), thermalexpansion("thermalexpansion");
+    storagedrawersextra("storagedrawersextra"),
+    thermaldynamics("thermaldynamics"),
+    thermalexpansion("thermalexpansion");
 
     public final String modid;
     private boolean isLoaded = false;

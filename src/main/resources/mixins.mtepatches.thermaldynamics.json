@@ -1,17 +1,15 @@
 {
-  "package": "io.bluebeaker.mtepatches.mixin.buildcraft",
+  "package": "io.bluebeaker.mtepatches.mixin.thermaldynamics",
   "required": false,
   "refmap": "${mixin_refmap}",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8.5",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "AccessorPipeFlowPower",
-    "MixinPipeFlowPowerSection",
-    "MixinPluggablePowerAdaptor"
   ],
   "server": [],
   "client": [
-    "MixinRenderPipeHolder"
+    "MixinRenderDuctFluids",
+    "MixinRenderDuctItems"
   ]
 }

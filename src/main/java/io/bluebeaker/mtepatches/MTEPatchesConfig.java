@@ -8,6 +8,33 @@ import net.minecraftforge.common.config.Config.Type;
 @Config(modid = MTEPatchesMod.MODID,type = Type.INSTANCE,category = "general")
 public class MTEPatchesConfig {
 
+    public static CategoryRender render = new CategoryRender();
+    public static class CategoryRender{
+        @Config.RangeInt(min = 0)
+        @Comment({"Limit render distance of complex tileentity rendering, like items in pipes."})
+        @LangKey("config.mtepatches.render.pipeContentRenderDistance.name")
+        public int renderDistance = 16;
+
+        public boolean buildcraft = true;
+        public boolean thermaldynamics = true;
+        public boolean projectred = true;
+    }
+
+    public static CategoryConnectionTimeout connectionTimeout = new CategoryConnectionTimeout();
+    public static class CategoryConnectionTimeout{
+        @Config.RequiresMcRestart
+        @Comment({"Add a timeout when it's retrieving info for some mods, prevent it from sticking the loading progress forever on a lossy internet connection.",
+                "Set to 0 for infinite timeout."})
+        @LangKey("config.mtepatches.connectionTimeout.timeout.name")
+        @Config.RangeInt(min = 0)
+        public int timeout = 5000;
+
+        @Comment({"Enable timeout for Biomes o' Plenty when it's checking trail info."})
+        public boolean bop = true;
+        @Comment({"Enable timeout for Industrial Foregoing when it's checking contributors."})
+        public boolean industrialForegoing = true;
+    }
+
     @LangKey("config.mtepatches.vanilla.name")
     public static CategoryVanilla vanilla = new CategoryVanilla();
     public static class CategoryVanilla{
@@ -200,21 +227,6 @@ public class MTEPatchesConfig {
         @Comment({"Do null check before meat feeder drains fluid from containers. Prevents potential NullPointerException."})
         @LangKey("config.mtepatches.industrialforegoing.fixMeatFeederTickNull.name")
         public boolean fixMeatFeederTickNull = true;
-    }
-
-    public static CategoryConnectionTimeout connectionTimeout = new CategoryConnectionTimeout();
-    public static class CategoryConnectionTimeout{
-        @Config.RequiresMcRestart
-        @Comment({"Add a timeout when it's retrieving info for some mods, prevent it from sticking the loading progress forever on a lossy internet connection.",
-                "Set to 0 for infinite timeout."})
-        @LangKey("config.mtepatches.connectionTimeout.timeout.name")
-        @Config.RangeInt(min = 0)
-        public int timeout = 5000;
-
-        @Comment({"Enable timeout for Biomes o' Plenty when it's checking trail info."})
-        public boolean bop = true;
-        @Comment({"Enable timeout for Industrial Foregoing when it's checking contributors."})
-        public boolean industrialForegoing = true;
     }
 
     @LangKey("config.mtepatches.projectred.name")

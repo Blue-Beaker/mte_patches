@@ -23,6 +23,7 @@ public class MTEPatchesMixins implements ILateMixinLoader {
         addMixinsForMod(LoadedModChecker.stevescarts);
         addMixinsForMod(LoadedModChecker.storagedrawers);
         addMixinsForMod(LoadedModChecker.storagedrawersextra);
+        addMixinsForMod(LoadedModChecker.thermaldynamics);
         addMixinsForMod(LoadedModChecker.thermalexpansion);
     }
 
