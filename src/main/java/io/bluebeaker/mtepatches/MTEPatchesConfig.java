@@ -14,20 +14,20 @@ public class MTEPatchesConfig {
     public static class CategoryRender{
 
         public CategoryRender(){
-            skipShadows.buildcraft=false;
-            skipShadows.thermaldynamics=false;
-            skipShadows.projectred=false;
+            shadowCulling.buildcraft=false;
+            shadowCulling.thermaldynamics=false;
+            shadowCulling.projectred=false;
         }
 
         @Config.RangeInt(min = 0)
-        @Comment({"Skips some complex rendering in tileentities, like items in pipes, when further from player than this distance."})
+        @Comment({"Culls some complex rendering in tileentities, like items in pipes, when further than this distance."})
         @LangKey("config.mtepatches.render.renderDistance.name")
-        public int renderDistance = 16;
+        public int cullingDistance = 16;
 
-        @Comment({"Skip certain renderers when far away from the player."})
-        public RenderSkipConfig skipFarAway = new RenderSkipConfig();
-        @Comment({"Skip certain renderers in shadow pass of shaders."})
-        public RenderSkipConfig skipShadows = new RenderSkipConfig();
+        @Comment({"Culls certain renderings when far away from the player."})
+        public RenderSkipConfig farCulling = new RenderSkipConfig();
+        @Comment({"Culls certain renderings in shadow pass of shaders."})
+        public RenderSkipConfig shadowCulling = new RenderSkipConfig();
 
         public static class RenderSkipConfig {
             @Comment({"Items, fluid, and energy flow in pipes"})

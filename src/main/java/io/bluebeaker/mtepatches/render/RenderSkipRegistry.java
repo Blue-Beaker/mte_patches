@@ -17,10 +17,10 @@ public class RenderSkipRegistry {
     public void reloadConfigs(){
         skipFar.clear();
         skipShadows.clear();
-        readConfigClasses(render.skipFarAway.extra_tesrs, skipFar,"skipFarAway_tesr");
-        readConfigClasses(render.skipShadows.extra_tesrs, skipShadows,"skipShadows_tesr");
-        readConfigClasses(render.skipFarAway.extra_tiles, skipFarTiles,"skipFarAway_tiles");
-        readConfigClasses(render.skipShadows.extra_tiles, skipShadowsTiles,"skipShadows_tiles");
+        readConfigClasses(render.farCulling.extra_tesrs, skipFar,"skipFarAway_tesr");
+        readConfigClasses(render.shadowCulling.extra_tesrs, skipShadows,"skipShadows_tesr");
+        readConfigClasses(render.farCulling.extra_tiles, skipFarTiles,"skipFarAway_tiles");
+        readConfigClasses(render.shadowCulling.extra_tiles, skipShadowsTiles,"skipShadows_tiles");
     }
     private void readConfigClasses(String[] entries, Set<Class<?>> classes, String section){
         for (String s : entries) {

@@ -22,7 +22,7 @@ public abstract class MixinRenderMachine {
     // Skip rendering fluids in machine far away
     @Inject(method = "render(Lforestry/core/tiles/TileBase;DDDFIF)V",at = @At(value = "INVOKE", target = "Lforestry/core/render/RenderMachine;render(Lforestry/core/render/TankRenderInfo;Lforestry/core/render/TankRenderInfo;Lnet/minecraft/util/EnumFacing;DDDI)V",ordinal = 0),cancellable = true)
     private void skipRenderContentsWhenFar(TileBase tile, double x, double y, double z, float partialTicks, int destroyStage, float alpha, CallbackInfo ci, @Local EnumFacing facing){
-        if((render.skipShadows.forestry && ShadersAccessor.getIsRenderingShadowPass()) || render.skipFarAway.forestry && RenderUtils.isOutOfRenderDistance(tile, render.renderDistance)){
+        if((render.shadowCulling.forestry && ShadersAccessor.getIsRenderingShadowPass()) || render.farCulling.forestry && RenderUtils.isOutOfRenderDistance(tile, render.cullingDistance)){
             render(TankRenderInfo.EMPTY,TankRenderInfo.EMPTY,facing,x,y,z,destroyStage);
             ci.cancel();
         }
