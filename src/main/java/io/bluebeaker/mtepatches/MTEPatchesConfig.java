@@ -14,10 +14,22 @@ public class MTEPatchesConfig {
     public static class CategoryRender{
 
         public CategoryRender(){
+            farCulling.extra_tesrs=new String[]{
+                    "li.cil.oc.client.renderer.tileentity.PrinterRenderer$",
+                    "li.cil.oc.client.renderer.tileentity.CaseRenderer$"
+            };
+
             shadowCulling.buildcraft=false;
             shadowCulling.thermaldynamics=false;
             shadowCulling.projectred=false;
-            shadowCulling.extra_tesrs= new String[]{"com.jaquadro.minecraft.storagedrawers.client.renderer.TileEntityDrawersRenderer#Storage Drawers Label","cofh.thermalexpansion.render.RenderCache#Cache Label"};
+            shadowCulling.extra_tesrs= new String[]{
+                    "com.jaquadro.minecraft.storagedrawers.client.renderer.TileEntityDrawersRenderer#Storage Drawers Label",
+                    "cofh.thermalexpansion.render.RenderCache#Cache Label",
+                    "li.cil.oc.client.renderer.tileentity.PrinterRenderer$",
+                    "com.zuxelus.energycontrol.renderers.TEAdvancedInfoPanelRenderer",
+                    "vazkii.psi.client.render.tile.RenderTileProgrammer",
+                    "li.cil.oc.client.renderer.tileentity.CaseRenderer$",
+                    "li.cil.oc.client.renderer.tileentity.ScreenRenderer$"};
         }
 
         @Config.RangeInt(min = 0)
