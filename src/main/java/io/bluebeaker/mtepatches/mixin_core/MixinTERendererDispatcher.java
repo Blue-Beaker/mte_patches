@@ -20,6 +20,7 @@ import static io.bluebeaker.mtepatches.MTEPatchesConfig.render;
 public abstract class MixinTERendererDispatcher {
     @Shadow @Nullable public abstract <T extends TileEntity> TileEntitySpecialRenderer<T> getRenderer(@org.jetbrains.annotations.Nullable TileEntity tileEntityIn);
 
+    // Skip configured generic rendering of tileentities far away
     @Inject(method = "render(Lnet/minecraft/tileentity/TileEntity;DDDFIF)V",at = @At(value = "INVOKE_ASSIGN",target = "Lnet/minecraft/client/renderer/tileentity/TileEntityRendererDispatcher;getRenderer(Lnet/minecraft/tileentity/TileEntity;)Lnet/minecraft/client/renderer/tileentity/TileEntitySpecialRenderer;"),cancellable = true)
     private void skipRenderContentsWhenFar(TileEntity tileEntityIn, double x, double y, double z, float partialTicks, int destroyStage, float p_192854_10_, CallbackInfo ci, @Local TileEntitySpecialRenderer renderer){
         if (RenderUtils.isOutOfRenderDistance(tileEntityIn, render.renderDistance)

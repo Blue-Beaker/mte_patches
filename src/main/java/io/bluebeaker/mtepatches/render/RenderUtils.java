@@ -14,6 +14,7 @@ public class RenderUtils {
     }
     public static boolean isOutOfRenderDistance(TileEntity tile, double distance){
         TileEntityRendererDispatcher instance = TileEntityRendererDispatcher.instance;
-        return tile.getDistanceSq(instance.entityX, instance.entityY, instance.entityZ) > distance * distance;
+        return instance.world==tile.getWorld()
+                && tile.getDistanceSq(instance.entityX, instance.entityY, instance.entityZ) > distance * distance;
     }
 }

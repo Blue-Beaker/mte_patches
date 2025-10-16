@@ -12,6 +12,8 @@ public class RenderSkipRegistry {
     public final Set<Class<?>> skipShaders = new HashSet<>();
 
     public void reloadConfigs(){
+        skipFar.clear();
+        skipShaders.clear();
         for (String s : MTEPatchesConfig.render.renderers_skip_far) {
             try {
                 Class<?> aClass = Class.forName(s);

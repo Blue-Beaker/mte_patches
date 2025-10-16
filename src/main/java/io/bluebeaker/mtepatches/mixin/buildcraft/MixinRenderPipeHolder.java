@@ -13,6 +13,8 @@ import static io.bluebeaker.mtepatches.MTEPatchesConfig.render;
 
 @Mixin(value = RenderPipeHolder.class,remap = false)
 public abstract class MixinRenderPipeHolder {
+
+    // Skip rendering items/fluid/energy flow in pipes far away
     @Inject(method = "renderContents",at = @At("HEAD"),cancellable = true)
     private static void skipRenderContentsWhenFar(TilePipeHolder pipe, double x, double y, double z, float partialTicks, BufferBuilder bb, CallbackInfo ci){
         if(!render.buildcraft) return;
