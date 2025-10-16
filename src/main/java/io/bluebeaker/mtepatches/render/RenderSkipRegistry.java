@@ -1,10 +1,11 @@
 package io.bluebeaker.mtepatches.render;
 
-import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import io.bluebeaker.mtepatches.MTEPatchesMod;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import static io.bluebeaker.mtepatches.MTEPatchesConfig.render;
 
 public class RenderSkipRegistry {
     public static final RenderSkipRegistry INSTANCE = new RenderSkipRegistry();
@@ -14,14 +15,17 @@ public class RenderSkipRegistry {
     public void reloadConfigs(){
         skipFar.clear();
         skipShaders.clear();
-        for (String s : MTEPatchesConfig.render.renderers_skip_far) {
+        readConfigClasses(render.renderers_skip_far,skipFar,"renderers_skip_far");
+        readConfigClasses(render.renderers_skip_shaders,skipShaders,"renderers_skip_shaders");
+    }
+    private void readConfigClasses(String[] entries, Set<Class<?>> classes, String section){
+        for (String s : entries) {
             try {
                 Class<?> aClass = Class.forName(s);
-                skipFar.add(aClass);
-            } catch (ClassNotFoundException e) {
-                MTEPatchesMod.getLogger().error("Error loading renderers_skip_far: at renderer class \"{}\" : ",s,e);
+                classes.add(aClass);
+            } catch (Throwable e) {
+                MTEPatchesMod.getLogger().error("Error loading {}: at renderer class \"{}\" : ",section,s,e);
             }
         }
-
     }
 }

@@ -8,22 +8,33 @@ import net.minecraftforge.common.config.Config.Type;
 @Config(modid = MTEPatchesMod.MODID,type = Type.INSTANCE,category = "general")
 public class MTEPatchesConfig {
 
+    @Comment({"Client-side render optimizations."})
     @LangKey("config.mtepatches.render.name")
     public static CategoryRender render = new CategoryRender();
     public static class CategoryRender{
         @Config.RangeInt(min = 0)
-        @Comment({"Limit render distance of complex tileentity rendering, like items in pipes."})
+        @Comment({"Stops rendering of complex tileentity, like items in pipes, when further from player than this distance."})
         @LangKey("config.mtepatches.render.pipeContentRenderDistance.name")
         public int renderDistance = 16;
 
+        @Comment({"Items, fluid, and energy flow in pipes"})
         public boolean buildcraft = true;
+        @Comment({"Items and fluid flow in pipes"})
         public boolean thermaldynamics = true;
+        @Comment({"Items in pipes"})
         public boolean projectred = true;
+        @Comment({"Fluid tanks in machines"})
+        public boolean forestry = true;
 
         @Comment({"Additional TileEntity special renderers to skip when far away.",
                 "Note that renderers in this list will COMPLETELY skipped!"})
         @LangKey("config.mtepatches.render.renderers_skip_far.name")
         public String[] renderers_skip_far = {};
+
+        @Comment({"Additional TileEntity special renderers to skip when rendering for shaders.",
+                "Note that renderers in this list will COMPLETELY skipped!"})
+        @LangKey("config.mtepatches.render.renderers_skip_shaders.name")
+        public String[] renderers_skip_shaders = {};
     }
 
     @LangKey("config.mtepatches.connectionTimeout.name")
