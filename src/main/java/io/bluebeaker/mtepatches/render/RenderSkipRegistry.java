@@ -1,6 +1,8 @@
 package io.bluebeaker.mtepatches.render;
 
 import io.bluebeaker.mtepatches.MTEPatchesMod;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.relauncher.Side;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +17,7 @@ public class RenderSkipRegistry {
     public final Set<Class<?>> skipShadowsTiles = new HashSet<>();
 
     public void reloadConfigs(){
+        if(FMLCommonHandler.instance().getSide()!= Side.CLIENT) return;
         skipFar.clear();
         skipShadows.clear();
         readConfigClasses(render.farCulling.extra_tesrs, skipFar,"skipFarAway_tesr");
@@ -25,7 +28,7 @@ public class RenderSkipRegistry {
     private void readConfigClasses(String[] entries, Set<Class<?>> classes, String section){
         for (String s : entries) {
             try {
-                Class<?> aClass = Class.forName(s);
+                Class<?> aClass = Class.forName(s.split("#")[0].trim());
                 classes.add(aClass);
             } catch (Throwable e) {
                 MTEPatchesMod.getLogger().warn("Error loading {}: config line \"{}\" : ",section,s,e);
