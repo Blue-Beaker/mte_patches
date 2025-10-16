@@ -35,7 +35,7 @@ public class MTEPatchesConfig {
         @Config.RangeInt(min = 0)
         @Comment({"Culls some complex rendering in tileentities, like items in pipes, when further than this distance."})
         @LangKey("config.mtepatches.render.renderDistance.name")
-        public int cullingDistance = 16;
+        public int cullingDistance = 24;
 
         @Comment({"Main switch to all render culling optimization of this mod"})
         @LangKey("config.mtepatches.render.enableRenderCulling.name")
