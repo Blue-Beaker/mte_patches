@@ -59,14 +59,10 @@ public class MTEPatchesConfig {
             public boolean projectred = true;
             @Comment({"Fluid tanks in machines"})
             public boolean forestry = true;
-            @Comment({"Additional TileEntity special renderer classes to be culled for this section.",
+            @Comment({"Additional TileEntity special renderer or TileEntity classes to be culled for this section.",
                     "Comments can be added after a '#'"})
             @LangKey("config.mtepatches.render.extra_tesrs.name")
             public String[] extra_tesrs = {};
-            @Comment({"Additional TileEntity classes to be culled for this section.",
-                    "Comments can be added after a '#'"})
-            @LangKey("config.mtepatches.render.extra_tiles.name")
-            public String[] extra_tiles = {};
         }
     }
 
