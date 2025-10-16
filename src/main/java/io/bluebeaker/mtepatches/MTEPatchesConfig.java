@@ -51,13 +51,13 @@ public class MTEPatchesConfig {
         public RenderSkipConfig shadowCulling = new RenderSkipConfig();
 
         public static class RenderSkipConfig {
-            @Comment({"Items, fluid, and energy flow in pipes"})
+            @Comment({"Items and fluid flow in BC pipes"})
             public boolean buildcraft = true;
-            @Comment({"Items and fluid flow in pipes"})
+            @Comment({"Items and fluid flow in TD pipes"})
             public boolean thermaldynamics = true;
-            @Comment({"Items in pipes"})
+            @Comment({"Items in PR pipes"})
             public boolean projectred = true;
-            @Comment({"Fluid tanks in machines"})
+            @Comment({"Fluid tanks in FR machines"})
             public boolean forestry = true;
             @Comment({"Additional TileEntity special renderer or TileEntity classes to be culled for this section.",
                     "Comments can be added after a '#'"})

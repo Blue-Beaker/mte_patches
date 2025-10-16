@@ -12,6 +12,7 @@
   ],
   "server": [],
   "client": [
-    "MixinRenderPipeHolder"
+    "MixinRenderPipeHolder",
+    "MixinRenderPump"
   ]
 }
