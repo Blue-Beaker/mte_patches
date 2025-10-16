@@ -1,5 +1,5 @@
 # MTE Patches
-Fix bugs and add useful patches for various mods.  
+Fix bugs, add useful patches, and maybe some optimizations for various mods.  
 Made for the modpack Minetech Evolution. Use freely if you want any fixes in the mod. Most fixes are toggleable via config. 
 This mod works outside of the modpack as well.  
 ## Current patches:  
@@ -120,3 +120,17 @@ Add a timeout when it's retrieving info for some mods, prevent it from freezing 
 Supported mods:  
 - Biomes o' Plenty  
 - Industrial Foregoing  
+
+### Render Culling
+Skips rendering of certain complex things of some tileentities, when:
+- It's far away from the player (distance configurable)
+- It's rendering shadows for shaders.  
+
+Including:
+- Buildcraft(Items, Fluid, Energy in pipes)
+- Forestry(Fluid in machines)
+- Thermal Dynamics(Items/Fluid in ducts)
+- Project Red(Items in pipes)
+- Any custom TileEntity with a special renderer
+
+Culled TileEntity types can be configured separately for far and shadow.
