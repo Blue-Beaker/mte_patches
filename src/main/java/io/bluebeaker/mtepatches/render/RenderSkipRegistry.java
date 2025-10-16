@@ -28,7 +28,9 @@ public class RenderSkipRegistry {
     private void readConfigClasses(String[] entries, Set<Class<?>> classes, String section){
         for (String s : entries) {
             try {
-                Class<?> aClass = Class.forName(s.split("#")[0].trim());
+                String trim = s.split("#")[0].trim();
+                if(trim.isEmpty()) continue;
+                Class<?> aClass = Class.forName(trim);
                 classes.add(aClass);
             } catch (Throwable e) {
                 MTEPatchesMod.getLogger().warn("Error loading {}: config line \"{}\" : ",section,s,e);

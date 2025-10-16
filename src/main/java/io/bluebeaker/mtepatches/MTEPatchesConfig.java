@@ -17,7 +17,7 @@ public class MTEPatchesConfig {
             shadowCulling.buildcraft=false;
             shadowCulling.thermaldynamics=false;
             shadowCulling.projectred=false;
-            shadowCulling.extra_tesrs= new String[]{"com.jaquadro.minecraft.storagedrawers.client.renderer.TileEntityDrawersRenderer","cofh.thermalexpansion.render.RenderCache"};
+            shadowCulling.extra_tesrs= new String[]{"com.jaquadro.minecraft.storagedrawers.client.renderer.TileEntityDrawersRenderer#Storage Drawers Label","cofh.thermalexpansion.render.RenderCache#Cache Label"};
         }
 
         @Config.RangeInt(min = 0)
@@ -40,13 +40,14 @@ public class MTEPatchesConfig {
             public boolean projectred = true;
             @Comment({"Fluid tanks in machines"})
             public boolean forestry = true;
-            @Comment({"Additional TileEntity special renderer classes to skip for this section.",
-                    "Note that renderers in this list will COMPLETELY skipped in the pass!",
-                    "Use the Extra TileEntities list "})
+            @Comment({"Additional TileEntity special renderer classes to be culled for this section.",
+                    "Note that renderers in this list will be COMPLETELY skipped in the pass!",
+                    "Comments can be added after a '#'"})
             @LangKey("config.mtepatches.render.extra_tesrs.name")
             public String[] extra_tesrs = {};
-            @Comment({"Additional TileEntity classes to skip for this section.",
-                    "Note that tileentities in this list with special renderers will COMPLETELY skipped in the pass!"})
+            @Comment({"Additional TileEntity classes to be culled for this section.",
+                    "Note that tileentities in this list will have its special renderer COMPLETELY skipped in the pass!",
+                    "Comments can be added after a '#'"})
             @LangKey("config.mtepatches.render.extra_tiles.name")
             public String[] extra_tiles = {};
         }
