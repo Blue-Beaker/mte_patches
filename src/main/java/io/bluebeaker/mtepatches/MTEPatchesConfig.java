@@ -37,7 +37,7 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.render.renderDistance.name")
         public int cullingDistance = 24;
 
-        @Comment({"Main switch to all render culling optimization of this mod"})
+        @Comment({"Main switch to distance-based and shadow culling optimization of this mod"})
         @LangKey("config.mtepatches.render.enableRenderCulling.name")
         public boolean enableRenderCulling = true;
 
@@ -314,6 +314,10 @@ public class MTEPatchesConfig {
         @Comment({"Fix extra drawers translation key"})
         @LangKey("config.mtepatches.storageDrawers.extraDrawersTranslation.name")
         public boolean extraDrawersTranslation = true;
+
+        @Comment({"Culls drawers rendering when it's backwards towards the player."})
+        @LangKey("config.mtepatches.storageDrawers.cullDrawers.name")
+        public boolean cullDrawers = true;
     }
 
     @LangKey("config.mtepatches.bop.name")

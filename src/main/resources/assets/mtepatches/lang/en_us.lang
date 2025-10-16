@@ -66,6 +66,7 @@ config.mtepatches.storageDrawers.clearEmptySlot.name=Unmark empty slot
 config.mtepatches.storageDrawers.fixTrimPickBlock.name=Fix Trim Pick Block
 config.mtepatches.storageDrawers.extraTrimSubtypes.name=Extras trim subtypes patch
 config.mtepatches.storageDrawers.extraDrawersTranslation.name=Extras translation patch
+config.mtepatches.storageDrawers.cullDrawers.name=Cull Drawers
 
 config.mtepatches.steveCarts.name=Steve's Carts
 config.mtepatches.steveCarts.moreBridgingBlocks.name=More Bridge Blocks
