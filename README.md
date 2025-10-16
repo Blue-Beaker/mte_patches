@@ -2,7 +2,29 @@
 Fix bugs, add useful patches, and maybe some optimizations for various mods.  
 Made for the modpack Minetech Evolution. Use freely if you want any fixes in the mod. Most fixes are toggleable via config. 
 This mod works outside of the modpack as well.  
-## Current patches:  
+## Generic Features:
+
+### Connection Timeout
+Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
+Supported mods:
+- Biomes o' Plenty
+- Industrial Foregoing
+
+### Render Culling
+Skips rendering of certain complex things of some tileentities, when:
+- It's far away from the player. (distance configurable)
+- It's rendering shadows for shaders.
+
+Including:
+- Buildcraft(Items, Fluid, Energy in pipes)
+- Forestry(Fluid in machines)
+- Thermal Dynamics(Items/Fluid in ducts)
+- Project Red(Items in pipes)
+- Any custom TileEntity with a special renderer
+
+Culled TileEntity types can be configured separately for far and shadow.  
+
+## Mod-specific patches:  
 ### Railcraft
 #### Multiblock Desync fix  
   Fix a desync bug of multiblock that when the multiblock is across chunks.
@@ -114,23 +136,3 @@ Fix wrong items appearing in crop calculator GUI on inventory update.
 Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags.  
 #### Falling block dupe glitch
 (Disabled by default) Stops vanilla falling block duplication with end portal, by blocking falling block entities from being teleported by the portal.  
-
-### Connection Timeout
-Add a timeout when it's retrieving info for some mods, prevent it from freezing the loading progress forever on a lossy internet connection.  
-Supported mods:  
-- Biomes o' Plenty  
-- Industrial Foregoing  
-
-### Render Culling
-Skips rendering of certain complex things of some tileentities, when:
-- It's far away from the player (distance configurable)
-- It's rendering shadows for shaders.  
-
-Including:
-- Buildcraft(Items, Fluid, Energy in pipes)
-- Forestry(Fluid in machines)
-- Thermal Dynamics(Items/Fluid in ducts)
-- Project Red(Items in pipes)
-- Any custom TileEntity with a special renderer
-
-Culled TileEntity types can be configured separately for far and shadow.
