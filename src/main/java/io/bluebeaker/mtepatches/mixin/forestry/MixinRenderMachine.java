@@ -5,6 +5,7 @@ import forestry.core.render.RenderMachine;
 import forestry.core.render.TankRenderInfo;
 import forestry.core.tiles.TileBase;
 import io.bluebeaker.mtepatches.render.RenderUtils;
+import io.bluebeaker.mtepatches.render.ShadersAccessor;
 import net.minecraft.util.EnumFacing;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,8 +22,7 @@ public abstract class MixinRenderMachine {
     // Skip rendering fluids in machine far away
     @Inject(method = "render(Lforestry/core/tiles/TileBase;DDDFIF)V",at = @At(value = "INVOKE", target = "Lforestry/core/render/RenderMachine;render(Lforestry/core/render/TankRenderInfo;Lforestry/core/render/TankRenderInfo;Lnet/minecraft/util/EnumFacing;DDDI)V",ordinal = 0),cancellable = true)
     private void skipRenderContentsWhenFar(TileBase tile, double x, double y, double z, float partialTicks, int destroyStage, float alpha, CallbackInfo ci, @Local EnumFacing facing){
-        if(!render.buildcraft) return;
-        if(RenderUtils.isOutOfRenderDistance(tile, render.renderDistance)){
+        if((render.skipShadows.forestry && ShadersAccessor.getIsRenderingShadowPass()) || render.skipFarAway.forestry && RenderUtils.isOutOfRenderDistance(tile, render.renderDistance)){
             render(TankRenderInfo.EMPTY,TankRenderInfo.EMPTY,facing,x,y,z,destroyStage);
             ci.cancel();
         }

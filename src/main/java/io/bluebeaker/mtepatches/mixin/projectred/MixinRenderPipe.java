@@ -3,6 +3,7 @@ package io.bluebeaker.mtepatches.mixin.projectred;
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.vec.Vector3;
 import io.bluebeaker.mtepatches.render.RenderUtils;
+import io.bluebeaker.mtepatches.render.ShadersAccessor;
 import mrtjp.projectred.transportation.PayloadPipePart;
 import mrtjp.projectred.transportation.RenderPipe;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,8 +17,8 @@ import static io.bluebeaker.mtepatches.MTEPatchesConfig.render;
 public abstract class MixinRenderPipe {
     @Inject(method = "renderItemFlow",at = @At("HEAD"),cancellable = true)
     private static void skipRenderContentsWhenFar(PayloadPipePart pipe, Vector3 par2, float par3, CCRenderState par4, CallbackInfo ci){
-        if(!render.projectred) return;
-        if(RenderUtils.isOutOfRenderDistance(
+        if(render.skipShadows.projectred && ShadersAccessor.getIsRenderingShadowPass()) ci.cancel();
+        if(render.skipFarAway.projectred && RenderUtils.isOutOfRenderDistance(
                 pipe.tile(), render.renderDistance)) ci.cancel();
     }
 }

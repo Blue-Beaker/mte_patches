@@ -12,29 +12,42 @@ public class MTEPatchesConfig {
     @LangKey("config.mtepatches.render.name")
     public static CategoryRender render = new CategoryRender();
     public static class CategoryRender{
+
+        public CategoryRender(){
+            skipShadows.buildcraft=false;
+            skipShadows.thermaldynamics=false;
+            skipShadows.projectred=false;
+        }
+
         @Config.RangeInt(min = 0)
-        @Comment({"Stops rendering of complex tileentity, like items in pipes, when further from player than this distance."})
-        @LangKey("config.mtepatches.render.pipeContentRenderDistance.name")
+        @Comment({"Skips some complex rendering in tileentities, like items in pipes, when further from player than this distance."})
+        @LangKey("config.mtepatches.render.renderDistance.name")
         public int renderDistance = 16;
 
-        @Comment({"Items, fluid, and energy flow in pipes"})
-        public boolean buildcraft = true;
-        @Comment({"Items and fluid flow in pipes"})
-        public boolean thermaldynamics = true;
-        @Comment({"Items in pipes"})
-        public boolean projectred = true;
-        @Comment({"Fluid tanks in machines"})
-        public boolean forestry = true;
+        @Comment({"Skip certain renderers when far away from the player."})
+        public RenderSkipConfig skipFarAway = new RenderSkipConfig();
+        @Comment({"Skip certain renderers in shadow pass of shaders."})
+        public RenderSkipConfig skipShadows = new RenderSkipConfig();
 
-        @Comment({"Additional TileEntity special renderers to skip when far away.",
-                "Note that renderers in this list will COMPLETELY skipped!"})
-        @LangKey("config.mtepatches.render.renderers_skip_far.name")
-        public String[] renderers_skip_far = {};
-
-        @Comment({"Additional TileEntity special renderers to skip when rendering for shaders.",
-                "Note that renderers in this list will COMPLETELY skipped!"})
-        @LangKey("config.mtepatches.render.renderers_skip_shaders.name")
-        public String[] renderers_skip_shaders = {};
+        public static class RenderSkipConfig {
+            @Comment({"Items, fluid, and energy flow in pipes"})
+            public boolean buildcraft = true;
+            @Comment({"Items and fluid flow in pipes"})
+            public boolean thermaldynamics = true;
+            @Comment({"Items in pipes"})
+            public boolean projectred = true;
+            @Comment({"Fluid tanks in machines"})
+            public boolean forestry = true;
+            @Comment({"Additional TileEntity special renderer classes to skip for this section.",
+                    "Note that renderers in this list will COMPLETELY skipped in the pass!",
+                    "Use the Extra TileEntities list "})
+            @LangKey("config.mtepatches.render.extra_tesrs.name")
+            public String[] extra_tesrs = {};
+            @Comment({"Additional TileEntity classes to skip for this section.",
+                    "Note that tileentities in this list with special renderers will COMPLETELY skipped in the pass!"})
+            @LangKey("config.mtepatches.render.extra_tiles.name")
+            public String[] extra_tiles = {};
+        }
     }
 
     @LangKey("config.mtepatches.connectionTimeout.name")

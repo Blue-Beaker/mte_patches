@@ -72,3 +72,7 @@ config.mtepatches.steveCarts.moreBridgingBlocks.name=More Bridge Blocks
 
 config.mtepatches.vanilla.name=Vanilla
 config.mtepatches.vanilla.dontReceiveItemsWhenDead.name=Don't receive item entities when dead
+
+config.mtepatches.render.renderDistance.name=Special Render Distance
+config.mtepatches.render.extra_tesrs.name=Extra Skipped Renderers
+config.mtepatches.render.extra_tiles.name=Extra Skipped TileEntities
