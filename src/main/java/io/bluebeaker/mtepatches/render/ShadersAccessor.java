@@ -1,9 +1,11 @@
 package io.bluebeaker.mtepatches.render;
 
 import io.bluebeaker.mtepatches.MTEPatchesMod;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.lang.reflect.Field;
-
+@SideOnly(Side.CLIENT)
 public class ShadersAccessor {
     private static Field isShadowPass;
     static {

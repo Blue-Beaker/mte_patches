@@ -17,6 +17,7 @@ public class MTEPatchesConfig {
             shadowCulling.buildcraft=false;
             shadowCulling.thermaldynamics=false;
             shadowCulling.projectred=false;
+            shadowCulling.extra_tesrs= new String[]{"com.jaquadro.minecraft.storagedrawers.client.renderer.TileEntityDrawersRenderer","cofh.thermalexpansion.render.RenderCache"};
         }
 
         @Config.RangeInt(min = 0)
@@ -26,7 +27,8 @@ public class MTEPatchesConfig {
 
         @Comment({"Culls certain renderings when far away from the player."})
         public RenderSkipConfig farCulling = new RenderSkipConfig();
-        @Comment({"Culls certain renderings in shadow pass of shaders."})
+        @Comment({"Culls certain renderings in shadow pass of shaders.",
+                "Overlays on some surface, like drawer labels, computer screens, are basically safe to be culled for shadows."})
         public RenderSkipConfig shadowCulling = new RenderSkipConfig();
 
         public static class RenderSkipConfig {

@@ -3,7 +3,10 @@ package io.bluebeaker.mtepatches.render;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SideOnly(Side.CLIENT)
 public class RenderUtils {
     public static boolean isOutOfRenderDistance(BlockPos pos, double distance){
         TileEntityRendererDispatcher instance = TileEntityRendererDispatcher.instance;
