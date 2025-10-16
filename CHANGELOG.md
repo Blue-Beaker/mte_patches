@@ -137,6 +137,8 @@ Added Fix for storage drawers extras:
 ## 1.6.2
 Add Scale generator buffers patch for IC2  
 Split mixin configs by mod so most mixins will only load when certain mod is present  
-## 1.6.3
+## 1.7.0
 Added render optimization
-- Skip rendering complex things like pipe contents far away for FPS
+- Culls some complex rendering in tileentities, like items in pipes, when further than this distance  
+- Culls some complex rendering in shadow pass of shaders when optifine shaders is used  
+- Has some integrated culling
