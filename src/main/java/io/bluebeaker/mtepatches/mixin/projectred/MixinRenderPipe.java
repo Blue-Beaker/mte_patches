@@ -17,6 +17,7 @@ import static io.bluebeaker.mtepatches.MTEPatchesConfig.render;
 public abstract class MixinRenderPipe {
     @Inject(method = "renderItemFlow",at = @At("HEAD"),cancellable = true)
     private static void skipRenderContentsWhenFar(PayloadPipePart pipe, Vector3 par2, float par3, CCRenderState par4, CallbackInfo ci){
+        if(!render.enableRenderCulling) return;
         if(render.shadowCulling.projectred && ShadersAccessor.getIsRenderingShadowPass()) ci.cancel();
         if(render.farCulling.projectred && RenderUtils.isOutOfRenderDistance(
                 pipe.tile(), render.cullingDistance)) ci.cancel();

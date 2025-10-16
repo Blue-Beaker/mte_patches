@@ -37,10 +37,17 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.render.renderDistance.name")
         public int cullingDistance = 16;
 
+        @Comment({"Main switch to all render culling optimization of this mod"})
+        @LangKey("config.mtepatches.render.enableRenderCulling.name")
+        public boolean enableRenderCulling = true;
+
         @Comment({"Culls certain renderings when far away from the player."})
+        @LangKey("config.mtepatches.render.farCulling.name")
         public RenderSkipConfig farCulling = new RenderSkipConfig();
         @Comment({"Culls certain renderings in shadow pass of shaders.",
-                "Overlays on some surface, like drawer labels, computer screens, are basically safe to be culled for shadows."})
+                "Overlays on some surface, like drawer labels, computer screens, are basically safe to be culled for shadows.",
+                "Only effective when using shaders."})
+        @LangKey("config.mtepatches.render.shadowCulling.name")
         public RenderSkipConfig shadowCulling = new RenderSkipConfig();
 
         public static class RenderSkipConfig {
@@ -53,12 +60,10 @@ public class MTEPatchesConfig {
             @Comment({"Fluid tanks in machines"})
             public boolean forestry = true;
             @Comment({"Additional TileEntity special renderer classes to be culled for this section.",
-                    "Note that renderers in this list will be COMPLETELY skipped in the pass!",
                     "Comments can be added after a '#'"})
             @LangKey("config.mtepatches.render.extra_tesrs.name")
             public String[] extra_tesrs = {};
             @Comment({"Additional TileEntity classes to be culled for this section.",
-                    "Note that tileentities in this list will have its special renderer COMPLETELY skipped in the pass!",
                     "Comments can be added after a '#'"})
             @LangKey("config.mtepatches.render.extra_tiles.name")
             public String[] extra_tiles = {};

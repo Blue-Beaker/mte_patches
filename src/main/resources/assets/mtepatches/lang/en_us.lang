@@ -73,6 +73,10 @@ config.mtepatches.steveCarts.moreBridgingBlocks.name=More Bridge Blocks
 config.mtepatches.vanilla.name=Vanilla
 config.mtepatches.vanilla.dontReceiveItemsWhenDead.name=Don't receive item entities when dead
 
+config.mtepatches.render.name=Render Optimization
 config.mtepatches.render.renderDistance.name=Special Render Distance
 config.mtepatches.render.extra_tesrs.name=Extra Skipped Renderers
 config.mtepatches.render.extra_tiles.name=Extra Skipped TileEntities
+config.mtepatches.render.enableRenderCulling.name=Enable Render culling
+config.mtepatches.render.farCulling.name=Distance-based Culling
+config.mtepatches.render.shadowCulling.name=Shadow Culling

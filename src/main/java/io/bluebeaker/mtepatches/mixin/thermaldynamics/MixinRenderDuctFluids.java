@@ -15,6 +15,7 @@ import static io.bluebeaker.mtepatches.MTEPatchesConfig.render;
 public abstract class MixinRenderDuctFluids {
     @Inject(method = "render",at = @At("HEAD"),cancellable = true)
     private void skipRenderWhenFar(TileDuctFluid tile, double x, double y, double z, float partialTicks, int destroyStage, float alpha, CallbackInfo ci){
+        if(!render.enableRenderCulling) return;
         if(render.shadowCulling.thermaldynamics && ShadersAccessor.getIsRenderingShadowPass()) ci.cancel();
         if(render.farCulling.thermaldynamics && RenderUtils.isOutOfRenderDistance(tile, render.cullingDistance)) ci.cancel();
     }
