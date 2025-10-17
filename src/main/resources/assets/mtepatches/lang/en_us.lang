@@ -37,6 +37,7 @@ config.mtepatches.buildcraft.mjToForgeEnergy.name=Use RF/FE
 config.mtepatches.buildcraft.mjToForgeEnergyRatio.name=MJ to FE Ratio
 config.mtepatches.buildcraft.limitPipePower.name=Enforce Power Limits
 config.mtepatches.buildcraft.cacheAdaptors.name=Cache Adaptors
+config.mtepatches.buildcraft.cleanPlayerProfileNBT.name=Clean owner profile from NBT
 
 config.mtepatches.forestry.name=Forestry
 config.mtepatches.forestry.faultyQueenFix.name=Faulty Queen Fix

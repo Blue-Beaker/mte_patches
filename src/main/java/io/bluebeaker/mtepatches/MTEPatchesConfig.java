@@ -255,6 +255,11 @@ public class MTEPatchesConfig {
         @Comment({"Cache adaptor capabilities created by this mod. Only disable this for debug!"})
         @LangKey("config.mtepatches.buildcraft.cacheAdaptors.name")
         public boolean cacheAdaptors = true;
+
+        @Comment({"Clean owner's additional properties from NBT stored in BC tiles.",
+                "Even the owner's skin is in there, but only the name and UUID are useful."})
+        @LangKey("config.mtepatches.buildcraft.cleanPlayerProfileNBT.name")
+        public boolean cleanPlayerProfileNBT = true;
     }
 
     @LangKey("config.mtepatches.moarTinkers.name")

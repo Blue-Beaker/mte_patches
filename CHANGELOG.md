@@ -137,6 +137,7 @@ Added Fix for storage drawers extras:
 ## 1.6.2
 Add Scale generator buffers patch for IC2  
 Split mixin configs by mod so most mixins will only load when certain mod is present  
+
 ## 1.7.0
 New feature: render optimization
 - Culls some complex rendering in tileentities, like items in pipes, when further than this distance  
@@ -144,4 +145,7 @@ New feature: render optimization
 - Has some integrated culling  
 
 Add backface culling for storage drawers  
-Add shader compat workaround for projectred lamps  
+Add shader compat workaround for projectred lamps
+
+## 1.7.1
+Add "Clean owner profile from NBT" to BuildCraft  
