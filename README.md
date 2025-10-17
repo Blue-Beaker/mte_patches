@@ -16,7 +16,7 @@ Skips rendering of certain complex things of some tileentities, when:
 - It's rendering shadows for shaders.
 
 Including:
-- Buildcraft(Items, Fluid, Energy in pipes)
+- Buildcraft(Items and Fluid in pipes)
 - Forestry(Fluid in machines)
 - Thermal Dynamics(Items/Fluid in ducts)
 - Project Red(Items in pipes)
