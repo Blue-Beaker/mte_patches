@@ -144,3 +144,4 @@ New feature: render optimization
 - Has some integrated culling  
 
 Add backface culling for storage drawers  
+Add shader compat workaround for projectred lamps  

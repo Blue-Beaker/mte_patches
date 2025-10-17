@@ -10,7 +10,7 @@ Supported mods:
 - Biomes o' Plenty
 - Industrial Foregoing
 
-### Render Culling
+### [Client] Render Culling
 Skips rendering of certain complex things of some tileentities, when:
 - It's far away from the player. (distance configurable)
 - It's rendering shadows for shaders.
@@ -107,12 +107,17 @@ Items can cram up in ProjectRed's pressure tubes under some conditions.
 With this feature, pressure tubes with item stacks more than this value will be considered unpassable when pathfinding, so items won't cram up infinitely and cause huge lags.  
 #### Machine inventory size fix
 Fix inventory sizes of certain machines to fix related crashes.  
+#### [Client] Lamp Shaders Compat
+A workaround to make lamp halos render correctly with shaders.  
 
 ### Storage Drawers
 #### Clear empty slot
 QoL feature: Unmark an empty slot from an formerly-locked drawer with a left-click.
 #### Trim Pick Block Patch
 Fixes pick block on trims from storage drawers and storage drawers extra.  
+#### [Client] Backface Culling
+Do not render items in drawers that are backwards towards the player. Improves FPS.  
+
 ### Storage Drawers Extras
 #### Extra trim subtypes
 Fixes silk touch drops for Extra Trims
