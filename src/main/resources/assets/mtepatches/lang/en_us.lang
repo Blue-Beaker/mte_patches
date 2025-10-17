@@ -60,6 +60,7 @@ config.mtepatches.projectred.name=ProjectRed
 config.mtepatches.projectred.fixMiningSpeed.name=Breaking Speed Fix
 config.mtepatches.projectred.pressureTubeOverflowLimit.name=Pressure Tube Overflow Limit
 config.mtepatches.projectred.fixMachineInventorySizes.name=Machine inventory sizes fix
+config.mtepatches.projectred.lampHaloShaders.name=Fix lamp halo for shaders
 
 config.mtepatches.storageDrawers.name=Storage Drawers
 config.mtepatches.storageDrawers.clearEmptySlot.name=Unmark empty slot

@@ -8,11 +8,14 @@ import java.lang.reflect.Field;
 @SideOnly(Side.CLIENT)
 public class ShadersAccessor {
     private static Field isShadowPass;
+    private static Field isShaderPackInitialized;
     static {
         try {
             Class<?> ofShaders = Class.forName("net.optifine.shaders.Shaders");
             isShadowPass= ofShaders.getDeclaredField("isShadowPass");
             isShadowPass.setAccessible(true);
+            isShaderPackInitialized = ofShaders.getDeclaredField("isShaderPackInitialized");
+            isShaderPackInitialized.setAccessible(true);
             MTEPatchesMod.getLogger().info("Optifine shaders found. Enabling render optimization for shaders.");
         } catch (Throwable e) {
         }
@@ -23,7 +26,18 @@ public class ShadersAccessor {
      */
     public static boolean getIsRenderingShadowPass(){
         try {
-            return isShadowPass != null && (boolean) isShadowPass.get(null);
+            return isShadowPass != null && isShadowPass.getBoolean(null);
+        } catch (Throwable e) {
+            return false;
+        }
+    }
+
+    /** Common method to check for shaders.
+     * @return Whether Optifine is found, and a shaderpack is active.
+     */
+    public static boolean getIsShadersOn(){
+        try {
+            return isShaderPackInitialized != null && isShaderPackInitialized.getBoolean(null);
         } catch (Throwable e) {
             return false;
         }

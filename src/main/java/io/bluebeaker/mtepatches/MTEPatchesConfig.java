@@ -290,6 +290,10 @@ public class MTEPatchesConfig {
                 "Set to 0 to disable this feature."})
         @LangKey("config.mtepatches.projectred.pressureTubeOverflowLimit.name")
         public int pressureTubeOverflowLimit = 64;
+
+        @Comment({"Workaround for rendering halo of Lamps with shaders enabled. No effects otherwise."})
+        @LangKey("config.mtepatches.projectred.lampHaloShaders.name")
+        public boolean lampHaloShaders = true;
     }
 
     @LangKey("config.mtepatches.storageDrawers.name")

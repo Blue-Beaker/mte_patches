@@ -55,7 +55,7 @@ dependencies {
     // IC2
     implementation rfg.deobf('industrialcraft-2:industrialcraft-2-2.8.222-ex112')
     // Crop breeding simulator
-    implementation rfg.deobf('libs:IC2CropBreeding Plugin V1.12-1.1')
+    compileOnly rfg.deobf('libs:IC2CropBreeding Plugin V1.12-1.1')
 
     // Railcraft
     implementation rfg.deobf('libs:railcraft-12.0.0')
@@ -94,12 +94,12 @@ dependencies {
     compileOnly rfg.deobf('libs:Forgelin-1.8.4')
 
     // ProjectRed
-    compileOnly rfg.deobf('libs:ChickenASM-1.12-1.0.2.7')
-    compileOnly rfg.deobf('libs:MrTJPCore-1.12.2-2.1.4.43-universal')
-    compileOnly rfg.deobf('libs:ForgeMultipart-1.12.2-2.6.2.83-universal')
-    compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-lighting')
+    implementation rfg.deobf('libs:ChickenASM-1.12-1.0.2.7')
+    implementation rfg.deobf('libs:MrTJPCore-1.12.2-2.1.4.43-universal')
+    implementation rfg.deobf('libs:ForgeMultipart-1.12.2-2.6.2.83-universal')
+    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-lighting')
     compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-integration')
-    compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-Base')
+    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-Base')
     compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-mechanical')
 
     // Drawers
@@ -107,11 +107,11 @@ dependencies {
     implementation rfg.deobf('libs:StorageDrawers-1.12.2-5.4.2')
 
     // Drawers Extras
-    implementation rfg.deobf('libs:StorageDrawersExtras-1.12-3.1.0')
+    compileOnly rfg.deobf('libs:StorageDrawersExtras-1.12-3.1.0')
 
     // Steve's Carts
-    implementation rfg.deobf('libs:RebornCore-1.12.2-3.19.5-universal')
-    implementation rfg.deobf('libs:StevesCarts-1.12.2-2.4.32.137')
+    compileOnly rfg.deobf('libs:RebornCore-1.12.2-3.19.5-universal')
+    compileOnly rfg.deobf('libs:StevesCarts-1.12.2-2.4.32.137')
 
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')
