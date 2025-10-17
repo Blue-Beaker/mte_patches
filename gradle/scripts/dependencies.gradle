@@ -75,8 +75,10 @@ dependencies {
     implementation rfg.deobf("curse.maven:forestry-59751:2918418")
 
     //Rftools
-    compileOnly rfg.deobf('libs:mcjtylib-1.12-3.5.4')
+    implementation rfg.deobf('libs:mcjtylib-1.12-3.5.4')
     compileOnly rfg.deobf('libs:rftools-1.12-7.73')
+    // NotEnoughWands
+    implementation rfg.deobf('libs:notenoughwands-1.12-1.8.1')
 
     implementation rfg.deobf('libs:BiomesOPlenty-1.12.2-7.0.1.2445-universal')
     // BuildCraft
@@ -112,6 +114,7 @@ dependencies {
     // Steve's Carts
     compileOnly rfg.deobf('libs:RebornCore-1.12.2-3.19.5-universal')
     compileOnly rfg.deobf('libs:StevesCarts-1.12.2-2.4.32.137')
+
 
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')

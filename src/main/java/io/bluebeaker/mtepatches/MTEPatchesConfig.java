@@ -344,6 +344,14 @@ public class MTEPatchesConfig {
         public boolean moreBridgingBlocks = true;
     }
 
+    @LangKey("config.mtepatches.notEnoughWands.name")
+    public static CategoryNotEnoughWands notEnoughWands = new CategoryNotEnoughWands();
+    public static class CategoryNotEnoughWands{
+        @Comment({"Fix GL attribute leakage, preventing wand overlay from breaking other mod's overlays"})
+        @LangKey("config.mtepatches.notEnoughWands.fixGlAttribLeak.name")
+        public boolean fixGlAttribLeak = true;
+    }
+
     @Comment("Enable debug output for some patches. May cause log spamming!")
     public static boolean debugOutput = false;
 }

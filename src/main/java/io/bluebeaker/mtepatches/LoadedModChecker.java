@@ -11,6 +11,7 @@ public enum LoadedModChecker {
     ic2cropplugin("ic2cropplugin"),
     industrialforegoing("industrialforegoing"),
     moartinkers("moartinkers"),
+    notenoughwands("notenoughwands"),
     projectredcore("projectred-core"),
     projectredexpansion("projectred-expansion"),
     projectredillumination("projectred-illumination"),
