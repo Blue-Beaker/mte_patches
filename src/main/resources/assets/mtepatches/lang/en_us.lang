@@ -75,6 +75,7 @@ config.mtepatches.steveCarts.moreBridgingBlocks.name=More Bridge Blocks
 
 config.mtepatches.notEnoughWands.name=Not Enough Wands
 config.mtepatches.notEnoughWands.fixGlAttribLeak.name=GL Attribute Leakage Fix
+config.mtepatches.notEnoughWands.fixWandCostMultiplier.name=Fix Wand RF Costs
 
 config.mtepatches.vanilla.name=Vanilla
 config.mtepatches.vanilla.dontReceiveItemsWhenDead.name=Don't receive item entities when dead

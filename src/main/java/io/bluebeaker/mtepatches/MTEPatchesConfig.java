@@ -350,6 +350,11 @@ public class MTEPatchesConfig {
         @Comment({"Fix GL attribute leakage, preventing wand overlay from breaking other mod's overlays"})
         @LangKey("config.mtepatches.notEnoughWands.fixGlAttribLeak.name")
         public boolean fixGlAttribLeak = true;
+
+        @Comment({"Fix wand RF cost being capped at the value configured."
+                ,"Some wands may cost more than configured, like acceleration wand in faster and fastest modes"})
+        @LangKey("config.mtepatches.notEnoughWands.fixWandCostMultiplier.name")
+        public boolean fixWandCostMultiplier = true;
     }
 
     @Comment("Enable debug output for some patches. May cause log spamming!")
