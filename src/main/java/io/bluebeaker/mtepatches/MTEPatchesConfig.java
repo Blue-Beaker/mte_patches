@@ -51,7 +51,7 @@ public class MTEPatchesConfig {
         public RenderSkipConfig shadowCulling = new RenderSkipConfig();
 
         public static class RenderSkipConfig {
-            @Comment({"Items and fluid flow in BC pipes"})
+            @Comment({"Items and fluid flow in BC pipes, Lights on BC pumps"})
             public boolean buildcraft = true;
             @Comment({"Items and fluid flow in TD pipes"})
             public boolean thermaldynamics = true;
