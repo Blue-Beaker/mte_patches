@@ -257,7 +257,7 @@ public class MTEPatchesConfig {
         public boolean cacheAdaptors = true;
 
         @Comment({"Clean owner's additional properties from NBT stored in BC tiles.",
-                "Even the owner's skin is in there, but only the name and UUID are useful."})
+                "Other mod may cause more informations to be stored, but only the name and ID are useful there."})
         @LangKey("config.mtepatches.buildcraft.cleanPlayerProfileNBT.name")
         public boolean cleanPlayerProfileNBT = true;
     }
