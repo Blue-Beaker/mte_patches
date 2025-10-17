@@ -88,6 +88,8 @@ Allows BuildCraft item pipes to accept items ejected from vanilla hoppers and ma
 (Disabled by default) Simply make BuildCraft works with RF/FE.  
 #### Enforce Power Limits
 (Disabled by default) Apply the transfer rate limits to kinesis pipes. Also limits how much power can be stored in it.  
+#### Clean owner profile from NBT
+Some mod adds additional data to player profile, and these are stored to NBT in BC blocks. This patch removes them from BC NBT as they are useless there.  
 
 ### Moar Tinkers
 #### Disable Mining Boost when Sneaking
@@ -135,6 +137,13 @@ Allows all solid, opaque, non-falling blocks to be used in bridger module.
 ### IC2 crop breeding plugin
 #### Calculator GUI fix
 Fix wrong items appearing in crop calculator GUI on inventory update.  
+
+### Not Enough Wands
+#### GL attribute leakage fix
+NotEnoughWands leaks OpenGL attributes in its overlay, and may break other mod's overlay. This fixes the leak.  
+#### Wand RF cost fix
+Fix wand RF cost being capped at the value configured."
+,"Some wands may cost more than configured, like acceleration wand in faster and fastest modes
 
 ### Vanilla
 #### [Client] Don't receive item entities when dead

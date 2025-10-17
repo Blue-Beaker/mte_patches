@@ -149,3 +149,5 @@ Add shader compat workaround for projectred lamps
 
 ## 1.7.1
 Add "Clean owner profile from NBT" to BuildCraft  
+Add GL attribute leakage fix for NotEnoughWands  
+Add wand RF cost fix for NotEnoughWands  

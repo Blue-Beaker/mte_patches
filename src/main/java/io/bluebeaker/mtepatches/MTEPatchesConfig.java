@@ -347,7 +347,7 @@ public class MTEPatchesConfig {
     @LangKey("config.mtepatches.notEnoughWands.name")
     public static CategoryNotEnoughWands notEnoughWands = new CategoryNotEnoughWands();
     public static class CategoryNotEnoughWands{
-        @Comment({"Fix GL attribute leakage, preventing wand overlay from breaking other mod's overlays"})
+        @Comment({"NotEnoughWands leaks OpenGL attributes in its overlay, and may break other mod's overlay. This fixes the leak."})
         @LangKey("config.mtepatches.notEnoughWands.fixGlAttribLeak.name")
         public boolean fixGlAttribLeak = true;
 
