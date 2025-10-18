@@ -142,8 +142,8 @@ Fix wrong items appearing in crop calculator GUI on inventory update.
 #### GL attribute leakage fix
 NotEnoughWands leaks OpenGL attributes in its overlay, and may break other mod's overlay. This fixes the leak.  
 #### Wand RF cost fix
-Fix wand RF cost being capped at the value configured."
-,"Some wands may cost more than configured, like acceleration wand in faster and fastest modes
+Fix wand RF cost being capped at the value configured.  
+Some wands may cost more than configured, like acceleration wand in faster and fastest modes  
 
 ### Vanilla
 #### [Client] Don't receive item entities when dead
