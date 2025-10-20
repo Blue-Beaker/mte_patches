@@ -102,7 +102,7 @@ dependencies {
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-lighting')
     compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-integration')
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-Base')
-    compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-mechanical')
+    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-mechanical')
 
     // Drawers
     implementation rfg.deobf('libs:Chameleon-1.12-4.1.3')

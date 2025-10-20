@@ -299,6 +299,11 @@ public class MTEPatchesConfig {
         @Comment({"Workaround for rendering halo of Lamps with shaders enabled. No effects otherwise."})
         @LangKey("config.mtepatches.projectred.lampHaloShaders.name")
         public boolean lampHaloShaders = true;
+
+        @Comment({"Fix PR screwdriver consuming the multitool item from Omniwand/morph-o-tool on breaking,",
+                "by firing a PlayerDestroyItemEvent when breaking them"})
+        @LangKey("config.mtepatches.projectred.fixToolBreaking.name")
+        public boolean fixToolBreaking = true;
     }
 
     @LangKey("config.mtepatches.storageDrawers.name")
@@ -360,7 +365,7 @@ public class MTEPatchesConfig {
     @LangKey("config.mtepatches.immersiveengineering.name")
     public static CategoryIE immersiveengineering = new CategoryIE();
     public static class CategoryIE{
-        @Comment({"Fix IE hammer consuming whole Omniwand/morph-o-tool on breaking.",
+        @Comment({"Fix IE hammer consuming the multitool item from Omniwand/morph-o-tool on breaking,",
                 "By firing a PlayerDestroyItemEvent when breaking them"})
         @LangKey("config.mtepatches.immersiveengineering.fixHammerBreakEvent.name")
         public boolean fixHammerBreakEvent = true;

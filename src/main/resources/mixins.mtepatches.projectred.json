@@ -9,6 +9,7 @@
     "MixinFramedWirePart",
     "MixinFramePart",
     "MixinGatePart",
+    "MixinItemScrewdriver",
     "MixinLightPart",
     "MixinMultiTileBlock",
     "MixinPipePart",

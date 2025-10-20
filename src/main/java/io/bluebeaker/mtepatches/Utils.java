@@ -1,9 +1,13 @@
 package io.bluebeaker.mtepatches;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.StringUtils;
 
+import javax.annotation.Nullable;
 import java.net.URLConnection;
 
 public class Utils {
@@ -26,5 +30,22 @@ public class Utils {
             tag.setString("Id", profile.getId().toString());
         }
         return tag;
+    }
+
+    /** Get which hand the stack is on.
+     * @param stack The stack to check
+     * @param player The player to check
+     * @return The hand which the stack is on, or null if the stack isn't on any hand, or player is null.
+     */
+    @Nullable
+    public static EnumHand getHandForItem(ItemStack stack, @Nullable EntityPlayer player){
+        if(player==null) return null;
+        if(player.getHeldItemMainhand()==stack) {
+            return EnumHand.MAIN_HAND;
+        } else if (player.getHeldItemOffhand()==stack) {
+            return EnumHand.OFF_HAND;
+        }else {
+            return null;
+        }
     }
 }

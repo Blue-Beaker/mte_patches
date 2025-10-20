@@ -4,6 +4,7 @@ import blusunrize.immersiveengineering.api.Lib;
 import blusunrize.immersiveengineering.common.items.ItemIETool;
 import blusunrize.immersiveengineering.common.util.ItemNBTHelper;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
+import io.bluebeaker.mtepatches.Utils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
@@ -24,16 +25,11 @@ public abstract class MixinItemIETool {
     // Fire onDestroy event on item destroy. Fixes consuming the whole morph-o-tool/omniwand on destroy
     @Inject(method = "damageIETool",at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getMetadata()I"))
     public void fireEventOnDestroy(ItemStack stack, int amount, Random rand, EntityPlayer player, CallbackInfo ci){
-        if(!MTEPatchesConfig.immersiveengineering.fixHammerBreakEvent || player==null) return;
+        if(!MTEPatchesConfig.immersiveengineering.fixHammerBreakEvent) return;
         // Check which hand the item is on
-        EnumHand hand;
-        if(player.getHeldItemMainhand()==stack) {
-            hand=EnumHand.MAIN_HAND;
-        } else if (player.getHeldItemOffhand()==stack) {
-            hand=EnumHand.OFF_HAND;
-        }else {
-            return;
-        }
+        EnumHand hand = Utils.getHandForItem(stack,player);
+        if(hand==null) return;
+
         int curDamage = ItemNBTHelper.getInt(stack, Lib.NBT_DAMAGE) + amount;
 
         if(curDamage >= (stack.getMetadata()==HAMMER_META?hammerDurabiliy: cutterDurabiliy)){
