@@ -115,6 +115,8 @@ dependencies {
     compileOnly rfg.deobf('libs:RebornCore-1.12.2-3.19.5-universal')
     compileOnly rfg.deobf('libs:StevesCarts-1.12.2-2.4.32.137')
 
+    implementation rfg.deobf('libs:ImmersiveEngineering-0.12-98')
+    implementation rfg.deobf('libs:omniwand-1.12.2-2.0.1')
 
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')

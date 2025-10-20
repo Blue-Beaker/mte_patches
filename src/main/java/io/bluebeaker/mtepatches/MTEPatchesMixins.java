@@ -15,6 +15,7 @@ public class MTEPatchesMixins implements ILateMixinLoader {
         addMixinsForMod(LoadedModChecker.forestry);
         addMixinsForMod(LoadedModChecker.ic2);
         addMixinsForMod(LoadedModChecker.ic2cropplugin);
+        addMixinsForMod(LoadedModChecker.immersiveengineering);
         addMixinsForMod(LoadedModChecker.industrialforegoing);
         addMixinsForMod(LoadedModChecker.moartinkers);
         addMixinsForMod("projectred",LoadedModChecker.projectredcore);

@@ -9,6 +9,7 @@ public enum LoadedModChecker {
     forestry("forestry"),
     ic2("ic2"),
     ic2cropplugin("ic2cropplugin"),
+    immersiveengineering("immersiveengineering"),
     industrialforegoing("industrialforegoing"),
     moartinkers("moartinkers"),
     notenoughwands("notenoughwands"),
