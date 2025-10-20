@@ -3,6 +3,7 @@ package io.bluebeaker.mtepatches.mixin.immersiveengineering;
 import blusunrize.immersiveengineering.api.Lib;
 import blusunrize.immersiveengineering.common.items.ItemIETool;
 import blusunrize.immersiveengineering.common.util.ItemNBTHelper;
+import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
@@ -23,7 +24,8 @@ public abstract class MixinItemIETool {
     // Fire onDestroy event on item destroy. Fixes consuming the whole morph-o-tool/omniwand on destroy
     @Inject(method = "damageIETool",at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getMetadata()I"))
     public void fireEventOnDestroy(ItemStack stack, int amount, Random rand, EntityPlayer player, CallbackInfo ci){
-        if(player==null) return;
+        if(!MTEPatchesConfig.immersiveengineering.fixHammerBreakEvent || player==null) return;
+        // Check which hand the item is on
         EnumHand hand;
         if(player.getHeldItemMainhand()==stack) {
             hand=EnumHand.MAIN_HAND;

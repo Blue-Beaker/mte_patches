@@ -87,3 +87,6 @@ config.mtepatches.render.extra_tiles.name=Extra Skipped TileEntities
 config.mtepatches.render.enableRenderCulling.name=Enable Render culling
 config.mtepatches.render.farCulling.name=Distance-based Culling
 config.mtepatches.render.shadowCulling.name=Shadow Culling
+
+config.mtepatches.immersiveengineering.name=Immersive Engineeering
+config.mtepatches.immersiveengineering.fixHammerBreakEvent.name=Fix hammer breaking multitools

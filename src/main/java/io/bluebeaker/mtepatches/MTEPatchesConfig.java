@@ -357,6 +357,15 @@ public class MTEPatchesConfig {
         public boolean fixWandCostMultiplier = true;
     }
 
+    @LangKey("config.mtepatches.immersiveengineering.name")
+    public static CategoryIE immersiveengineering = new CategoryIE();
+    public static class CategoryIE{
+        @Comment({"Fix IE hammer consuming whole Omniwand/morph-o-tool on breaking.",
+                "By firing a PlayerDestroyItemEvent when breaking them"})
+        @LangKey("config.mtepatches.immersiveengineering.fixHammerBreakEvent.name")
+        public boolean fixHammerBreakEvent = true;
+    }
+
     @Comment("Enable debug output for some patches. May cause log spamming!")
     public static boolean debugOutput = false;
 }
