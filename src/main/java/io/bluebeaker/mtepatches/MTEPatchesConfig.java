@@ -65,6 +65,19 @@ public class MTEPatchesConfig {
             public String[] extra_tesrs = {};
         }
     }
+    @Comment({"Some mod have tools that can consume the entire multitool item from Omniwand/morph-o-tool on breaking",
+            "This provides fix to certain tools by firing a PlayerDestroyItemEvent on breaking."})
+    @LangKey("config.mtepatches.multitoolPatch.name")
+    public static CategoryMultitool multitoolPatch = new CategoryMultitool();
+    public static class CategoryMultitool{
+        @Comment({"Fix IE hammer consuming the multitool item on breaking"})
+        @LangKey("config.mtepatches.multitoolPatch.IEHammer.name")
+        public boolean IEHammer = true;
+
+        @Comment({"Fix PR screwdriver consuming the multitool item on breaking"})
+        @LangKey("config.mtepatches.multitoolPatch.PRScrewdriver.name")
+        public boolean PRScrewdriver = true;
+    }
 
     @LangKey("config.mtepatches.connectionTimeout.name")
     public static CategoryConnectionTimeout connectionTimeout = new CategoryConnectionTimeout();
@@ -299,11 +312,6 @@ public class MTEPatchesConfig {
         @Comment({"Workaround for rendering halo of Lamps with shaders enabled. No effects otherwise."})
         @LangKey("config.mtepatches.projectred.lampHaloShaders.name")
         public boolean lampHaloShaders = true;
-
-        @Comment({"Fix PR screwdriver consuming the multitool item from Omniwand/morph-o-tool on breaking,",
-                "by firing a PlayerDestroyItemEvent when breaking them"})
-        @LangKey("config.mtepatches.projectred.fixToolBreaking.name")
-        public boolean fixToolBreaking = true;
     }
 
     @LangKey("config.mtepatches.storageDrawers.name")
@@ -365,10 +373,6 @@ public class MTEPatchesConfig {
     @LangKey("config.mtepatches.immersiveengineering.name")
     public static CategoryIE immersiveengineering = new CategoryIE();
     public static class CategoryIE{
-        @Comment({"Fix IE hammer consuming the multitool item from Omniwand/morph-o-tool on breaking,",
-                "By firing a PlayerDestroyItemEvent when breaking them"})
-        @LangKey("config.mtepatches.immersiveengineering.fixHammerBreakEvent.name")
-        public boolean fixHammerBreakEvent = true;
     }
 
     @Comment("Enable debug output for some patches. May cause log spamming!")

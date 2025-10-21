@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class MixinItemScrewdriver {
     @Inject(method = "damageScrewdriver",at = @At("HEAD"))
     public void fireEventOnBreak(EntityPlayer player, ItemStack stack, CallbackInfo ci){
-        if(!MTEPatchesConfig.projectred.fixToolBreaking) return;
+        if(!MTEPatchesConfig.multitoolPatch.PRScrewdriver) return;
         if(Configurator.unbreakableScrewdriver()) return;
 
         EnumHand hand = Utils.getHandForItem(stack, player);

@@ -89,4 +89,7 @@ config.mtepatches.render.farCulling.name=Distance-based Culling
 config.mtepatches.render.shadowCulling.name=Shadow Culling
 
 config.mtepatches.immersiveengineering.name=Immersive Engineeering
-config.mtepatches.immersiveengineering.fixHammerBreakEvent.name=Fix hammer breaking multitools
+
+config.mtepatches.multitoolPatch.name=Multitool Compatibility
+config.mtepatches.multitoolPatch.IEHammer.name=Immersive Engineering Hammer
+config.mtepatches.multitoolPatch.PRScrewdriver.name=ProjectRed Screwdriver

@@ -25,7 +25,7 @@ public abstract class MixinItemIETool {
     // Fire onDestroy event on item destroy. Fixes consuming the whole morph-o-tool/omniwand on destroy
     @Inject(method = "damageIETool",at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getMetadata()I"))
     public void fireEventOnDestroy(ItemStack stack, int amount, Random rand, EntityPlayer player, CallbackInfo ci){
-        if(!MTEPatchesConfig.immersiveengineering.fixHammerBreakEvent) return;
+        if(!MTEPatchesConfig.multitoolPatch.IEHammer) return;
         // Check which hand the item is on
         EnumHand hand = Utils.getHandForItem(stack,player);
         if(hand==null) return;
