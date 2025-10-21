@@ -22,7 +22,7 @@ public abstract class MixinItemToolWrench {
         if(hand==null) return;
 
         // Check whether the item will break on use
-        if(stack.getItemDamage()>=stack.getMaxDamage()){
+        if(stack.getItemDamage()+damage>stack.getMaxDamage()){
             ForgeEventFactory.onPlayerDestroyItem(player,stack.copy(),hand);
         }
     }
