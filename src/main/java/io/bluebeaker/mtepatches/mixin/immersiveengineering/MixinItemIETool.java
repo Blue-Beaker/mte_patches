@@ -29,7 +29,7 @@ public abstract class MixinItemIETool {
         // Check which hand the item is on
         EnumHand hand = Utils.getHandForItem(stack,player);
         if(hand==null) return;
-
+        // Check whether the item will break on use
         int curDamage = ItemNBTHelper.getInt(stack, Lib.NBT_DAMAGE) + amount;
 
         if(curDamage >= (stack.getMetadata()==HAMMER_META?hammerDurabiliy: cutterDurabiliy)){

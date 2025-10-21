@@ -52,11 +52,6 @@ config.mtepatches.industrialforegoing.name=Industrial Foregoing
 config.mtepatches.industrialforegoing.fixConveyorInsertionDuplication.name=Insertion Conveyor Duplication Fix
 config.mtepatches.industrialforegoing.fixMeatFeederTickNull.name=Meat Feeder Null Handler Check
 
-config.mtepatches.connectionTimeout.name=Connection Timeout
-config.mtepatches.connectionTimeout.timeout.name=Connection Timeout (ms)
-config.mtepatches.connectionTimeout.bop.name=Enable for Biomes O Plenty
-config.mtepatches.connectionTimeout.industrialforegoing.name=Enable for Industrial Foregoing
-
 config.mtepatches.projectred.name=ProjectRed
 config.mtepatches.projectred.fixMiningSpeed.name=Breaking Speed Fix
 config.mtepatches.projectred.pressureTubeOverflowLimit.name=Pressure Tube Overflow Limit
@@ -80,7 +75,9 @@ config.mtepatches.notEnoughWands.fixWandCostMultiplier.name=Fix Wand RF Costs
 config.mtepatches.vanilla.name=Vanilla
 config.mtepatches.vanilla.dontReceiveItemsWhenDead.name=Don't receive item entities when dead
 
-config.mtepatches.render.name=Render Optimization
+config.mtepatches.immersiveengineering.name=Immersive Engineeering
+
+config.mtepatches.render.name=[Generic] Render Optimization
 config.mtepatches.render.renderDistance.name=Special Render Distance
 config.mtepatches.render.extra_tesrs.name=Extra Skipped Renderers
 config.mtepatches.render.extra_tiles.name=Extra Skipped TileEntities
@@ -88,8 +85,12 @@ config.mtepatches.render.enableRenderCulling.name=Enable Render culling
 config.mtepatches.render.farCulling.name=Distance-based Culling
 config.mtepatches.render.shadowCulling.name=Shadow Culling
 
-config.mtepatches.immersiveengineering.name=Immersive Engineeering
+config.mtepatches.connectionTimeout.name=[Generic] Connection Timeout
+config.mtepatches.connectionTimeout.timeout.name=Connection Timeout (ms)
+config.mtepatches.connectionTimeout.bop.name=Enable for Biomes O Plenty
+config.mtepatches.connectionTimeout.industrialforegoing.name=Enable for Industrial Foregoing
 
-config.mtepatches.multitoolPatch.name=Multitool Compatibility
+config.mtepatches.multitoolPatch.name=[Generic] Multitool Compatibility
 config.mtepatches.multitoolPatch.IEHammer.name=Immersive Engineering Hammer
 config.mtepatches.multitoolPatch.PRScrewdriver.name=ProjectRed Screwdriver
+config.mtepatches.multitoolPatch.IC2Wrench.name=IC2 Wrench

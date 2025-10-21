@@ -1,9 +1,8 @@
-package io.bluebeaker.mtepatches.mixin.projectred;
+package io.bluebeaker.mtepatches.mixin.ic2;
 
+import ic2.core.item.tool.ItemToolWrench;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import io.bluebeaker.mtepatches.Utils;
-import mrtjp.projectred.core.Configurator;
-import mrtjp.projectred.core.ItemScrewdriver;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
@@ -13,12 +12,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = ItemScrewdriver.class,remap = false)
-public abstract class MixinItemScrewdriver {
-    @Inject(method = "damageScrewdriver",at = @At("HEAD"))
-    public void fireEventOnBreak(EntityPlayer player, ItemStack stack, CallbackInfo ci){
-        if(!MTEPatchesConfig.multitoolPatch.PRScrewdriver) return;
-        if(Configurator.unbreakableScrewdriver()) return;
+@Mixin(value = ItemToolWrench.class,remap = false)
+public abstract class MixinItemToolWrench {
+    @Inject(method = "damage",at=@At("HEAD"))
+    public void fireBreakingEvent(ItemStack stack, int damage, EntityPlayer player, CallbackInfo ci){
+        if(!MTEPatchesConfig.multitoolPatch.IC2Wrench) return;
 
         EnumHand hand = Utils.getHandForItem(stack, player);
         if(hand==null) return;

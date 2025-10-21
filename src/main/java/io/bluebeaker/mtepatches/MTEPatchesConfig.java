@@ -77,6 +77,10 @@ public class MTEPatchesConfig {
         @Comment({"Fix PR screwdriver consuming the multitool item on breaking"})
         @LangKey("config.mtepatches.multitoolPatch.PRScrewdriver.name")
         public boolean PRScrewdriver = true;
+
+        @Comment({"Fix IC2 Wrench consuming the multitool item on breaking"})
+        @LangKey("config.mtepatches.multitoolPatch.IC2Wrench.name")
+        public boolean IC2Wrench = true;
     }
 
     @LangKey("config.mtepatches.connectionTimeout.name")
