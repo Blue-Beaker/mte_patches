@@ -10,6 +10,15 @@ Supported mods:
 - Biomes o' Plenty
 - Industrial Foregoing
 
+### Multitool Compatibility
+Some mod have tools that can consume the entire multitool item from Omniwand/morph-o-tool on breaking.  
+This provides fix to certain tools by firing a PlayerDestroyItemEvent on breaking.  
+
+#### Supported items:
+- IndustrialCraft2 Wrench
+- ProjectRed Screwdriver
+- Immersive Engineering Hammer 
+
 ### [Client] Render Culling
 Skips rendering of certain complex things of some tileentities, when:
 - It's far away from the player. (distance configurable)

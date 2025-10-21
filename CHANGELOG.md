@@ -151,3 +151,9 @@ Add shader compat workaround for projectred lamps
 Add "Clean owner profile from NBT" to BuildCraft  
 Add GL attribute leakage fix for NotEnoughWands  
 Add wand RF cost fix for NotEnoughWands  
+
+## 1.7.2
+Add Multitool Compatibility fix for:
+- IC2 wrench
+- IE hammer
+- PR screwdriver
