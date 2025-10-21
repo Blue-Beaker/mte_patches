@@ -74,6 +74,9 @@ config.mtepatches.notEnoughWands.fixWandCostMultiplier.name=Fix Wand RF Costs
 
 config.mtepatches.vanilla.name=Vanilla
 config.mtepatches.vanilla.dontReceiveItemsWhenDead.name=Don't receive item entities when dead
+config.mtepatches.vanilla.fallingBlockDupeFix.name=Disable Falling Block Duplication
+config.mtepatches.vanilla.floatingPumpkin.name=Floating Pumpkins
+config.mtepatches.vanilla.floatingFenceGate.name=Floating Fence Gates
 
 config.mtepatches.immersiveengineering.name=Immersive Engineeering
 

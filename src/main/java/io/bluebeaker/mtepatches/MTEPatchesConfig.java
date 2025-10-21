@@ -111,6 +111,14 @@ public class MTEPatchesConfig {
                 "by blocking it from being teleported by the portal."})
         @LangKey("config.mtepatches.vanilla.fallingBlockDupeFix.name")
         public boolean fallingBlockDupeFix = false;
+
+
+        @Comment({"Allows placing pumpkins and jack-o-lanterns without a solid top surface under it."})
+        @LangKey("config.mtepatches.vanilla.floatingPumpkin.name")
+        public boolean floatingPumpkin = true;
+        @Comment({"Allows placing fence gates without a block under it."})
+        @LangKey("config.mtepatches.vanilla.floatingFenceGate.name")
+        public boolean floatingFenceGate = true;
     }
     @LangKey("config.mtepatches.railcraft.name")
     public static CategoryRailcraft railcraft = new CategoryRailcraft();
