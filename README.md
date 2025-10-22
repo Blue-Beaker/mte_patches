@@ -159,3 +159,5 @@ Some wands may cost more than configured, like acceleration wand in faster and f
 Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags.  
 #### Falling block dupe glitch
 (Disabled by default) Stops vanilla falling block duplication with end portal, by blocking falling block entities from being teleported by the portal.  
+#### Floating Pumpkins & Floating Fence Gates
+Allows placing pumpkins and/or fence gates without a block below it.  

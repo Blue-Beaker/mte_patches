@@ -157,3 +157,6 @@ Add Multitool Compatibility fix for:
 - IC2 wrench
 - IE hammer
 - PR screwdriver
+
+## 1.7.3
+Added a feature for vanilla, to place pumpkins and fence gates without a block below   
