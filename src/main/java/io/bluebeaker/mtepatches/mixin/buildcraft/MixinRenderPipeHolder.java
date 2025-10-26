@@ -26,7 +26,7 @@ public abstract class MixinRenderPipeHolder {
         if(render.enableRenderCulling && flow instanceof PipeFlowItems || flow instanceof PipeFlowFluids){
             if (render.shadowCulling.buildcraft && ShadersAccessor.getIsRenderingShadowPass()) {
                 return null;
-            } else if (render.farCulling.buildcraft && RenderUtils.isOutOfRenderDistance(pipeHolder, render.cullingDistance)) {
+            } else if (render.farCulling.buildcraft && RenderUtils.isOutOfRenderDistance(pipeHolder)) {
                 return null;
             }
         }

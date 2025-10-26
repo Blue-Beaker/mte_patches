@@ -20,6 +20,6 @@ public abstract class MixinRenderPipe {
         if(!render.enableRenderCulling) return;
         if(render.shadowCulling.projectred && ShadersAccessor.getIsRenderingShadowPass()) ci.cancel();
         if(render.farCulling.projectred && RenderUtils.isOutOfRenderDistance(
-                pipe.tile(), render.cullingDistance)) ci.cancel();
+                pipe.tile())) ci.cancel();
     }
 }

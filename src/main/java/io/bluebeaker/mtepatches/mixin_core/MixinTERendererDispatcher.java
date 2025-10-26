@@ -25,7 +25,7 @@ public abstract class MixinTERendererDispatcher {
     @Inject(method = "render(Lnet/minecraft/tileentity/TileEntity;DDDFIF)V",at = @At(value = "INVOKE_ASSIGN",target = "Lnet/minecraft/client/renderer/tileentity/TileEntityRendererDispatcher;getRenderer(Lnet/minecraft/tileentity/TileEntity;)Lnet/minecraft/client/renderer/tileentity/TileEntitySpecialRenderer;"),cancellable = true)
     private void skipRenderContentsWhenFar(TileEntity tileEntityIn, double x, double y, double z, float partialTicks, int destroyStage, float p_192854_10_, CallbackInfo ci, @Local TileEntitySpecialRenderer renderer){
         if(!render.enableRenderCulling) return;
-        if (renderer != null && RenderUtils.isOutOfRenderDistance(tileEntityIn, render.cullingDistance)
+        if (renderer != null && RenderUtils.isOutOfRenderDistance(tileEntityIn)
                 && (RenderSkipRegistry.INSTANCE.skipFar.contains(renderer.getClass()) || RenderSkipRegistry.INSTANCE.skipFarTiles.contains(tileEntityIn.getClass()))) {
             ci.cancel();
         }

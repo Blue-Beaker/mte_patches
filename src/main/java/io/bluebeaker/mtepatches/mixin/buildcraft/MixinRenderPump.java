@@ -17,7 +17,7 @@ public abstract class MixinRenderPump {
     @ModifyConstant(method = "renderTileEntityFast(Lbuildcraft/factory/tile/TilePump;DDDFIFLnet/minecraft/client/renderer/BufferBuilder;)V",constant = @Constant(intValue = 4))
     public int pumpRenderCulling(int constant, @Local(argsOnly = true) TilePump tile){
         if(!render.enableRenderCulling) return constant;
-        if((render.shadowCulling.buildcraft && ShadersAccessor.getIsRenderingShadowPass()) || (render.farCulling.buildcraft && RenderUtils.isOutOfRenderDistance(tile, render.cullingDistance))){
+        if((render.shadowCulling.buildcraft && ShadersAccessor.getIsRenderingShadowPass()) || (render.farCulling.buildcraft && RenderUtils.isOutOfRenderDistance(tile))){
             // Set loop count to 0 to skip rendering lights
             return 0;
         }

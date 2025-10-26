@@ -17,6 +17,6 @@ public abstract class MixinRenderDuctItems {
     private void skipRenderWhenFar(TileGrid tile, double x, double y, double z, float partialTicks, int destroyStage, float alpha, CallbackInfo ci){
         if(!render.enableRenderCulling) return;
         if(render.shadowCulling.thermaldynamics && ShadersAccessor.getIsRenderingShadowPass()) ci.cancel();
-        if(render.farCulling.thermaldynamics && RenderUtils.isOutOfRenderDistance(tile, render.cullingDistance)) ci.cancel();
+        if(render.farCulling.thermaldynamics && RenderUtils.isOutOfRenderDistance(tile)) ci.cancel();
     }
 }
