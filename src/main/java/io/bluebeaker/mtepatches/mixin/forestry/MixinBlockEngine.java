@@ -31,11 +31,10 @@ public abstract class MixinBlockEngine extends BlockBase<BlockTypeEngine> {
         super(blockType);
     }
 
-    @Inject(method = "addCollisionBoxToList",at = @At("HEAD"),cancellable = true,remap = true)
+    @Inject(method = "addCollisionBoxToList(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/AxisAlignedBB;Ljava/util/List;Lnet/minecraft/entity/Entity;Z)V",at = @At("HEAD"),cancellable = true,remap = true)
     public void bioGenCollision(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn, boolean p_185477_7_, CallbackInfo ci){
-        if(!forestry.collisionBoxFix || !LoadedModChecker.ic2.isLoaded()) return;
-        BlockEngine engine = (BlockEngine) (Object) this;
-        if(engine==PluginIC2.getBlocks().generator){
+        if(!forestry.collisionBoxFix) return;
+        if(blockType==BlockTypeEngine.GENERATOR){
 
             AxisAlignedBB axisalignedbb = new AxisAlignedBB(pos);
             if (entityBox.intersects(axisalignedbb))
@@ -45,11 +44,10 @@ public abstract class MixinBlockEngine extends BlockBase<BlockTypeEngine> {
             ci.cancel();
         }
     }
-    @Inject(method = "collisionRayTrace",at = @At("HEAD"),cancellable = true,remap = true)
+    @Inject(method = "collisionRayTrace(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;",at = @At("HEAD"),cancellable = true,remap = true)
     public void bioGenCollisionRay(IBlockState blockState, World worldIn, BlockPos pos, Vec3d start, Vec3d end, CallbackInfoReturnable<RayTraceResult> cir){
-        if(!forestry.collisionBoxFix || !LoadedModChecker.ic2.isLoaded()) return;
-        BlockEngine engine = (BlockEngine) (Object) this;
-        if(engine==PluginIC2.getBlocks().generator){
+        if(!forestry.collisionBoxFix) return;
+        if(blockType==BlockTypeEngine.GENERATOR){
             cir.setReturnValue(super.collisionRayTrace(blockState, worldIn, pos, start, end));
         }
     }
