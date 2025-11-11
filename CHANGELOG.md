@@ -160,3 +160,6 @@ Add Multitool Compatibility fix for:
 
 ## 1.7.3
 Added a feature for vanilla, to place pumpkins and fence gates without a block below   
+
+## 1.7.4
+Fix the bio engine collision box fix  
