@@ -19,16 +19,16 @@ public class WorldLeakCleaner {
 
     public static void updateCleaners(){
         cleaners.clear();
-        if(MTEPatchesConfig.memoryLeakFix.railcraft && LoadedModChecker.railcraft.isLoaded()){
+        if(MTEPatchesConfig.worldLeakFix.railcraft && LoadedModChecker.railcraft.isLoaded()){
             cleaners.add(new WorldCleanerRC());
         }
-        if(MTEPatchesConfig.memoryLeakFix.energyControl && LoadedModChecker.energyControl.isLoaded()){
+        if(MTEPatchesConfig.worldLeakFix.energyControl && LoadedModChecker.energyControl.isLoaded()){
             cleaners.add(new WorldCleanerEnergyControl());
         }
-        if(MTEPatchesConfig.memoryLeakFix.immersiveEngineering && LoadedModChecker.immersiveengineering.isLoaded()){
+        if(MTEPatchesConfig.worldLeakFix.immersiveEngineering && LoadedModChecker.immersiveengineering.isLoaded()){
             cleaners.add(new WorldCleanerIE());
         }
-        if(MTEPatchesConfig.memoryLeakFix.thermalDynamics && LoadedModChecker.thermaldynamics.isLoaded()){
+        if(MTEPatchesConfig.worldLeakFix.thermalDynamics && LoadedModChecker.thermaldynamics.isLoaded()){
             cleaners.add(new WorldCleanerThermalDynamics());
         }
     }

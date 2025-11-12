@@ -100,10 +100,10 @@ public class MTEPatchesConfig {
     }
 
     @Comment({"When unloading the world, remove references to the world to allow GC to recycle them, to fix memory leaks.",
-            "However in large modpacks it's difficult to ensure all references is removed when world is unloaded"})
+            "However in large modpacks it's difficult to fully prevent world leak"})
     @LangKey("config.mtepatches.memoryLeakFix.name")
-    public static CategoryMemoryLeakFix memoryLeakFix = new CategoryMemoryLeakFix();
-    public static class CategoryMemoryLeakFix {
+    public static CategoryWorldLeakFix worldLeakFix = new CategoryWorldLeakFix();
+    public static class CategoryWorldLeakFix {
         public boolean energyControl = true;
         public boolean railcraft = true;
         public boolean immersiveEngineering = true;

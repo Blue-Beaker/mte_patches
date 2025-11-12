@@ -163,3 +163,10 @@ Added a feature for vanilla, to place pumpkins and fence gates without a block b
 
 ## 1.7.4
 Fix the bio engine collision box fix  
+
+## 1.7.5
+Added some world leak fixes for:
+- Immersive Engineering
+- Railcraft
+- Thermal Dynamics
+- Energy Control
