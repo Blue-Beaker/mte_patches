@@ -99,12 +99,15 @@ public class MTEPatchesConfig {
         public boolean industrialForegoing = true;
     }
 
-    @Comment({"When unloading the world, remove references to the world to allow GC to recycle them, to fix memory leaks."})
+    @Comment({"When unloading the world, remove references to the world to allow GC to recycle them, to fix memory leaks.",
+            "However in large modpacks it's difficult to ensure all references is removed when world is unloaded"})
     @LangKey("config.mtepatches.memoryLeakFix.name")
     public static CategoryMemoryLeakFix memoryLeakFix = new CategoryMemoryLeakFix();
     public static class CategoryMemoryLeakFix {
         public boolean energyControl = true;
         public boolean railcraft = true;
+        public boolean immersiveEngineering = true;
+        public boolean thermalDynamics = true;
     }
 
     @LangKey("config.mtepatches.vanilla.name")

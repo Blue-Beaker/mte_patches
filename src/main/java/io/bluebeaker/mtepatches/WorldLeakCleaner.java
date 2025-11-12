@@ -1,8 +1,6 @@
 package io.bluebeaker.mtepatches;
 
-import io.bluebeaker.mtepatches.worldcleaners.IWorldCleaner;
-import io.bluebeaker.mtepatches.worldcleaners.WorldCleanerEnergyControl;
-import io.bluebeaker.mtepatches.worldcleaners.WorldCleanerRC;
+import io.bluebeaker.mtepatches.worldcleaners.*;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -26,6 +24,12 @@ public class WorldLeakCleaner {
         }
         if(MTEPatchesConfig.memoryLeakFix.energyControl && LoadedModChecker.energyControl.isLoaded()){
             cleaners.add(new WorldCleanerEnergyControl());
+        }
+        if(MTEPatchesConfig.memoryLeakFix.immersiveEngineering && LoadedModChecker.immersiveengineering.isLoaded()){
+            cleaners.add(new WorldCleanerIE());
+        }
+        if(MTEPatchesConfig.memoryLeakFix.thermalDynamics && LoadedModChecker.thermaldynamics.isLoaded()){
+            cleaners.add(new WorldCleanerThermalDynamics());
         }
     }
 
