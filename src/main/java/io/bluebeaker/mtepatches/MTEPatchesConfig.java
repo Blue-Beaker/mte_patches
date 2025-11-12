@@ -99,6 +99,14 @@ public class MTEPatchesConfig {
         public boolean industrialForegoing = true;
     }
 
+    @Comment({"When unloading the world, remove references to the world to allow GC to recycle them, to fix memory leaks."})
+    @LangKey("config.mtepatches.memoryLeakFix.name")
+    public static CategoryMemoryLeakFix memoryLeakFix = new CategoryMemoryLeakFix();
+    public static class CategoryMemoryLeakFix {
+        public boolean energyControl = true;
+        public boolean railcraft = true;
+    }
+
     @LangKey("config.mtepatches.vanilla.name")
     public static CategoryVanilla vanilla = new CategoryVanilla();
     public static class CategoryVanilla{
