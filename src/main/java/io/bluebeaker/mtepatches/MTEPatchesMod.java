@@ -2,6 +2,7 @@ package io.bluebeaker.mtepatches;
 
 import io.bluebeaker.mtepatches.buildcraft.BCCapabilityAdapter;
 import io.bluebeaker.mtepatches.buildcraft.BCUtils;
+import io.bluebeaker.mtepatches.railcraft.RCMultiblockPatch;
 import io.bluebeaker.mtepatches.render.RenderSkipRegistry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;

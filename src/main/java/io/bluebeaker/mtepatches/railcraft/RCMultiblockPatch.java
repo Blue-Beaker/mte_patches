@@ -1,5 +1,7 @@
-package io.bluebeaker.mtepatches;
+package io.bluebeaker.mtepatches.railcraft;
 
+import io.bluebeaker.mtepatches.MTEPatchesConfig;
+import io.bluebeaker.mtepatches.MTEPatchesMod;
 import mods.railcraft.common.blocks.multi.TileMultiBlock;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;

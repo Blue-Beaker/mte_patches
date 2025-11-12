@@ -1,5 +1,6 @@
-package io.bluebeaker.mtepatches;
+package io.bluebeaker.mtepatches.vanilla;
 
+import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGameOver;
 import net.minecraft.entity.item.EntityItem;
