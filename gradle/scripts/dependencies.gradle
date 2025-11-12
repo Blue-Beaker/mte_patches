@@ -56,6 +56,8 @@ dependencies {
     implementation rfg.deobf('industrialcraft-2:industrialcraft-2-2.8.222-ex112')
     // Crop breeding simulator
     compileOnly rfg.deobf('libs:IC2CropBreeding Plugin V1.12-1.1')
+    // EnergyControl
+    implementation rfg.deobf('libs:EnergyControl-1.12.2-0.3.1')
 
     // Railcraft
     implementation rfg.deobf('libs:railcraft-12.0.0')
@@ -70,15 +72,15 @@ dependencies {
     implementation rfg.deobf('libs:ThermalFoundation-1.12.2-2.6.7.1-universal')
 
     //Baubles
-    implementation rfg.deobf('libs:Baubles-1.12-1.5.2')
+    compileOnly rfg.deobf('libs:Baubles-1.12-1.5.2')
     //Forestry
     implementation rfg.deobf("libs:forestry_1.12.2-5.8.2.426")
 
     //Rftools
-    implementation rfg.deobf('libs:mcjtylib-1.12-3.5.4')
+    compileOnly rfg.deobf('libs:mcjtylib-1.12-3.5.4')
     compileOnly rfg.deobf('libs:rftools-1.12-7.73')
     // NotEnoughWands
-    implementation rfg.deobf('libs:notenoughwands-1.12-1.8.1')
+    compileOnly rfg.deobf('libs:notenoughwands-1.12-1.8.1')
 
     implementation rfg.deobf('libs:BiomesOPlenty-1.12.2-7.0.1.2445-universal')
     // BuildCraft
@@ -100,13 +102,13 @@ dependencies {
     implementation rfg.deobf('libs:MrTJPCore-1.12.2-2.1.4.43-universal')
     implementation rfg.deobf('libs:ForgeMultipart-1.12.2-2.6.2.83-universal')
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-lighting')
-    compileOnly rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-integration')
+    implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-integration')
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-Base')
     implementation rfg.deobf('libs:ProjectRed-1.12.2-4.9.4.120-mechanical')
 
     // Drawers
-    implementation rfg.deobf('libs:Chameleon-1.12-4.1.3')
-    implementation rfg.deobf('libs:StorageDrawers-1.12.2-5.4.2')
+    compileOnly rfg.deobf('libs:Chameleon-1.12-4.1.3')
+    compileOnly rfg.deobf('libs:StorageDrawers-1.12.2-5.4.2')
 
     // Drawers Extras
     compileOnly rfg.deobf('libs:StorageDrawersExtras-1.12-3.1.0')

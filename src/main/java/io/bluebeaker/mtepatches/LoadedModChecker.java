@@ -6,6 +6,7 @@ public enum LoadedModChecker {
     biomesoplenty("biomesoplenty"),
     buildcraftcore("buildcraftcore"),
     buildcrafttransport("buildcrafttransport"),
+    energyControl("energyControl"),
     forestry("forestry"),
     ic2("ic2"),
     ic2cropplugin("ic2cropplugin"),

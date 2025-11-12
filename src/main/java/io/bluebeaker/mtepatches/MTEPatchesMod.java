@@ -73,6 +73,7 @@ public class MTEPatchesMod
         if(event.getSide()== Side.CLIENT){
             RenderSkipRegistry.INSTANCE.reloadConfigs();
         }
+        WorldLeakCleaner.updateCleaners();
     }
 
     @EventHandler
@@ -96,6 +97,7 @@ public class MTEPatchesMod
             if(FMLCommonHandler.instance().getSide() == Side.CLIENT){
                 RenderSkipRegistry.INSTANCE.reloadConfigs();
             }
+            WorldLeakCleaner.updateCleaners();
         }
     }
     public static @Nullable Logger getLogger(){return logger;}
