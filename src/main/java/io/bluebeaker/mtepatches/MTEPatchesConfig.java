@@ -101,7 +101,7 @@ public class MTEPatchesConfig {
 
     @Comment({"When unloading the world, remove references to the world to allow GC to recycle them, to fix memory leaks.",
             "However in large modpacks it's difficult to fully prevent world leak"})
-    @LangKey("config.mtepatches.memoryLeakFix.name")
+    @LangKey("config.mtepatches.worldLeakFix.name")
     public static CategoryWorldLeakFix worldLeakFix = new CategoryWorldLeakFix();
     public static class CategoryWorldLeakFix {
         public boolean energyControl = true;
@@ -392,11 +392,6 @@ public class MTEPatchesConfig {
                 ,"Some wands may cost more than configured, like acceleration wand in faster and fastest modes"})
         @LangKey("config.mtepatches.notEnoughWands.fixWandCostMultiplier.name")
         public boolean fixWandCostMultiplier = true;
-    }
-
-    @LangKey("config.mtepatches.immersiveengineering.name")
-    public static CategoryIE immersiveengineering = new CategoryIE();
-    public static class CategoryIE{
     }
 
     @Comment("Enable debug output for some patches. May cause log spamming!")

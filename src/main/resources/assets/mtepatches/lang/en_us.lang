@@ -97,3 +97,5 @@ config.mtepatches.multitoolPatch.name=[Generic] Multitool Compatibility
 config.mtepatches.multitoolPatch.IEHammer.name=Immersive Engineering Hammer
 config.mtepatches.multitoolPatch.PRScrewdriver.name=ProjectRed Screwdriver
 config.mtepatches.multitoolPatch.IC2Wrench.name=IC2 Wrench
+
+config.mtepatches.worldLeakFix.name=[Generic] World Leak Fix
