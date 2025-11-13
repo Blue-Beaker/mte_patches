@@ -108,6 +108,7 @@ public class MTEPatchesConfig {
         public boolean railcraft = true;
         public boolean immersiveEngineering = true;
         public boolean thermalDynamics = true;
+        public boolean ftbutils = true;
     }
 
     @LangKey("config.mtepatches.vanilla.name")

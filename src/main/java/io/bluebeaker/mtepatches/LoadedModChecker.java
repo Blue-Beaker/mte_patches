@@ -8,6 +8,7 @@ public enum LoadedModChecker {
     buildcrafttransport("buildcrafttransport"),
     energycontrol("energycontrol"),
     forestry("forestry"),
+    ftbutilities("ftbutilities"),
     ic2("ic2"),
     ic2cropplugin("ic2cropplugin"),
     immersiveengineering("immersiveengineering"),

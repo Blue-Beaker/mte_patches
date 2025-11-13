@@ -31,6 +31,10 @@ public class WorldLeakCleaner {
         if(MTEPatchesConfig.worldLeakFix.thermalDynamics && LoadedModChecker.thermaldynamics.isLoaded()){
             cleaners.add(new WorldCleanerThermalDynamics());
         }
+
+        if(MTEPatchesConfig.worldLeakFix.ftbutils && LoadedModChecker.ftbutilities.isLoaded()){
+            cleaners.add(new WorldCleanerFTBU());
+        }
     }
 
     @SubscribeEvent
