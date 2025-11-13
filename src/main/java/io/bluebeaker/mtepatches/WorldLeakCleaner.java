@@ -22,7 +22,7 @@ public class WorldLeakCleaner {
         if(MTEPatchesConfig.worldLeakFix.railcraft && LoadedModChecker.railcraft.isLoaded()){
             cleaners.add(new WorldCleanerRC());
         }
-        if(MTEPatchesConfig.worldLeakFix.energyControl && LoadedModChecker.energyControl.isLoaded()){
+        if(MTEPatchesConfig.worldLeakFix.energyControl && LoadedModChecker.energycontrol.isLoaded()){
             cleaners.add(new WorldCleanerEnergyControl());
         }
         if(MTEPatchesConfig.worldLeakFix.immersiveEngineering && LoadedModChecker.immersiveengineering.isLoaded()){
