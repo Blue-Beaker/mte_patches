@@ -33,6 +33,17 @@ Including:
 
 Culled TileEntity types can be configured separately for far and shadow.  
 
+### World Leak Fix
+After quitting a world, some mod keeps referencing it somewhere, preventing it from being cleaned by java's garbage collection.  
+This patch fixes some world leaks in these mods:  
+- Immersive Engineering
+- Railcraft
+- Thermal Dynamics
+- Energy Control
+- FTB Utilities
+
+However, it's difficult to fix all world leaks in a large modpack.  
+
 ## Mod-specific patches:  
 ### Railcraft
 #### Multiblock Desync fix  

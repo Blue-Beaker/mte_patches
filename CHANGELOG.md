@@ -170,3 +170,4 @@ Added some world leak fixes for:
 - Railcraft
 - Thermal Dynamics
 - Energy Control
+- FTB Utilities
