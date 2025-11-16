@@ -211,6 +211,10 @@ public class MTEPatchesConfig {
                 "to prevent output capping of them."})
         @LangKey("config.mtepatches.ic2.scaleGeneratorBuffers.name")
         public boolean scaleGeneratorBuffers = true;
+
+        @Comment({"Make IC2 Explosions respect to FTB Utilities Permissions, so IC2 explosions won't break blocks in chunks protected by FTBU."})
+        @LangKey("config.mtepatches.ic2.explosionProtection.name")
+        public boolean explosionProtection = true;
     }
 
     @LangKey("config.mtepatches.ic2cropcalc.name")

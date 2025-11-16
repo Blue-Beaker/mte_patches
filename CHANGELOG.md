@@ -173,3 +173,4 @@ Added some world leak fixes for:
 - FTB Utilities
 
 Added allow analyzer with errors patch for Forestry  
+Add IC2 Explosion Protection  

@@ -78,6 +78,8 @@ Prevent IC2 keybinds in GUIs. Fixes jetpack being activated when pressing jump w
 Fixes a bug that on a LAN server, all IC2 messages are sent to the host, instead of the player that should receive the message.  
 #### Scale Generator Buffers
 Increase buffer size of generators that had very small buffers with energy generation factors in config, to prevent output capping when a large factor is set.
+#### Explosion Protection
+Make IC2 Explosions respect to FTB Utilities Permissions, so IC2 explosions won't break blocks in chunks protected by FTBU.  
 
 ### Thermal Series
 #### Fuzzy NBT Recycling  
