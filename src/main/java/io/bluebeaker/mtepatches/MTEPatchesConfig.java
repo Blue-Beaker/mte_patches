@@ -251,6 +251,11 @@ public class MTEPatchesConfig {
         @Comment({"Fix collision box for bio generator."})
         @LangKey("config.mtepatches.forestry.collisionBoxFix.name")
         public boolean collisionBoxFix = true;
+
+        @Comment({"Allow analyzing bees in apiary gui, even when the apiary has errors active.",
+                "However only bees in the input slots can be analyzed"})
+        @LangKey("config.mtepatches.forestry.allowAnalyzerWithErrors.name")
+        public boolean allowAnalyzerWithErrors = true;
     }
 
     @LangKey("config.mtepatches.rftools.name")

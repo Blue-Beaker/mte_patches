@@ -171,3 +171,5 @@ Added some world leak fixes for:
 - Thermal Dynamics
 - Energy Control
 - FTB Utilities
+
+Added allow analyzer with errors patch for Forestry  

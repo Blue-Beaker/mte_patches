@@ -90,6 +90,8 @@ Prevent crashing when placing a faulty queen bee into apiary
 Fix multi-farm does not return dirt or sand when replacing soil  
 #### BuildCraft Compat Fix
 Fix Forestry's BuildCraft compat modules not working with BC8.0.  
+#### Allow analyzer with errors
+Allow analyzing bees in apiary gui, even when the apiary has errors active.  
 
 ### RFTools
 #### [Client] Modular Storage GUI Tweaks  
