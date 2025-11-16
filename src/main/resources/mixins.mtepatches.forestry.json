@@ -9,6 +9,8 @@
     "MixinBeeKeepingLogic",
     "MixinBlockEngine",
     "MixinFarmController",
+    "MixinInventorySqueezer",
+    "MixinInventoryStill",
     "MixinPluginBuildCraftFuels",
     "MixinPluginBuildCraftRecipes",
     "MixinPluginBuildCraftStatements"

@@ -172,5 +172,7 @@ Added some world leak fixes for:
 - Energy Control
 - FTB Utilities
 
-Added allow analyzer with errors patch for Forestry  
+Added patches for Forestry:
+- Allow Analyzer with Errors
+- Allow Partially Filled Containers
 Add IC2 Explosion Protection  

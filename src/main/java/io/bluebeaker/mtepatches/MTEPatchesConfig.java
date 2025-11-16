@@ -260,6 +260,10 @@ public class MTEPatchesConfig {
                 "However only bees in the input slots can be analyzed"})
         @LangKey("config.mtepatches.forestry.allowAnalyzerWithErrors.name")
         public boolean allowAnalyzerWithErrors = true;
+
+        @Comment({"Make container slot of squeezer and still accept partially filled containers."})
+        @LangKey("config.mtepatches.forestry.acceptPartialContainers.name")
+        public boolean acceptPartialContainers = true;
     }
 
     @LangKey("config.mtepatches.rftools.name")
