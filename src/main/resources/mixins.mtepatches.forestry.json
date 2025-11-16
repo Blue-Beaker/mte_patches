@@ -15,7 +15,7 @@
   ],
   "server": [],
   "client": [
-    "MixinGuiBeeHousing",
+    "MixinGuiAnalyzerProvider",
     "MixinRenderMachine"
   ]
 }
