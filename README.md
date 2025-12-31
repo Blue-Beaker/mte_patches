@@ -64,6 +64,8 @@ Tile caches can miss some updates occuring in neighbouring tileentities, like mu
 This patch adds an interval(in ticks) to purge the cache.  
 #### Charge Network Fix[EXPERIMENTAL]
 Charge Network in RC is very buggy. This fix improves its stability by a lot, but it's still a bit buggy yet.  
+#### Railcraft IC2 EU Loader/Unloader Drop Fix
+Fix EU Loader/Unloader not dropping upgrades on break.  
 
 ### IndustrialCraft 2
 #### Mass Fabricator Stuck  

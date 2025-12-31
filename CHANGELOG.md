@@ -177,3 +177,6 @@ Added patches for Forestry:
 - Allow Partially Filled Containers
 
 Add IC2 Explosion Protection  
+
+## 1.7.6
+Added Railcraft IC2 EU Loader/Unloader Drop Fix  
