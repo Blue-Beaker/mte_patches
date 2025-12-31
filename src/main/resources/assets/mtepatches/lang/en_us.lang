@@ -7,6 +7,7 @@ config.mtepatches.railcraft.itemMoveInterval.name=Item Transfer Interval
 config.mtepatches.railcraft.tileCachePurgeInterval.name=Tile Cache Purging Interval
 config.mtepatches.railcraft.chargeNetworkFix.name=Charge Network Fix [EXPERIMENTAL]
 config.mtepatches.railcraft.chargeNetworkFixDebug.name=Charge Network Fix Debug
+config.mtepatches.railcraft.manipulatorDropFix.name=(Un)loader Blocks Drop Fix
 
 config.mtepatches.ic2.name=IC2
 config.mtepatches.ic2.cropOnAllFarmlands.name=Crop on all farmlands
