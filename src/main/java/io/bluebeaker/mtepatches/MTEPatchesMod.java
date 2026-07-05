@@ -53,8 +53,10 @@ public class MTEPatchesMod
             BCUtils.updateValues();
         }
         if(LoadedModChecker.railcraft.isLoaded()){
-            ComparableVersion rcVersion = new ComparableVersion(LoadedModChecker.railcraft.getVersion());
-            int compared = rcVersion.compareTo(new ComparableVersion("12.1.0"));
+            ComparableVersion rcVersion = new ComparableVersion(LoadedModChecker.railcraft.getVersion().replace("-beta-",".0."));
+            logger.info("Railcraft version: {}", rcVersion);
+
+            int compared = rcVersion.compareTo(new ComparableVersion("12.1"));
             if(compared < 0){
                 try {
                     Class.forName("mods.railcraft.common.blocks.multi.TileMultiBlock");
@@ -63,7 +65,7 @@ public class MTEPatchesMod
                     logger.error("Could not load RCMultiblockPatch: ", e);
                 }
             }else {
-                logger.info("RCMultiblockPatch is not needed for Railcraft version {}, not loading it",rcVersion);
+                logger.info("RCMultiblockPatch is not needed for Railcraft version {}, not loading it",LoadedModChecker.railcraft.getVersion());
             }
         }
     }
