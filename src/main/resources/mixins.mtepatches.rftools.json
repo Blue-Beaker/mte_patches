@@ -9,6 +9,7 @@
   ],
   "server": [],
   "client": [
-    "MixinGuiModularStorage"
+    "MixinGuiModularStorage",
+    "MixinGuiCraftingGrid"
   ]
 }

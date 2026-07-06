@@ -100,6 +100,9 @@ Allow analyzing bees in apiary gui, even when the apiary has errors active.
 Make container slot of squeezer and still accept partially filled containers.  
 
 ### RFTools
+#### [Client] Crafting GUI optimization
+Optimize the Crafting GUI to only update when the crafting grid has updated, to fix the huge FPS drop in GUIs like modular storage.  
+
 #### [Client] Modular Storage GUI Tweaks  
 - Shift Tweak  
 

@@ -282,6 +282,10 @@ public class MTEPatchesConfig {
         @Comment({"In modular storage GUI, when putting your held item into the storage, prevent swapping the hovered item out from the storage."})
         @LangKey("config.mtepatches.rftools.storageGuiInsertTweak.name")
         public boolean storageGuiInsertTweak = true;
+
+        @Comment({"Optimize the Crafting GUI, only update when the crafting grid has updated, fix the huge FPS drop in GUIs like modular storage."})
+        @LangKey("config.mtepatches.rftools.craftingGUIOptimization.name")
+        public boolean craftingGUIOptimization = true;
     }
 
     @LangKey("config.mtepatches.buildcraft.name")

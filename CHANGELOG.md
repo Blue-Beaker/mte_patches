@@ -1,3 +1,5 @@
+## 1.7.9
+Crafting GUI optimization for RFTools: Optimize the Crafting GUI, only update when the crafting grid has updated, fix the huge FPS drop in GUIs like modular storage
 ## 1.7.8
 Reduce log spam when class not found for RenderSkipRegistry. Now it prints a shorter warning message instead of full stack trace.  
 ## 1.7.7
