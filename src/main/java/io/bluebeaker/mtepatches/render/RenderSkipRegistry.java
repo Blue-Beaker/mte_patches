@@ -40,7 +40,11 @@ public class RenderSkipRegistry {
                     MTEPatchesMod.getLogger().warn("Class {} in {} is neither a TileEntity or a TileEntitySpecialRenderer, skipping it", s, sectionName);
                 }
             } catch (Throwable e) {
-                MTEPatchesMod.getLogger().warn("Error loading {}: config line \"{}\" : ", sectionName,s,e);
+                if(e instanceof ClassNotFoundException) {
+                    MTEPatchesMod.getLogger().warn("Error loading {}: config line \"{}\" : Class Not Found: {}", sectionName,s,e.getMessage());
+                }else{
+                    MTEPatchesMod.getLogger().warn("Error loading {}: config line \"{}\" : ", sectionName,s,e);
+                }
             }
         }
     }

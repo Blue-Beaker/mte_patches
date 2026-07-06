@@ -1,3 +1,5 @@
+## 1.7.8
+Reduce log spam when class not found for RenderSkipRegistry. Now it prints a shorter warning message instead of full stack trace.  
 ## 1.7.7
 Fix version detection for Railcraft 12.1.0-beta8, now it should skip loading MultiBlock patch entirely with 12.1.0-beta-8  
 ## 1.7.6
