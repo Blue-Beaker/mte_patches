@@ -286,6 +286,10 @@ public class MTEPatchesConfig {
         @Comment({"Optimize the Crafting GUI, only update when the crafting grid has updated, fix the huge FPS drop in GUIs like modular storage."})
         @LangKey("config.mtepatches.rftools.craftingGUIOptimization.name")
         public boolean craftingGUIOptimization = true;
+
+        @Comment({"Optimize the RFTools GUI, skips rendering of hidden item slots, mainly in modular storage GUIs"})
+        @LangKey("config.mtepatches.rftools.GUISlotsCulling.name")
+        public boolean GUISlotsCulling = true;
     }
 
     @LangKey("config.mtepatches.buildcraft.name")

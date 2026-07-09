@@ -13,6 +13,7 @@ public enum LoadedModChecker {
     ic2cropplugin("ic2cropplugin"),
     immersiveengineering("immersiveengineering"),
     industrialforegoing("industrialforegoing"),
+    mcjtylib("mcjtylib_ng"),
     moartinkers("moartinkers"),
     notenoughwands("notenoughwands"),
     projectredcore("projectred-core"),

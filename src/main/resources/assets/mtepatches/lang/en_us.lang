@@ -29,6 +29,7 @@ config.mtepatches.rftools.name=RFTools
 config.mtepatches.rftools.storageGuiShiftTweak.name=Modular Storage Shift Tweak
 config.mtepatches.rftools.storageGuiInsertTweak.name=Modular Storage Insertion Tweak
 config.mtepatches.rftools.craftingGUIOptimization.name=Crafting GUI Optimization
+config.mtepatches.rftools.GUISlotsCulling.name=GUI Slots Culling
 
 config.mtepatches.bop.name=Biomes O Plenty
 config.mtepatches.bop.fogCheckRange.name=Fog Check Range
