@@ -1,7 +1,5 @@
 package io.bluebeaker.mtepatches.mixin.rftools;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import io.bluebeaker.mtepatches.MTEPatchesConfig;
 import mcjty.rftools.craftinggrid.CraftingGridProvider;
 import mcjty.rftools.craftinggrid.GuiCraftingGrid;
@@ -11,6 +9,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Arrays;
 
@@ -23,10 +23,9 @@ public abstract class MixinGuiCraftingGrid {
     @Shadow(remap = false)
     private CraftingGridProvider provider;
 
-    @WrapOperation(method = "draw()V", at = @At(value="INVOKE", target = "Lmcjty/rftools/craftinggrid/GuiCraftingGrid;testRecipe()V"),remap = false)
-    private void cachedTestRecipe(GuiCraftingGrid instance, Operation<Void> original) {
+    @Inject(method = "testRecipe()V", at = @At("HEAD"),remap = false, cancellable = true)
+    private void cachedTestRecipe(CallbackInfo ci) {
         if(!MTEPatchesConfig.rftools.craftingGUIOptimization){
-            original.call(instance);
             return;
         }
 
@@ -46,10 +45,13 @@ public abstract class MixinGuiCraftingGrid {
         }
         // Do checking when the grid is changed
         if (!isSame) {
-            original.call(instance);
+            // Capture the grid before actually checking the recipe
             for (int i = 0; i < 9; i++) {
                 mte_patches$cachedCraftingGrid[i] = craftingGridInventory.getStackInSlot(i+1).copy();
             }
+        }else {
+            // When not changed, cancel
+            ci.cancel();
         }
     }
 }
