@@ -125,6 +125,8 @@ dependencies {
     compileOnly rfg.deobf('libs:ImmersiveEngineering-0.12-98')
     compileOnly rfg.deobf('libs:omniwand-1.12.2-2.0.1')
 
+    implementation rfg.deobf('libs:wirelessutils-1.12.2-1.8.126-universal')
+
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')
 

@@ -84,6 +84,9 @@ config.mtepatches.vanilla.fallingBlockDupeFix.name=Disable Falling Block Duplica
 config.mtepatches.vanilla.floatingPumpkin.name=Floating Pumpkins
 config.mtepatches.vanilla.floatingFenceGate.name=Floating Fence Gates
 
+config.mtepatches.wirelessUtils.name=Wireless Utils
+config.mtepatches.wirelessUtils.fixCommandPermissionCheck.name=Command Permissions Fix
+
 config.mtepatches.immersiveengineering.name=Immersive Engineeering
 
 config.mtepatches.render.name=[Generic] Render Optimization

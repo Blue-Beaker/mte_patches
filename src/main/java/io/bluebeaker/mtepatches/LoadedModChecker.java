@@ -26,7 +26,8 @@ public enum LoadedModChecker {
     storagedrawers("storagedrawers"),
     storagedrawersextra("storagedrawersextra"),
     thermaldynamics("thermaldynamics"),
-    thermalexpansion("thermalexpansion");
+    thermalexpansion("thermalexpansion"),
+    wirelessutils("wirelessutils");
 
     public final String modid;
     private boolean isLoaded = false;

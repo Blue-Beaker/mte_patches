@@ -1,3 +1,6 @@
+## 1.7.10
+Added Command Permissions Fix for Wireless Utils:  
+Fix command permission check for non-player senders, which is bugged and prevents /help command from working in the console of dedicated server.  
 ## 1.7.9
 Crafting GUI optimization for RFTools: Optimize the Crafting GUI, only update when the crafting grid has updated, fix the huge FPS drop in GUIs like modular storage
 Slot Culling for RFTools/MCJtyLib: Culls invisible slots in GUIs to improve FPS.

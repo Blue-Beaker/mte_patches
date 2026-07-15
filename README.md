@@ -178,6 +178,10 @@ NotEnoughWands leaks OpenGL attributes in its overlay, and may break other mod's
 Fix wand RF cost being capped at the value configured.  
 Some wands may cost more than configured, like acceleration wand in faster and fastest modes  
 
+### WirelessUtils
+#### Command Permissions Fix
+Fix command permission check for non-player senders, which is bugged and prevents /help command from working in the console of dedicated server.
+
 ### Vanilla
 #### [Client] Don't receive item entities when dead
 Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags.  

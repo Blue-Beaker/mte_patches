@@ -419,6 +419,14 @@ public class MTEPatchesConfig {
         public boolean fixWandCostMultiplier = true;
     }
 
+    @LangKey("config.mtepatches.wirelessUtils.name")
+    public static CategoryWirelessUtils wirelessUtils = new CategoryWirelessUtils();
+    public static class CategoryWirelessUtils{
+        @Comment({"Fix command permission check for non-player senders, which is bugged and prevents /help command from working in the console of dedicated server."})
+        @LangKey("config.mtepatches.wirelessUtils.fixCommandPermissionCheck.name")
+        public boolean fixCommandPermissionCheck = true;
+    }
+
     @Comment("Enable debug output for some patches. May cause log spamming!")
     public static boolean debugOutput = false;
 }
