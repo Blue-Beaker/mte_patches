@@ -114,4 +114,5 @@ config.mtepatches.tileLeakFix.blockIDs.name=Block IDs
 config.mtepatches.tileLeakFix.blockClasses.name=Block Classes
 config.mtepatches.tileLeakFix.forceAll.name=Force All Blocks
 config.mtepatches.tileLeakFix.enable.name=Enable
-config.mtepatches.tileLeakFix.invalidCleanInterval.name=Purge Interval
+config.mtepatches.tileLeakFix.purgeInterval.name=Purge Interval
+config.mtepatches.tileLeakFix.logs.name=Log Leak Fix

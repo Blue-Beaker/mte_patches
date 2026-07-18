@@ -4,7 +4,7 @@ import io.bluebeaker.mtepatches.buildcraft.BCCapabilityAdapter;
 import io.bluebeaker.mtepatches.buildcraft.BCUtils;
 import io.bluebeaker.mtepatches.railcraft.RCMultiblockPatch;
 import io.bluebeaker.mtepatches.render.RenderSkipRegistry;
-import io.bluebeaker.mtepatches.tileleak.TileLeakCleaner;
+import io.bluebeaker.mtepatches.tileleak.TileLeakCleanerClient;
 import io.bluebeaker.mtepatches.tileleak.TileLeakHandler;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
@@ -71,7 +71,7 @@ public class MTEPatchesMod
             }
         }
         if(event.getSide() == Side.CLIENT){
-            MinecraftForge.EVENT_BUS.register(TileLeakCleaner.class);
+            MinecraftForge.EVENT_BUS.register(TileLeakCleanerClient.class);
         }
     }
 

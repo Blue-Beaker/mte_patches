@@ -8,11 +8,11 @@
   "mixins": [
     "MixinBlockEndPortal",
     "MixinBlockFenceGate",
-    "MixinBlockPumpkin",
-    "MixinChunk"
+    "MixinBlockPumpkin"
   ],
   "server": [],
   "client": [
-    "MixinTERendererDispatcher"
+    "MixinTERendererDispatcher",
+    "MixinChunkClient"
   ]
 }
