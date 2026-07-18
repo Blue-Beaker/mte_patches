@@ -108,3 +108,9 @@ config.mtepatches.multitoolPatch.PRScrewdriver.name=ProjectRed Screwdriver
 config.mtepatches.multitoolPatch.IC2Wrench.name=IC2 Wrench
 
 config.mtepatches.worldLeakFix.name=[Generic] World Leak Fix
+
+config.mtepatches.tileLeakFix.name=[Generic] TileEntity Leak Fix
+config.mtepatches.tileLeakFix.blockIDs.name=Block IDs
+config.mtepatches.tileLeakFix.blockClasses.name=Block Classes
+config.mtepatches.tileLeakFix.forceAll.name=Force All Blocks
+config.mtepatches.tileLeakFix.enable.name=Enable

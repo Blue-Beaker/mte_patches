@@ -111,6 +111,42 @@ public class MTEPatchesConfig {
         public boolean ftbutils = true;
     }
 
+    @Comment({"When block is removed, certain blocks doesn't have 'hasTileEntity' implemented correctly, causing tileentity leaks on client-side.",
+        "This fix try to fix leak by adding additional blocks."})
+    @LangKey("config.mtepatches.tileLeakFix.name")
+    public static CategoryTileLeakFix tileLeakFix = new CategoryTileLeakFix();
+    public static class CategoryTileLeakFix {
+
+        @Comment({"Additional blocks to be checked and fixed.",
+                "Format: modid:id",
+                "Comments can be added after a '#'"})
+        @LangKey("config.mtepatches.tileLeakFix.blockIDs.name")
+        public String[] blockIDs = {
+        };
+
+        @Comment({"Additional block classes to be checked and fixed.",
+                "Comments can be added after a '#'"})
+        @LangKey("config.mtepatches.tileLeakFix.blockClasses.name")
+        public String[] blockClasses = {
+                "forestry.arboriculture.blocks.BlockForestryLeaves",
+                "forestry.arboriculture.blocks.BlockCandle",
+                "forestry.arboriculture.blocks.BlockCocoon",
+                "forestry.arboriculture.blocks.BlockSolidCocoon",
+                "forestry.arboriculture.blocks.BlockFruitPod",
+                "forestry.core.blocks.BlockStructure",
+                "forestry.core.blocks.BlockBase",
+                "forestry.arboriculture.blocks.BlockPlanter",
+                "forestry.sorting.blocks.BlockGeneticFilter"
+        };
+
+        @Comment({"Force removing all tiles from removed blocks, most powerful, but may cause problems."})
+        @LangKey("config.mtepatches.tileLeakFix.forceAll.name")
+        public boolean forceAll = false;
+        @Comment({"Disable this to disable the entire Tile Leak Fix."})
+        @LangKey("config.mtepatches.tileLeakFix.enable.name")
+        public boolean enable = true;
+    }
+
     @LangKey("config.mtepatches.vanilla.name")
     public static CategoryVanilla vanilla = new CategoryVanilla();
     public static class CategoryVanilla{

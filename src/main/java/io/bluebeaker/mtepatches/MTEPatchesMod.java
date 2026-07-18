@@ -4,6 +4,7 @@ import io.bluebeaker.mtepatches.buildcraft.BCCapabilityAdapter;
 import io.bluebeaker.mtepatches.buildcraft.BCUtils;
 import io.bluebeaker.mtepatches.railcraft.RCMultiblockPatch;
 import io.bluebeaker.mtepatches.render.RenderSkipRegistry;
+import io.bluebeaker.mtepatches.tileleak.TileLeakHandler;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Config.Type;
@@ -76,6 +77,7 @@ public class MTEPatchesMod
             RenderSkipRegistry.INSTANCE.reloadConfigs();
         }
         WorldLeakCleaner.updateCleaners();
+        TileLeakHandler.updateConfig();
     }
 
     @EventHandler
@@ -100,6 +102,7 @@ public class MTEPatchesMod
                 RenderSkipRegistry.INSTANCE.reloadConfigs();
             }
             WorldLeakCleaner.updateCleaners();
+            TileLeakHandler.updateConfig();
         }
     }
     public static @Nullable Logger getLogger(){return logger;}
