@@ -1,5 +1,6 @@
 package io.bluebeaker.mtepatches.tileleak;
 
+import io.bluebeaker.mtepatches.MTEPatchesMod;
 import net.minecraft.block.Block;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class CheckerByClass implements ITileChecker {
         try {
             CheckerByClass.blockClasses.add(Class.forName(blockClass));
         } catch (ClassNotFoundException ignored) {
-
+            MTEPatchesMod.logInfo("TileLeakFix: Block " + blockClass + " not found");
         }
     }
 }

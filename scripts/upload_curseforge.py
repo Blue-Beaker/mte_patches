@@ -74,7 +74,7 @@ def get_changelog_for_version(version: str) -> str:
         content = f.read()
 
     # Find the section for this version
-    pattern = rf"#+\s*{re.escape(version)}\b(.*?)(?=#+\s|\Z)"
+    pattern = rf"##\s*{re.escape(version)}\b(.*?)(?=##\s|\Z)"
     match = re.search(pattern, content, re.DOTALL)
     if match:
         return match.group(1).strip()
