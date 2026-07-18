@@ -127,6 +127,8 @@ dependencies {
 
     implementation rfg.deobf('libs:wirelessutils-1.12.2-1.8.126-universal')
 
+    // My personal debug helper mod, can be disabled safely
+    runtimeOnly rfg.deobf('libs:debugmod-1.0.0')
     // Cyclic
     // implementation rfg.deobf('libs:Cyclic-1.12.2-1.20.14')
 
