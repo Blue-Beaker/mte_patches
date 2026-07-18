@@ -145,6 +145,10 @@ public class MTEPatchesConfig {
         @Comment({"Disable this to disable the entire Tile Leak Fix."})
         @LangKey("config.mtepatches.tileLeakFix.enable.name")
         public boolean enable = true;
+
+        @Comment({"Interval to purge invalid tileEntities (marked as invalid but still in loadedTileEntities, can leak over time). Set to <=0 to disable."})
+        @LangKey("config.mtepatches.tileLeakFix.purgeInterval.name")
+        public int purgeInterval = 200;
     }
 
     @LangKey("config.mtepatches.vanilla.name")

@@ -1,3 +1,7 @@
+## 1.8.0
+Added Tile Leak Fix
+- Remove TileEntities for blocks like Forestry Leaves that didn't mark as "hasTileEntity" correctly, on broken or replacement, for client-side  
+- purges invalidated TileEntities periodically, to prevent the loadedTileEntities list growing over time from things like Forestry Trees in auto farms.
 ## 1.7.10
 Added Command Permissions Fix for Wireless Utils:  
 Fix command permission check for non-player senders, which is bugged and prevents /help command from working in the console of dedicated server.  
