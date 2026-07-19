@@ -6,13 +6,14 @@
   "minVersion": "0.8.5",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "AccessorExplosion",
     "MixinBlockEndPortal",
     "MixinBlockFenceGate",
     "MixinBlockPumpkin"
   ],
   "server": [],
   "client": [
-    "MixinTERendererDispatcher",
-    "MixinChunkClient"
+    "MixinChunkClient",
+    "MixinTERendererDispatcher"
   ]
 }
