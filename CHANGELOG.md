@@ -1,3 +1,5 @@
+## 1.8.1
+Fixed IC2 Explosion Permission patch prevented IC2 Explosions from working in obfuscated environment
 ## 1.8.0
 Added Tile Leak Fix
 - Remove TileEntities for blocks like Forestry Leaves that didn't mark as "hasTileEntity" correctly, on broken or replacement, for client-side  

@@ -44,6 +44,12 @@ This patch fixes some world leaks in these mods:
 
 However, it's difficult to fix all world leaks in a large modpack.  
 
+### Tile Leak Fix
+On client-side, some TileEntities didn't mark as "hasTileEntity" correctly, and didn't get cleaned from loadedTileEntities, causing leakage over time with frequent tile creation/destroy, like farming Forestry trees with an auto farm.  
+
+- At first, mixin into chunk logic and cleans them when their blocks are removed/replaced
+- Then purges invalidated TileEntities periodically. To prevent the loadedTileEntities list growing over time when tileEntities from the same type of block are replacing each other (for example, Forestry leaves replaced Forestry leaves, leaving the old tile "invalid", this patch cleans them)
+
 ## Mod-specific patches:  
 ### Railcraft
 #### Multiblock Desync fix  
