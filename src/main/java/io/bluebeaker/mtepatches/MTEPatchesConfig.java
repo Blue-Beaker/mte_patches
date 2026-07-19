@@ -150,6 +150,7 @@ public class MTEPatchesConfig {
         @LangKey("config.mtepatches.tileLeakFix.purgeInterval.name")
         public int purgeInterval = 200;
 
+        @Comment({"Log tile leaks fixed/purged by this mod."})
         @LangKey("config.mtepatches.tileLeakFix.logs.name")
         public boolean logs = false;
     }
