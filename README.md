@@ -124,9 +124,11 @@ Optimize the Crafting GUI to only update when the crafting grid has updated, to 
 #### Item Pipe Accepts Ejection
 Allows BuildCraft item pipes to accept items ejected from vanilla hoppers and machines from other mods.  
 #### RF/FE Compatibility
-(Disabled by default) Simply make BuildCraft works with RF/FE.  
+*(Disabled by default)* Simply make BuildCraft works with RF/FE.  
 #### Enforce Power Limits
-(Disabled by default) Apply the transfer rate limits to kinesis pipes. Also limits how much power can be stored in it.  
+*(Disabled by default)* Apply the transfer rate limits to kinesis pipes. Also limits how much power can be stored in it.  
+#### Disposable Water Gel
+*(Disabled by default)* make water gel more convenient to use, as a disposable container with 1000mB water.
 #### Clean owner profile from NBT
 Some mod adds additional data to player profile, and these are stored to NBT in BC blocks. This patch removes them from BC NBT as they are useless there.  
 
@@ -192,6 +194,6 @@ Fix command permission check for non-player senders, which is bugged and prevent
 #### [Client] Don't receive item entities when dead
 Stops receiving new item entities on client when player is dead. Item entities doesn't remove correctly on client-side when player is dead, so they can get more and more over time, causing huge lags.  
 #### Falling block dupe glitch
-(Disabled by default) Stops vanilla falling block duplication with end portal, by blocking falling block entities from being teleported by the portal.  
+*(Disabled by default)* Stops vanilla falling block duplication with end portal, by blocking falling block entities from being teleported by the portal.  
 #### Floating Pumpkins & Floating Fence Gates
 Allows placing pumpkins and/or fence gates without a block below it.  

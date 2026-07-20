@@ -1,3 +1,5 @@
+## 1.8.2
+Add Disposable Water Gel feature, make water gel more convenient to use, as a disposable container with 1000mB water.
 ## 1.8.1
 Fixed IC2 Explosion Permission patch prevented IC2 Explosions from working in obfuscated environment
 ## 1.8.0

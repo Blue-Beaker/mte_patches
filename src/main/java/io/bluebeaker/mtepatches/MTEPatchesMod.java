@@ -36,7 +36,6 @@ public class MTEPatchesMod
     public MTEPatchesMod() {
         MinecraftForge.EVENT_BUS.register(this);
         if(LoadedModChecker.buildcraftcore.isLoaded()){
-            BCCapabilityAdapter.INSTANCE.init();
             MinecraftForge.EVENT_BUS.register(BCCapabilityAdapter.INSTANCE);
         }
     }

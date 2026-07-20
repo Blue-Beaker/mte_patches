@@ -366,6 +366,10 @@ public class MTEPatchesConfig {
                 "Other mod may cause more informations to be stored, but only the name and ID are useful there."})
         @LangKey("config.mtepatches.buildcraft.cleanPlayerProfileNBT.name")
         public boolean cleanPlayerProfileNBT = true;
+
+        @Comment({"Make water gel more convenient to use, as a disposable container with 1000mB water."})
+        @LangKey("config.mtepatches.buildcraft.disposableWaterGel.name")
+        public boolean disposableWaterGel = false;
     }
 
     @LangKey("config.mtepatches.moarTinkers.name")
